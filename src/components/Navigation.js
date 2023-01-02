@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navigation.css'
-import LogoImage from "../assets/logo/TestLogo.png";
+
 
 function Navigation() {
     return (
@@ -9,7 +9,7 @@ function Navigation() {
 <nav className="navbar">
     <ul className="list-searchbar">
         <li>Home</li>
-        <li>Favorites</li>
+        <li>Favourites</li>
         <li>My Account</li>
         <li>Help</li>
     </ul>
