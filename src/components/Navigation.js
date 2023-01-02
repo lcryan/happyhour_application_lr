@@ -1,23 +1,21 @@
 import React from 'react';
 import './Navigation.css'
+import {Link} from "react-router-dom";
 
 
 function Navigation() {
     return (
-
         <>
-<nav className="navbar">
-    <ul className="list-searchbar">
-        <li>Home</li>
-        <li>Favourites</li>
-        <li>My Account</li>
-        <li>Help</li>
-    </ul>
-    <input className="search-bar" placeholder="Search your cocktail here">
-    </input>
-</nav>
-
-
+            <nav className="navbar">
+                <ul className="list-searchbar">
+                    <li>Home</li>
+                    <li>Favourites</li>
+                    <li>My Account</li>
+                    <li>Help</li>
+                </ul>
+                <input className="search-bar" placeholder="Search your cocktail here">
+                </input>
+            </nav>
         </>
     );
 }
