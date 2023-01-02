@@ -1,14 +1,40 @@
-.homepage-header{
+.homepage-header {
     font-family: "Montserrat", sans-serif;
     font-weight: lighter;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
 }
 
 h1 {
-    margin-top: 100px;
-
+    margin-top: 10px;
 }
 
+img {
+    margin-top: 20px;
+    width: 150px;
+}
+
+.overview-article {
+    padding-left: 50px;
+    padding-top: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: center;
+    background-color: dimgrey;
+    font-family: Montserrat, sans-serif;
+}
+
+.day-cocktail-image {
+    width: 400px;
+}
+
+.randomizer-button {
+margin-left: 186px;
+    margin-top: 30px;
+}
