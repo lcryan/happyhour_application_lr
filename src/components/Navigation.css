@@ -3,9 +3,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     align-content: flex-start;
     font-family: "Tahoma", sans-serif;
+    margin: 10px;
+    background-color: dimgrey;
+    height: 80px;
+    padding: 10px;
+    color: navajowhite;
 }
 
 .list-searchbar {
@@ -15,5 +20,14 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
+}
+
+input{
+    background-color: navajowhite;
+    border-radius: 10px;
+    border-style: none;
+    width: 200px;
+    height: 25px;
+    padding: 10px;
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navigation.css'
+import LogoImage from "../assets/logo/TestLogo.png";
 
 function Navigation() {
     return (
