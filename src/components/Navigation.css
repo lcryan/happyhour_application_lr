@@ -1,0 +1,19 @@
+.navbar {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    font-family: "Tahoma", sans-serif;
+}
+
+.list-searchbar {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
