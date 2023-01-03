@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navigation.css'
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 
 function Navigation() {
@@ -8,10 +8,10 @@ function Navigation() {
         <>
             <nav className="navbar">
                 <ul className="list-searchbar">
-                    <li>Home</li>
-                    <li>Favourites</li>
-                    <li>My Account</li>
-                    <li>Help</li>
+                    <li><NavLink to="/" className="home-link">Home</NavLink></li>
+                    <li><NavLink to="/favourites">Favourites</NavLink></li>
+                    <li><NavLink to="/myAccount">My Account</NavLink></li>
+                    <li><NavLink to="/help">Help</NavLink></li>
                 </ul>
                 <input className="search-bar" placeholder="Search your cocktail here">
                 </input>
