@@ -7,9 +7,16 @@ import Randomizer from './pages/randomizer/Randomizer';
 import Registration from './pages/registration/Registration';
 import Search from './pages/search/Search';
 import TopTen from './pages/topten/TopTen';
+import Favourites from './pages/favourites/Favourites'
 
 
 import './App.css';
+import Help from "./pages/help/Help";
+import Cocktail from "./pages/cocktail/Cocktail";
+import CocktailList from "./pages/cocktailList/CocktailList";
+import NotFound from "./pages/notFound/NotFound";
+import MyAccount from "./pages/myAccount/MyAccount";
+
 
 function App() {
     return (
@@ -24,6 +31,12 @@ function App() {
                 <Route path="/registration" element={<Registration/>}/>
                 <Route path="/search" element={<Search/>}/>
                 <Route path="/topten" element={<TopTen/>}/>
+                <Route path="/favourites" element={<Favourites/>}/>
+                <Route path="/help" element={<Help/>}/>
+                <Route path="/cocktail" element={<Cocktail/>}/>
+                <Route path="/cocktailList" element={<CocktailList/>}/>
+                <Route path="*" element={<NotFound/>}/>
+                <Route path="/myAccount" element={<MyAccount/>}/>
             </Routes>
 
 
