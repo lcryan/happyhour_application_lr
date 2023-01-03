@@ -1,11 +1,11 @@
 .homepage-header {
-    font-family: "Montserrat", sans-serif;
     font-weight: lighter;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
+    background-color: var(--darkturquoise);
 }
 
 h1 {
@@ -21,7 +21,7 @@ img {
     padding-left: 50px;
     padding-top: 20px;
     margin-top: 50px;
-    background-color: dimgrey;
+    background-color: var(--darkturquoise)
 }
 
 .randomizer-button {
@@ -30,6 +30,6 @@ img {
 
 .day-cocktail-image {
     width: 400px;
-    padding-left: 0px;
+    padding-left: 0;
 }
 

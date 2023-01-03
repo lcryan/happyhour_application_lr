@@ -5,12 +5,11 @@
     justify-content: space-between;
     align-items: center;
     align-content: flex-start;
-    font-family: "Tahoma", sans-serif;
     margin: 10px;
-    background-color: dimgrey;
+    background-color: var(--lightgrey);
     height: 80px;
     padding: 10px;
-    color: navajowhite;
+    color: var(--lighterturquoise);
 }
 
 .list-searchbar {
@@ -22,7 +21,7 @@
     gap: 30px;
 }
 
-input{
+input {
     background-color: navajowhite;
     border-radius: 10px;
     border-style: none;
