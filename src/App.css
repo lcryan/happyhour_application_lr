@@ -22,12 +22,27 @@ body, button, textarea {
     color: var(--black);
 }
 
-body{
+body {
     background-color: var(--lightgrey);
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat", sans-serif;
 }
 
+nav a:link {
+    color: whitesmoke;
+}
 
+nav a:visited {
+    color: var(--lighterturquoise);
+    font-weight: bold;
+}
 
+nav a:hover {
+    color: var(--darkturquoise);
+}
+
+nav a:active {
+    color: whitesmoke;
+}
