@@ -7,7 +7,8 @@ import Randomizer from './pages/randomizer/Randomizer';
 import Registration from './pages/registration/Registration';
 import Search from './pages/search/Search';
 import TopTen from './pages/topten/TopTen';
-import Favourites from './pages/favourites/Favourites'
+import Favourites from './pages/favourites/Favourites';
+import Navigation from "./components/Navigation";
 
 
 import './App.css';
@@ -21,7 +22,7 @@ import MyAccount from "./pages/myAccount/MyAccount";
 function App() {
     return (
         <>
-            {/* Future navigation */}
+            <Navigation/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/latest" element={<Latest/>}/>

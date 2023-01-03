@@ -30,19 +30,26 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat", sans-serif;
 }
 
-nav a:link {
+nav a,
+a:link {
     color: whitesmoke;
 }
 
-nav a:visited {
+/*NOTE: the visited link is still not functional! */
+
+nav a,
+a:visited {
     color: var(--lighterturquoise);
     font-weight: bold;
 }
 
-nav a:hover {
+nav a,
+a:hover {
     color: var(--darkturquoise);
 }
 
-nav a:active {
+nav a,
+a:active {
     color: whitesmoke;
 }
+

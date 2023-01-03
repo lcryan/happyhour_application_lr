@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from "../../components/Navigation";
+
 
 import './Home.css'
 import LogoImage from "../../assets/logo/TestLogo.png";
@@ -10,9 +10,9 @@ function Home() {
     return (
         <>
 
-            <Navigation/>
+
             <header className="homepage-header">
-                <img className="logo-image" src={LogoImage} alt="logo-image"/>
+                <img className="logo-image" src={LogoImage} alt="logo   -image"/>
                 <h1 className="header-homepage"> Welcome to your HappyHour.</h1>
             </header>
             <section className="overview-section">
