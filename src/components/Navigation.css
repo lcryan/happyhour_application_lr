@@ -5,13 +5,16 @@
     justify-content: space-between;
     align-items: center;
     align-content: flex-start;
-    margin: 10px;
-    background-color: var(--lightgrey);
+    background-color: var(--darkestgrey);
     height: 80px;
     padding: 10px;
     color: var(--lighterturquoise);
+    position: sticky;
+    top: 0;
 }
-
+li {
+    text-decoration: none;
+}
 .list-searchbar {
     list-style: none;
     display: flex;
@@ -19,6 +22,7 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
+    text-decoration: none;
 }
 
 input {

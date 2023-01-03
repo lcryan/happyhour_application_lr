@@ -4,6 +4,7 @@ import React from 'react';
 import './Home.css'
 import LogoImage from "../../assets/logo/TestLogo.png";
 import Blue from "../../assets/BlueHawaiiCocktail.png";
+import Line from "../../assets/pngfind.com-page-divider-png-929139.png"
 import {useNavigate} from 'react-router-dom';
 
 
@@ -17,7 +18,9 @@ function Home() {
             <header className="homepage-header">
                 <img className="logo-image" src={LogoImage} alt="image of tha happy hour logo"/>
                 <h1 className="header-homepage"> Welcome to your HappyHour.</h1>
+                <img className="page-divider" alt="page divider line black" src={Line}/>
             </header>
+
             <section className="overview-section">
                 <article className="random-cocktail-article">
                     <p className="cocktail-name">Blue Hawaii</p>
