@@ -9,7 +9,7 @@ import Search from './pages/search/Search';
 import TopTen from './pages/topten/TopTen';
 import Favourites from './pages/favourites/Favourites';
 import Navigation from "./components/Navigation";
-
+import Footer from "./components/Footer";
 
 import './App.css';
 import Help from "./pages/help/Help";
@@ -39,7 +39,7 @@ function App() {
                 <Route path="*" element={<NotFound/>}/>
                 <Route path="/myAccount" element={<MyAccount/>}/>
             </Routes>
-
+<Footer/>
 
         </>
     );
