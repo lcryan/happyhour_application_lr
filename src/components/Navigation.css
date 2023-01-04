@@ -12,9 +12,7 @@
     position: sticky;
     top: 0;
 }
-li {
-    text-decoration: none;
-}
+
 .list-searchbar {
     list-style: none;
     display: flex;
@@ -22,15 +20,15 @@ li {
     justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
-    text-decoration: none;
+    text-decoration: snow;
 }
 
 input {
     background-color: navajowhite;
     border-radius: 10px;
     border-style: none;
-    width: 200px;
-    height: 25px;
+    width: 300px;
+    height: 40px;
     padding: 10px;
 }
 

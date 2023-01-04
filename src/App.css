@@ -42,12 +42,13 @@ a:link {
 nav a,
 a:visited {
     color: var(--lighterturquoise);
-    font-weight: bold;
+    font-weight: bolder;
+    text-decoration: none;
 }
 
 nav a,
 a:hover {
-    color: var(--darkestgrey);
+    color: var(--navajowhite);
 }
 
 nav a,
