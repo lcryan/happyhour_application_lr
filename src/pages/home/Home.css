@@ -12,19 +12,10 @@ h1 {
     margin-top: 10px;
 }
 
-img {
-    margin-top: 20px;
+.logo-image {
+    margin-top: 100px;
     width: 150px;
-}
-
-.random-cocktail-article {
-
-    background-color: var(--darkturquoise)
-}
-
-.randomizer-button {
-    max-width: 100px;
-    max-height: 50px;
+    margin-bottom: 50px;
 }
 
 .day-cocktail-image {
@@ -39,25 +30,67 @@ img {
 }
 
 .random-cocktail-article {
-    margin-left: 200px;
+    background-color: var(--darkturquoise);
+    margin-left: 150px;
     margin-top: 100px;
     border: var(--lighterturquoise) 2px solid;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--lighterturquoise);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cocktail-name {
+    margin-right: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.randomizer-button {
+    color: var(--navajowhite);
+    background-color: var(--lightgrey);
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    max-height: 50px;
+    width: 200px;
+    border-style: none;
+     box-shadow: 14px 22px 42px -10px rgba(55, 65, 79, 1);
 }
 
 .menu-buttons {
     display: flex;
     flex-direction: column;
     max-height: 450px;
-    border: var(--lighterturquoise) 2px solid;
-    margin-right: 200px;
+    margin-right: 150px;
     margin-top: 100px;
 }
 
 .latest-button, .top-ten-button {
     width: 600px;
     margin-bottom: 40px;
+}
+
+.latest-button, .top-ten-button, .mixologist-button {
+    background-color: var(--lightgrey);
+    font-size: 20px;
+    color: var(--navajowhite);
+    font-weight: bold;
+    border-radius: 40px;
+    border-style: none;
+    box-shadow: 14px 22px 42px -10px rgba(55, 65, 79, 1);
+}
+
+.help-text {
+    margin-top: -30px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    color: var(--lighterturquoise);
+    font-weight: bolder;
+    
 }
