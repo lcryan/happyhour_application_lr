@@ -1,0 +1,37 @@
+.navbar {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+    background-color: var(--darkestgrey);
+    height: 80px;
+    padding: 10px;
+    color: var(--lighterturquoise);
+    position: sticky;
+    top: 0;
+    flex-shrink: 0;
+}
+
+.list-searchbar {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    text-decoration: snow;
+    flex-shrink: 0;
+}
+
+input {
+    background-color: navajowhite;
+    border-radius: 10px;
+    border-style: none;
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    flex-shrink: 1;
+}
+

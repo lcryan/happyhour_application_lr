@@ -1,26 +1,58 @@
-/*Colorpalette APP
-
-grey dark : #222831 (background color)
-turquoise / dark: #19BFB
-white
-grey light #37414f
-lighter black #0d0f13
-light turquoise #28e3da
-*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,200;1,300;1,400;1,500;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.font-link {
-    font-family: 'Montserrat', 'Source Code Pro', sans-serif;
+:root {
+    --darkestgrey: #222831;
+    --black: #292929;
+    --darkturquoise: #358e85;
+    --lightgrey: #37414f;
+    --lighterblack: #0d0f13;
+    --lighterturquoise: #28e3da;
+    --navajowhite: #FFDEADFF;
 }
 
-
-h1 {
-    font-family: "Source Code Pro", sans-serif;
-    font-weight: lighter;
+body, button, textarea {
+    font-family: "Cabin", sans-serif;
+    font-weight: 300;
+    color: var(--black);
+    flex-basis: 1200px;
 }
+
+body {
+    background-color: var(--darkturquoise);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif;
+}
+
+nav a,
+a:link {
+    color: whitesmoke;
+}
+
+/*NOTE: the visited link is still not functional! */
+
+nav a,
+a:visited {
+    color: var(--lighterturquoise);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+nav a,
+a:hover {
+    color: var(--navajowhite);
+}
+
+nav a,
+a:active {
+    color: whitesmoke;
+}
+
