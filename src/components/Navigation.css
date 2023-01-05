@@ -11,6 +11,7 @@
     color: var(--lighterturquoise);
     position: sticky;
     top: 0;
+    flex-shrink: 0;
 }
 
 .list-searchbar {
@@ -21,6 +22,7 @@
     align-items: flex-start;
     gap: 30px;
     text-decoration: snow;
+    flex-shrink: 0;
 }
 
 input {
@@ -30,5 +32,6 @@ input {
     width: 300px;
     height: 40px;
     padding: 10px;
+    flex-shrink: 1;
 }
 

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
+import axios from "axios"
+import './Latest.css'
 
 function Latest() {
 
@@ -27,18 +28,17 @@ function Latest() {
         <>
             <section className="outer-content-container-latest-cocktails">
                 <div className="inner-content-container-latest-cocktails">
-                    <h2>Latest Cocktails</h2>
+                    <h1 className="title-latest"> Our latest Cocktails are: </h1>
                     <div className="latest-cocktails-container">
                         {data.map((cocktail) => {
                             return (
                                 <article className="latest-cocktail" key={cocktail.idDrink}>
                                     <img src={cocktail.strDrinkThumb} alt="foto of according cocktail"
                                          className="cocktail-foto"/>
-                                    <p className="latest-cocktail-name">{cocktail.strDrink}</p>
+                                    <p>{cocktail.strDrink}</p>
                                 </article>
                             )
                         })}
-
                     </div>
                 </div>
             </section>
