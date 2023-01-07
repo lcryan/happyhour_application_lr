@@ -1,18 +1,20 @@
 import React from 'react';
 
 
-function OneCocktailCard({articleName, key, imageStr, altDescription, classNamePicture, cocktailNameStr, children}) {
+function OneCocktailCard({keyStr, imgStr, strDrink, children}) {
     return (
         <>
-            <article className={articleName} key={key}>
-                <img src={imageStr} alt={altDescription}
-                     className={classNamePicture}/>
-                <p>{cocktailNameStr}</p>
-                {children}
-            </article>
+                <article className="latest-cocktail"
+                         key={keyStr}>
+                <img src={imgStr} alt="foto of according cocktail"
+                     className="cocktail-foto"/>
+                <p>{strDrink}</p>
+                    {children}
+        </article>
+
+</>
 
 
-        </>
     );
 }
 

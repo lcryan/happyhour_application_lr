@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios"
 import './Latest.css'
+import OneCocktailCard from "../../components/OneCocktailCard";
 
 function Latest() {
 
@@ -32,11 +33,12 @@ function Latest() {
                     <div className="latest-cocktails-container">
                         {data.map((cocktail) => {
                             return (
-                                <article className="latest-cocktail" key={cocktail.idDrink}>
-                                    <img src={cocktail.strDrinkThumb} alt="foto of according cocktail"
-                                         className="cocktail-foto"/>
-                                    <p>{cocktail.strDrink}</p>
-                                </article>
+                                <OneCocktailCard
+                                    keyStr={cocktail.idDrink}
+                                    imgStr={cocktail.strDrinkThumb}
+                                    strDrink={cocktail.strDrink}
+                                />
+
                             )
                         })}
                     </div>
