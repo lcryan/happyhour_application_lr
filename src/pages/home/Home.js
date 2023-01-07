@@ -33,7 +33,6 @@ function Home() {
     if (loading) return <h2>"Fetching an awesome cocktail for you..."</h2>
 
     return (
-
         <>
             <header className="homepage-header">
                 <img className="logo-image" src={LogoImage} alt="the happy hour logo"/>
