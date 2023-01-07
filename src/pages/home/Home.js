@@ -1,16 +1,36 @@
-import React from 'react';
-
-
+import React, {useCallback, useEffect, useState} from 'react'
+import OneCocktailCard from "../../components/OneCocktailCard";
 import './Home.css'
 import LogoImage from "../../assets/logo/TestLogo.png";
-import Blue from "../../assets/BlueHawaiiCocktail.png";
+
 
 import {useNavigate} from 'react-router-dom';
+import axios from "axios";
 
 
 function Home() {
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(true);
+    const [randomCocktail, setRandomCocktail] = useState([]);
 
-    const navigate = useNavigate()
+    const apiUrl = `https://www.thecocktaildb.com/api/json/v2/9973533/random.php`;
+
+    const fetchCocktailHandler = useCallback(() => {
+        setLoading(true);
+
+        axios.get(apiUrl).then(response => {
+            console.log(response.data)
+            setRandomCocktail(response.data.drinks)
+        }).catch(e => console.log(e))
+            .finally(() => setLoading(false))
+    }, []);
+
+
+    useEffect(() => {
+        fetchCocktailHandler();
+    }, [fetchCocktailHandler]);
+
+    if (loading) return <h2>"Fetching an awesome cocktail for you..."</h2>
 
     return (
 
@@ -22,9 +42,22 @@ function Home() {
 
             <section className="overview-section">
                 <article className="random-cocktail-article">
-                    <p className="cocktail-name">Blue Hawaii</p>
-                    <img className="day-cocktail-image" alt="illustration blue hawaii cocktail" src={Blue}/>
-                    <button className="randomizer-button" onClick={() => navigate("/randomizer")}
+                    <div className="one-random-cocktail">
+                        {randomCocktail.map((cocktail) => {
+                                return (
+                                    <OneCocktailCard
+                                        strDrink={cocktail.strDrink}
+                                        keyStr={cocktail.idDrink}
+                                        imgStr={cocktail.strDrinkThumb}
+                                    />
+                                )
+                            }
+                        )}
+
+                    </div>
+                    <button className="randomizer-button" onClick={() => {
+                        fetchCocktailHandler()
+                    }}
                             type='button'>Randomizer
                     </button>
                 </article>

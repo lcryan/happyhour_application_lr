@@ -24,7 +24,6 @@ function Latest() {
         void getAllCocktails();
     }, [])
 
-
     return (
         <>
             <section className="outer-content-container-latest-cocktails">
