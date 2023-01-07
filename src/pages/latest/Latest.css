@@ -6,30 +6,3 @@
  margin-top: 100px;
  color: var(--navajowhite);
 }
-
-.latest-cocktails-container {
- margin-top: 100px;
- display: grid;
- grid-template-columns: repeat(5, 1fr);
- grid-template-rows: repeat(2, 1fr);
- grid-column-gap: 10px;
- grid-row-gap: 40px;
- color: var(--navajowhite);
- font-weight: bolder;
- flex-shrink: 1;
- margin-left: 50px;
- margin-right: 50px;
- justify-items: center;
- align-items: center;
-}
-
-
-.cocktail-foto {
- width: 200px;
- border-radius: 30px;
- border: 2px;
-}
-
-.latest-cocktail p {
- margin-top: 20px;
-}

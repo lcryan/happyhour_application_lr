@@ -1,4 +1,5 @@
 import React from 'react';
+import './OneCocktailCard.css'
 
 
 function OneCocktailCard({keyStr, imgStr, strDrink, children}) {
