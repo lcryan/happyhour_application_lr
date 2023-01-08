@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios"
 import './Latest.css'
-import OneCocktailCard from "../../components/OneCocktailCard";
+import {Link} from "react-router-dom";
 
 function Latest() {
 
     const [data, setData] = useState([])
+
 
     useEffect(() => {
 
@@ -14,8 +15,6 @@ function Latest() {
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/latest.php`);
                 console.log(response)
                 setData(response.data.drinks)
-
-
             } catch (e) {
                 console.error(e);
             }
@@ -32,11 +31,10 @@ function Latest() {
                     <div className="latest-cocktails-container">
                         {data.map((cocktail) => {
                             return (
-                                <OneCocktailCard
-                                    keyStr={cocktail.idDrink}
-                                    imgStr={cocktail.strDrinkThumb}
-                                    strDrink={cocktail.strDrink}
-                                />
+                                <article className="cocktail-data" key={cocktail.idDrink}>
+                                    <img className="cocktail-foto-latest-link" alt="foto of cocktail" src={cocktail.strDrinkThumb}/>
+                                    <Link className="link-to-subLatest" to="/LatestOne">{cocktail.strDrink}</Link>
+                                </article>
 
                             )
                         })}
