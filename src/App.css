@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 :root {
@@ -17,16 +18,14 @@
     --navajowhite: #FFDEADFF;
 }
 
-body, button, textarea {
+body {
+    background-color: var(--darkturquoise);
     font-family: "Cabin", sans-serif;
     font-weight: 300;
     color: var(--black);
     flex-basis: 1200px;
 }
 
-body {
-    background-color: var(--darkturquoise);
-}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat", sans-serif;

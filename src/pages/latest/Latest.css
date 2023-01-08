@@ -12,18 +12,22 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 10px;
+    grid-column-gap: 40px;
     grid-row-gap: 40px;
     margin-left: 50px;
     margin-right: 50px;
     justify-items: center;
     align-items: center;
-    flex-shrink: 1;
+    flex-shrink: 0;
     flex-grow: 0;
 }
 
 .cocktail-foto-latest-link {
-    width: 300px;
+    width: 200px;
     border-radius: 30px;
     border: 2px;
+}
+
+.link-to-subLatest {
+    margin-top: 20px;
 }
