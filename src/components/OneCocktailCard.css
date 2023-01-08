@@ -15,7 +15,7 @@
 }
 
 .cocktail-foto {
-    min-height: 300px;
+    width: 200px;
     border-radius: 30px;
     border: 2px;
 }

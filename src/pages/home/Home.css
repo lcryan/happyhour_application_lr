@@ -43,6 +43,7 @@ h1 {
 
 .one-random-cocktail img {
     width: 300px;
+    min-height: 300px;
 }
 
 .randomizer-button {

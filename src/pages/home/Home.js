@@ -1,16 +1,13 @@
 import React, {useCallback, useEffect, useState} from 'react'
-import OneCocktailCard from "../../components/OneCocktailCard";
+
 import './Home.css'
 import LogoImage from "../../assets/logo/TestLogo.png";
-
-import  {myCocktail} from "../../helpers";
 
 import {useNavigate} from 'react-router-dom';
 import RandomisedCocktail from "../../components/RandomisedCocktail";
 
 
 function Home() {
-
 
     const navigate = useNavigate();
 
@@ -24,7 +21,7 @@ function Home() {
             <section className="overview-section">
                 <article className="random-cocktail-article">
                     <div className="one-random-cocktail">
-                        <RandomisedCocktail />
+                        <RandomisedCocktail/>
                     </div>
                 </article>
                 <article className="menu-buttons">
