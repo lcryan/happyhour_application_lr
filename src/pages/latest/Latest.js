@@ -31,11 +31,10 @@ function Latest() {
                     <div className="latest-cocktails-container">
                         {data.map((cocktail) => {
                             return (
+
                                 <article className="cocktail-data" key={cocktail.idDrink}>
-
-                                    <img className="cocktail-foto-latest-link" alt="foto of cocktail" src={cocktail.strDrinkThumb}/>
-                                    <Link className="link-to-subLatest" to="/LatestOne">{cocktail.strDrink}</Link>
-
+                                    <Link className="link-to-subLatest" to="/LatestOne"><img className="cocktail-foto-latest-link" alt="foto of cocktail" src={cocktail.strDrinkThumb}/></Link>
+                                   <p className="latest-cocktail-name">{cocktail.strDrink}</p>
                                 </article>
 
                             )
