@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react'
+import React from 'react'
 
 import './Home.css'
 import LogoImage from "../../assets/logo/TestLogo.png";

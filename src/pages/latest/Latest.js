@@ -8,7 +8,6 @@ function Latest() {
 
     const [data, setData] = useState([])
 
-
     useEffect(() => {
 
         async function getAllCocktails() {
@@ -32,7 +31,7 @@ function Latest() {
                     <div className="latest-cocktails-container">
                         {data.map((cocktail) => {
                             return (
-                                <Link to={"/latestOne"}>
+                                <Link to={"/latestOne/:id"}>
                                     <OneCocktailCard
                                         keyStr={cocktail.idDrink}
                                         imgStr={cocktail.strDrinkThumb}
