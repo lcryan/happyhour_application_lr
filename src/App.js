@@ -35,7 +35,7 @@ function App() {
                 <Route path="/registration" element={<Registration/>}/>
                 <Route path="/search" element={<Search/>}/>
                 <Route path="/topten" element={<TopTen/>}/>
-                <Route path="/topTenOne" elemen={<TopTenOne/>}/>
+                <Route path="/topTenOne/:id" elemen={<TopTenOne/>}/>
                 <Route path="/favourites" element={<Favourites/>}/>
                 <Route path="/help" element={<Help/>}/>
                 <Route path="/cocktail" element={<Cocktail/>}/>
