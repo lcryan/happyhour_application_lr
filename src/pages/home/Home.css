@@ -81,6 +81,7 @@ h1 {
     border-radius: 40px;
     border-style: none;
     box-shadow: 14px 22px 42px -10px rgba(55, 65, 79, 1);
+    height: 100px;
 }
 
 .help-text {
