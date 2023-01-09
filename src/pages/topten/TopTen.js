@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import OneCocktailCard from "../../components/OneCocktailCard";
 import axios from "axios"
 import './TopTen.css'
+import {Link} from "react-router-dom";
 
 
 function TopTen() {
@@ -34,12 +35,13 @@ function TopTen() {
                     <div className="top-ten-cocktails-container">
                         {topTen.map((cocktail) => {
                             return (
-                                <OneCocktailCard
-                                    keyStr={cocktail.idDrink}
-                                    imgStr={cocktail.strDrinkThumb}
-                                    strDrink={cocktail.strDrink}
-                                />
-
+                                <Link to={"/latestOne"}>
+                                    <OneCocktailCard
+                                        keyStr={cocktail.idDrink}
+                                        imgStr={cocktail.strDrinkThumb}
+                                        strDrink={cocktail.strDrink}
+                                    />
+                                </Link>
                             )
                         })}
                     </div>
