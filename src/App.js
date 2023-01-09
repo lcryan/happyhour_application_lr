@@ -6,7 +6,8 @@ import Mixologist from './pages/mixologist/Mixologist';
 import Randomizer from './pages/randomizer/Randomizer';
 import Registration from './pages/registration/Registration';
 import Search from './pages/search/Search';
-import TopTen from './pages/topten/TopTen';
+import TopTen from "./pages/topten/TopTen";
+import TopTenOne from "./pages/topTenOne/TopTenOne"
 import Favourites from './pages/favourites/Favourites';
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -34,6 +35,7 @@ function App() {
                 <Route path="/registration" element={<Registration/>}/>
                 <Route path="/search" element={<Search/>}/>
                 <Route path="/topten" element={<TopTen/>}/>
+                <Route path="/topTenOne" elemen={<TopTenOne/>}/>
                 <Route path="/favourites" element={<Favourites/>}/>
                 <Route path="/help" element={<Help/>}/>
                 <Route path="/cocktail" element={<Cocktail/>}/>
