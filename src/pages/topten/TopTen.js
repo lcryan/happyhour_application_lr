@@ -35,7 +35,7 @@ function TopTen() {
                     <div className="top-ten-cocktails-container">
                         {topTen.map((cocktail) => {
                             return (
-                                <Link to={"/latestOne"}>
+                                <Link to={"/topTenOne/:id"}>
                                     <OneCocktailCard
                                         keyStr={cocktail.idDrink}
                                         imgStr={cocktail.strDrinkThumb}
