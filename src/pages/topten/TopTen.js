@@ -16,7 +16,7 @@ function TopTen() {
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/popular.php`);
                 /* console.log(response)*/
                 setTopTen(response.data.drinks)
-                console.log(response.data)
+
             } catch (e) {
                 console.error(e);
             }
@@ -33,12 +33,11 @@ function TopTen() {
                     <h1 className="title-top-ten"> Our User's Most Popular cocktails: </h1>
                     <div className="top-ten-cocktails-container">
                         {topTen.map((cocktail) => {
-                            console.log(cocktail.id)
+
                             return (
                                 <article className="cocktail-details" key={cocktail.idDrink}>
                                     <Link to={`/topTenOne/${cocktail.idDrink}`}>
                                         <OneCocktailCard
-                                            keyStr={cocktail.idDrink}
                                             imgStr={cocktail.strDrinkThumb}
                                             strDrink={cocktail.strDrink}
                                         />

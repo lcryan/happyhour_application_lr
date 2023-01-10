@@ -4,7 +4,7 @@ import {useParams} from "react-router-dom";
 
 
 function TopTenOne() {
-    const [oneCocktail, setOneCocktail] = useState([]);
+    const [oneCocktail, setOneCocktail] = useState({});
     const [loading, setLoading] = useState(false);
     const {id} = useParams();
     useEffect(() => {
@@ -13,10 +13,10 @@ function TopTenOne() {
             try {
 
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
-                /*console.log(response.data)*/
+                console.log(response.data)
                 setOneCocktail(response.data.drinks)
 
-                /*  if (oneCocktail) {
+           /*       if (oneCocktail) {
                       setOneCocktail(response.data.drinks)
                       setLoading(false);
                   } else {
@@ -26,12 +26,13 @@ function TopTenOne() {
             } catch (e) {
                 console.log(e)
             }
+
         }
 
         void getOneCocktail()
 
     }, [id]);
-
+    console.log(oneCocktail)
     if (loading) {
         return "Getting cocktail..."
     }
@@ -42,9 +43,8 @@ function TopTenOne() {
     return (
 
         <>
-
-            <p className="cocktail-item-name">Cocktail Name: {oneCocktail.strDrink} </p>
-            <img src={oneCocktail.strDrinkThumb}/>
+            <p className="cocktail-item-name">Cocktail Name: {oneCocktail[0].strDrink} </p>
+            <img src={oneCocktail[0].strDrinkThumb}/>
         </>
     );
 }
