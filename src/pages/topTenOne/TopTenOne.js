@@ -14,15 +14,16 @@ function TopTenOne() {
 
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
                 console.log(response.data)
+                console.log(id)
                 setOneCocktail(response.data.drinks)
 
-           /*       if (oneCocktail) {
-                      setOneCocktail(response.data.drinks)
-                      setLoading(false);
-                  } else {
-                      setOneCocktail(null);
-                      setLoading(false);
-                  }*/
+                /*       if (oneCocktail) {
+                           setOneCocktail(response.data.drinks)
+                           setLoading(false);
+                       } else {
+                           setOneCocktail(null);
+                           setLoading(false);
+                       }*/
             } catch (e) {
                 console.log(e)
             }
@@ -32,7 +33,8 @@ function TopTenOne() {
         void getOneCocktail()
 
     }, [id]);
-    console.log(oneCocktail)
+
+
     if (loading) {
         return "Getting cocktail..."
     }
@@ -43,8 +45,21 @@ function TopTenOne() {
     return (
 
         <>
-            <p className="cocktail-item-name">Cocktail Name: {oneCocktail[0].strDrink} </p>
-            <img src={oneCocktail[0].strDrinkThumb}/>
+            {Object.keys(oneCocktail).length > 0 && <><p className="cocktail-item-name">Cocktail
+                Name: {oneCocktail[0].strDrink} </p>
+                <img alt="foto of cocktail" src={oneCocktail[0].strDrinkThumb}/>
+                <ul className="ingredients-list">
+                    Ingredients:
+                    <li className="ingredients"> {oneCocktail[0].strIngredient1}</li>
+
+                    {oneCocktail[0].strIngredient2}
+
+                </ul>
+
+            </>
+
+            }
+
         </>
     );
 }

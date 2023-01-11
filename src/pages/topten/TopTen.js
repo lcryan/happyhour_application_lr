@@ -38,6 +38,7 @@ function TopTen() {
                                 <article className="cocktail-details" key={cocktail.idDrink}>
                                     <Link to={`/topTenOne/${cocktail.idDrink}`}>
                                         <OneCocktailCard
+                                            keyStr={cocktail.idDrink}
                                             imgStr={cocktail.strDrinkThumb}
                                             strDrink={cocktail.strDrink}
                                         />
