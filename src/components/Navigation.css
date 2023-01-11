@@ -11,6 +11,7 @@
     color: var(--lighterturquoise);
     position: sticky;
     top: 0;
+    flex-grow: 1;
     flex-shrink: 0;
 
 }
