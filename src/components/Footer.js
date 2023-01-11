@@ -5,9 +5,11 @@ function Footer() {
     return (
 
         <>
-            <p className="footer-style">
+            <footer className="footer">
+                <p className="footer-style">
                 Brought to you by The Cocktail Heads Co.
-            </p>
+                </p>
+            </footer>
 
         </>
     );

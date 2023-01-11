@@ -5,12 +5,12 @@ import Login from './pages/login/Login';
 import Mixologist from './pages/mixologist/Mixologist';
 import Registration from './pages/registration/Registration';
 import Search from './pages/search/Search';
-import TopTen from "./pages/topten/TopTen";
-import TopTenOne from "./pages/topTenOne/TopTenOne"
+import TopTwenty from "./pages/topTwenty/TopTwenty";
+import TopTwentyOne from "./pages/topTwentyOne/TopTwentyOne";
 import Favourites from './pages/favourites/Favourites';
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
-/*import LatestOne from './pages/latestOne/LatestOne'*/
+import LatestOne from './pages/latestOne/LatestOne'
 
 import './App.css';
 import Help from "./pages/help/Help";
@@ -27,13 +27,13 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/latest" element={<Latest/>}/>
-             {/*   <Route path="latestOne" element={<LatestOne/>}/>*/}
+                <Route path="latestOne" element={<LatestOne/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/mixologist" element={<Mixologist/>}/>
                 <Route path="/registration" element={<Registration/>}/>
                 <Route path="/search" element={<Search/>}/>
-                <Route path="/topten" element={<TopTen/>}/>
-                <Route path="/topTenOne/:id" element={<TopTenOne/>}/>
+                <Route path="/topTwenty" element={<TopTwenty/>}/>
+                <Route path="/topTwentyOne/:id" element={<TopTwentyOne/>}/>
                 <Route path="/favourites" element={<Favourites/>}/>
                 <Route path="/help" element={<Help/>}/>
                 <Route path="/cocktail" element={<Cocktail/>}/>
