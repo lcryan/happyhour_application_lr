@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import OneCocktailCard from "../../components/OneCocktailCard";
 import axios from "axios"
-import './TopTen.css'
+import './TopTwenty.css'
 import {Link} from "react-router-dom";
 
 
-function TopTen() {
+function TopTwenty() {
 
     const [topTen, setTopTen] = useState([]);
 
     useEffect(() => {
 
-        async function getTopTen() {
+        async function getTopTwenty() {
             try {
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/popular.php`);
                 /* console.log(response)*/
@@ -22,7 +22,7 @@ function TopTen() {
             }
         }
 
-        void getTopTen();
+        void getTopTwenty();
     }, [])
 
 
@@ -36,7 +36,7 @@ function TopTen() {
 
                             return (
                                 <article className="cocktail-details" key={cocktail.idDrink}>
-                                    <Link to={`/topTenOne/${cocktail.idDrink}`}>
+                                    <Link to={`/topTwentyOne/${cocktail.idDrink}`}>
                                         <OneCocktailCard
                                             keyStr={cocktail.idDrink}
                                             imgStr={cocktail.strDrinkThumb}
@@ -53,4 +53,4 @@ function TopTen() {
     );
 }
 
-export default TopTen;
+export default TopTwenty;

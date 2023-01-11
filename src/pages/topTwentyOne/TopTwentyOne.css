@@ -1,0 +1,26 @@
+.outer-topTwentyOne-cocktail h3, ul, .favourites-text-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.topTwenty-cocktail-title {
+    margin-top: 50px;
+}
+
+.inner-cocktail-container-topTwentyOne {
+
+}
+
+.foto-twentyOne-cocktail {
+    padding-left: 10px;
+    width: 300px;
+}
+
+
+
+.ingredients-list {
+    list-style-type: none;
+}
+
