@@ -22,7 +22,8 @@ import MyAccount from "./pages/myAccount/MyAccount";
 
 function App() {
     return (
-        <>
+        <div className="App">
+
             <Navigation/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
@@ -42,8 +43,8 @@ function App() {
                 <Route path="/myAccount" element={<MyAccount/>}/>
             </Routes>
             <Footer/>
+        </div>
 
-        </>
     );
 }
 
