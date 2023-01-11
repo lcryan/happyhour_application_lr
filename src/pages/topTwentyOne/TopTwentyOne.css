@@ -1,17 +1,17 @@
-.outer-topTwentyOne-cocktail h3, ul, .favourites-text-button {
+.outer-topTwentyOne-cocktail {
+
+}
+.inner-container-topTwentyOne {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+
 }
 
 .topTwenty-cocktail-title {
-    margin-top: 50px;
+   vertical-align: middle;
 }
 
-.inner-cocktail-container-topTwentyOne {
 
-}
 
 .foto-twentyOne-cocktail {
     padding-left: 10px;
