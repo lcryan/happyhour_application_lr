@@ -17,7 +17,7 @@ function Home() {
                 <img className="logo-image" src={LogoImage} alt="the happy hour logo"/>
                 <h1 className="header-homepage"> Welcome to your HappyHour.</h1>
             </header>
-
+<main>
             <section className="overview-section">
                 <article className="random-cocktail-article">
                     <div className="one-random-cocktail">
@@ -27,12 +27,13 @@ function Home() {
                 <article className="menu-buttons">
                     <p className="help-text">Choose to your liking from below...</p>
                     <button className="latest-button" onClick={() => navigate("/latest")}>Latest Cocktails</button>
-                    <button className="top-ten-button" onClick={() => navigate("/topten")}>Our User's Top 20</button>
+                    <button className="top-ten-button" onClick={() => navigate("/topTwenty")}>Our User's Top 20</button>
                     <button className="mixologist-button" onClick={() => navigate("/mixologist")}> Go to our
                         MIXOLOGIST
                     </button>
                 </article>
             </section>
+</main>
         </>
     );
 }
