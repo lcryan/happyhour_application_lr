@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios"
 import './Latest.css'
-import {Link} from "react-router-dom";
+
 import OneCocktailCard from "../../components/OneCocktailCard";
 
 function Latest() {
@@ -31,13 +31,11 @@ function Latest() {
                     <div className="latest-cocktails-container">
                         {data.map((cocktail) => {
                             return (
-                                <Link to={"/latestOne/:id"}>
-                                    <OneCocktailCard
-                                        keyStr={cocktail.idDrink}
-                                        imgStr={cocktail.strDrinkThumb}
-                                        strDrink={cocktail.strDrink}
-                                    />
-                                </Link>
+                                <OneCocktailCard
+                                    keyStr={cocktail.idDrink}
+                                    imgStr={cocktail.strDrinkThumb}
+                                    strDrink={cocktail.strDrink}
+                                />
                             )
                         })}
                     </div>
