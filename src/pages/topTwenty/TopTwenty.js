@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 
 function TopTwenty() {
 
-    const [topTen, setTopTen] = useState([]);
+    const [topTwenty, setTopTwenty] = useState([]);
 
     useEffect(() => {
 
@@ -15,7 +15,7 @@ function TopTwenty() {
             try {
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/popular.php`);
                 /* console.log(response)*/
-                setTopTen(response.data.drinks)
+                setTopTwenty(response.data.drinks)
 
             } catch (e) {
                 console.error(e);
@@ -32,11 +32,11 @@ function TopTwenty() {
                 <div className="inner-content-container-topTen-cocktails">
                     <h1 className="title-top-ten"> Our User's Most Popular cocktails: </h1>
                     <div className="top-ten-cocktails-container">
-                        {topTen.map((cocktail) => {
+                        {topTwenty.map((cocktail) => {
 
                             return (
                                 <article className="cocktail-details" key={cocktail.idDrink}>
-                                    <Link to={`/topTwentyOne/${cocktail.idDrink}`}>
+                                    <Link to={`/singleCocktail/${cocktail.idDrink}`}>
                                         <OneCocktailCard
                                             keyStr={cocktail.idDrink}
                                             imgStr={cocktail.strDrinkThumb}

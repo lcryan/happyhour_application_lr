@@ -6,7 +6,7 @@ import Mixologist from './pages/mixologist/Mixologist';
 import Registration from './pages/registration/Registration';
 import Search from './pages/search/Search';
 import TopTwenty from "./pages/topTwenty/TopTwenty";
-import TopTwentyOne from "./pages/topTwentyOne/TopTwentyOne";
+import SingleCocktail from "./pages/singleCocktail/SingleCocktail";
 import Favourites from './pages/favourites/Favourites';
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -32,7 +32,7 @@ function App() {
                 <Route path="/registration" element={<Registration/>}/>
                 <Route path="/search" element={<Search/>}/>
                 <Route path="/topTwenty" element={<TopTwenty/>}/>
-                <Route path="/topTwentyOne/:id" element={<TopTwentyOne/>}/>
+                <Route path="/singleCocktail/:id" element={<SingleCocktail/>}/>
                 <Route path="/favourites" element={<Favourites/>}/>
                 <Route path="/help" element={<Help/>}/>
                 <Route path="*" element={<NotFound/>}/>

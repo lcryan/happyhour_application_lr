@@ -3,6 +3,8 @@ import axios from "axios"
 import './Latest.css'
 
 import OneCocktailCard from "../../components/OneCocktailCard";
+import {Link} from "react-router-dom";
+
 
 function Latest() {
 
@@ -31,11 +33,16 @@ function Latest() {
                     <div className="latest-cocktails-container">
                         {data.map((cocktail) => {
                             return (
-                                <OneCocktailCard
-                                    keyStr={cocktail.idDrink}
-                                    imgStr={cocktail.strDrinkThumb}
-                                    strDrink={cocktail.strDrink}
-                                />
+                                <article className="cocktail-info" key={cocktail.idDrink}>
+                                    <Link to={`/singleCocktail/${cocktail.idDrink}`}>
+                                        <OneCocktailCard
+                                            keyStr={cocktail.idDrink}
+                                            imgStr={cocktail.strDrinkThumb}
+                                            strDrink={cocktail.strDrink}
+                                        />
+                                    </Link>
+                                </article>
+
                             )
                         })}
                     </div>

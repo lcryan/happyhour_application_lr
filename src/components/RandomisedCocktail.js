@@ -8,7 +8,7 @@ function RandomisedCocktail(props) {
     const apiUrl = `https://www.thecocktaildb.com/api/json/v2/9973533/random.php`;
 
     const fetchCocktailHandler = useCallback(() => {
-        setRandomCocktail({
+            setRandomCocktail({
             strDrink: "loading",
             idDrink: "",
             strDrinkThumb: "https://via.placeholder.com/150"

@@ -1,4 +1,4 @@
-.outer-topTwentyOne-cocktail {
+.outer-container-singleCocktail {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,8 +9,7 @@
     list-style-type: none;
 }
 
-
-.foto-twentyOne-cocktail {
+.foto-singleCocktail {
     width: 200px;
     vertical-align: middle;
     border-radius: 50px;
