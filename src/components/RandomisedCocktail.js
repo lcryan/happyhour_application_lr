@@ -1,14 +1,15 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import OneCocktailCard from "./OneCocktailCard";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
-function RandomisedCocktail(props) {
+function RandomisedCocktail() {
     const [randomCocktail, setRandomCocktail] = useState([]);
 
     const apiUrl = `https://www.thecocktaildb.com/api/json/v2/9973533/random.php`;
 
     const fetchCocktailHandler = useCallback(() => {
-            setRandomCocktail({
+        setRandomCocktail({
             strDrink: "loading",
             idDrink: "",
             strDrinkThumb: "https://via.placeholder.com/150"
@@ -28,11 +29,16 @@ function RandomisedCocktail(props) {
 
 
     return (<>
-        <OneCocktailCard
-            strDrink={randomCocktail.strDrink}
-            keyStr={randomCocktail.idDrink}
-            imgStr={randomCocktail.strDrinkThumb}
-        />
+
+        <article className="cocktail-details" key={randomCocktail.idDrink}>
+            <Link to={`/singleCocktail/${randomCocktail.idDrink}`}>
+                <OneCocktailCard
+                    strDrink={randomCocktail.strDrink}
+                    keyStr={randomCocktail.idDrink}
+                    imgStr={randomCocktail.strDrinkThumb}
+                />
+            </Link>
+        </article>
         <button className="randomizer-button" onClick={() => {
             fetchCocktailHandler()
         }}
