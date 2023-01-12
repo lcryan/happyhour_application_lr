@@ -9,11 +9,7 @@
     height: 80px;
     padding: 10px;
     color: var(--lighterturquoise);
-    position: fixed;
     width: 100%;
-    flex-grow: 1;
-    flex-shrink: 0;
-
 }
 
 .list-searchbar {
