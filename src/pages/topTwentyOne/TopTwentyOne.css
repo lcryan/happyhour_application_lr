@@ -1,26 +1,17 @@
 .outer-topTwentyOne-cocktail {
-
-}
-.inner-container-topTwentyOne {
     display: flex;
+    justify-content: center;
     align-items: center;
-
+    margin-top: 20px;
 }
-
-.topTwenty-cocktail-title {
-   vertical-align: middle;
-}
-
-
-
-.foto-twentyOne-cocktail {
-    padding-left: 10px;
-    width: 300px;
-}
-
-
 
 .ingredients-list {
     list-style-type: none;
 }
 
+
+.foto-twentyOne-cocktail {
+    width: 200px;
+    vertical-align: middle;
+    border-radius: 50px;
+}
