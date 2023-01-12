@@ -13,9 +13,9 @@ h1 {
 }
 
 .logo-image {
-    margin-top: 100px;
+    margin-top: 40px;
     width: 150px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .overview-section {
@@ -39,6 +39,7 @@ h1 {
     font-size: 20px;
     width: 400px;
     padding: 30px 50px;
+    margin-bottom: 40px;
 }
 
 .one-random-cocktail img {
@@ -65,7 +66,7 @@ h1 {
     flex-direction: column;
     max-height: 450px;
     margin-right: 150px;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .latest-button, .top-ten-button {
