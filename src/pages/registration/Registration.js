@@ -27,9 +27,11 @@ function Registration() {
                 password,
                 username,
             });
+            navigate('/login');
 
         } catch (error) {
             console.log(error)
+            setError(true)
         }
         setLoading(false);
     }
@@ -37,7 +39,7 @@ function Registration() {
 
     return (
         <main className="container-user-registration">
-            <h1 className="title-sign-up">Sign up here</h1>
+            <h1 className="title-sign-up">Sign up here!</h1>
             <p className="text-sign-up"> Join our community of Cocktail Aficionados in just a few seconds!</p>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="email-field">
@@ -48,6 +50,17 @@ function Registration() {
                         name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                    />
+                </label>
+
+                <label htmlFor="username-field">
+                    username
+                    <input
+                        type="name"
+                        id="name-field"
+                        name="name"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                     />
                 </label>
 
