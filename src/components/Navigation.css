@@ -24,7 +24,7 @@
 }
 
 .search-bar {
-    background-color: var(--navajowhite);
+    background-color: var(--ghostwhite);
     border-radius: 10px;
     border-style: none;
     width: 300px;
@@ -35,7 +35,7 @@
 }
 
 .search-bar:hover, .search-bar:focus {
-    border: 1px solid var(--lighterturquoise);
+    border: 2px solid var(--darkturquoise);
     background-color: white;
 }
 
@@ -54,9 +54,9 @@
     border-style: none;
     font-weight: bold;
     cursor: pointer;
-    color: var(--navajowhite);
+    color: var(--ghostwhite);
 }
 
-.logout-button:active {
-    box-shadow: 1px 6px 26px 6px rgba(0, 0, 0, 0.47);
+.logout-button:focus {
+    border: 2px solid var(--darkturquoise);
 }
