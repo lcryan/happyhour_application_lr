@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 
 function Latest() {
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState({})
 
     useEffect(() => {
 
