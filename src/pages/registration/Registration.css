@@ -1,0 +1,30 @@
+.outer-container-registration-form {
+    border: 2px dashed var(--lighterblack);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.user-input-boxes {
+    border: 2px dashed ghostwhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    width: 400px;
+    padding-right: 100px;
+    padding-left: 110px;
+    height: 400px;
+}
+
+.title-sign-up {
+    margin-top: 50px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
