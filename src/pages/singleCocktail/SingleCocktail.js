@@ -55,7 +55,7 @@ function SingleCocktail() {
                                  src={oneCocktail[0].strDrinkThumb}/>
                         </div>
                         <div className="content-single-cocktail">
-                                <h3 className="singleCocktail-cocktail-title">Cocktail Name: {oneCocktail[0].strDrink} </h3>
+                            <h3 className="singleCocktail-cocktail-title">Cocktail Name: {oneCocktail[0].strDrink} </h3>
                             <ul className="ingredients-list">
                                 Ingredients:
                                 <li className="ingredients"> {oneCocktail[0].strIngredient1}</li>
@@ -69,7 +69,7 @@ function SingleCocktail() {
                                 <li className="ingredients">{oneCocktail[0].strIngredient9}</li>
                                 <li className="ingredients">{oneCocktail[0].strIngredient10}</li>
                             </ul>
-                            <button type="button" className="button-single-cocktail"> Add to favourites </button>
+                            <button type="button" className="button-single-cocktail"> Add to favourites</button>
                         </div>
                     </>
                     }
