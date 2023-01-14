@@ -48,7 +48,7 @@ h1 {
 }
 
 .randomizer-button {
-    color: var(--navajowhite);
+    color: var(--ghostwhite);
     background-color: var(--lightgrey);
     border-radius: 20px;
     padding: 10px;
@@ -58,7 +58,11 @@ h1 {
     max-height: 50px;
     width: 200px;
     border-style: none;
+}
+
+.randomizer-button:hover {
     box-shadow: 14px 22px 42px -10px rgba(55, 65, 79, 1);
+    cursor: pointer;
 }
 
 .menu-buttons {
@@ -77,14 +81,17 @@ h1 {
 .latest-button, .top-ten-button, .mixologist-button {
     background-color: var(--lightgrey);
     font-size: 20px;
-    color: var(--navajowhite);
+    color: var(--ghostwhite);
     font-weight: bolder;
     border-radius: 40px;
     border-style: none;
-    box-shadow: 14px 22px 42px -10px rgba(55, 65, 79, 1);
     height: 100px;
 }
 
+.top-ten-button:hover, .mixologist-button:hover,.latest-button:hover {
+    cursor: pointer;
+    box-shadow: 14px 22px 42px -10px rgba(55, 65, 79, 1);
+}
 .help-text {
     margin-top: -30px;
     margin-bottom: 50px;
