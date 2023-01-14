@@ -4,20 +4,20 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    align-content: flex-start;
-    background-color: var(--darkestgrey);
+    background-color: var(--lightgrey);
     height: 80px;
     padding: 10px;
     color: var(--lighterturquoise);
     width: 100%;
+    flex-shrink: 0;
+    border: 2px solid #28e3da;
 }
 
-.list-searchbar {
+.list-navbar {
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
     gap: 30px;
     text-decoration: snow;
     flex-shrink: 0;
@@ -33,3 +33,24 @@ input {
     flex-shrink: 1;
 }
 
+.navbar-elements-right {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.logout-button {
+    background-color: var(--lighterturquoise);
+    color: var(--lightgrey);
+    padding: 10px;
+    border-radius: 20px;
+border-style: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logout-button:active {
+    box-shadow: 1px 6px 26px 6px rgba(0,0,0,0.47);
+}
