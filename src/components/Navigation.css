@@ -10,7 +10,7 @@
     color: var(--lighterturquoise);
     width: 100%;
     flex-shrink: 0;
-    border: 2px solid #28e3da;
+
 }
 
 .list-navbar {
@@ -23,8 +23,8 @@
     flex-shrink: 0;
 }
 
-input {
-    background-color: navajowhite;
+.search-bar {
+    background-color: var(--navajowhite);
     border-radius: 10px;
     border-style: none;
     width: 300px;
@@ -49,6 +49,7 @@ input {
     border-style: none;
     font-weight: bold;
     cursor: pointer;
+    color: var(--navajowhite);
 }
 
 .logout-button:active {
