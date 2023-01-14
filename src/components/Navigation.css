@@ -46,11 +46,11 @@ input {
     color: var(--lightgrey);
     padding: 10px;
     border-radius: 20px;
-border-style: none;
+    border-style: none;
     font-weight: bold;
     cursor: pointer;
 }
 
 .logout-button:active {
-    box-shadow: 1px 6px 26px 6px rgba(0,0,0,0.47);
+    box-shadow: 1px 6px 26px 6px rgba(0, 0, 0, 0.47);
 }
