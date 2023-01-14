@@ -10,11 +10,11 @@
 :root {
     --darkestgrey: #222831;
     --black: #292929;
-    --darkturquoise: #358e85;
+    --darkturquoise: #0abab5;
     --lightgrey: #37414f;
     --lighterblack: #0d0f13;
     --lighterturquoise: #28e3da;
-    --navajowhite: #FFDEADFF;
+    --navajowhite: #f8f8ff;
 }
 
 body {
