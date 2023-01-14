@@ -47,30 +47,28 @@ function SingleCocktail() {
     return (
 
         <>
-            <article className="outer-container-singleCocktail">
-                <div className="inner-container-singleCocktail">
-                    {Object.keys(oneCocktail).length > 0 && <>
-                        <h3 className="singleCocktail-cocktail-title">Cocktail
-                            Name: {oneCocktail[0].strDrink} </h3>
-                        <img className="foto-singleCocktail" alt="foto of single-cocktail"
-                             src={oneCocktail[0].strDrinkThumb}/>
-                        <ul className="ingredients-list">
-                            Ingredients:
-                            <li className="ingredients"> {oneCocktail[0].strIngredient1}</li>
-                            <li className="ingredients"> {oneCocktail[0].strIngredient2} </li>
-                            <li className="ingredients"> {oneCocktail[0].strIngredient3} </li>
-                            <li className="ingredients"> {oneCocktail[0].strIngredient4} </li>
-                            <li className="ingredients">{oneCocktail[0].strIngredient5}</li>
-                            <li className="ingredients">{oneCocktail[0].strIngredient6}</li>
-                            <li className="ingredients">{oneCocktail[0].strIngredient7}</li>
-                            <li className="ingredients">{oneCocktail[0].strIngredient8}</li>
-                            <li className="ingredients">{oneCocktail[0].strIngredient9}</li>
-                            <li className="ingredients">{oneCocktail[0].strIngredient10}</li>
-                        </ul>
-                        <button type="button"> Add to my favourites.</button>
-                    </>
-                    }
-                </div>
+            <article className="container-singleCocktail">
+                {Object.keys(oneCocktail).length > 0 && <>
+                    <img className="foto-singleCocktail" alt="foto of single-cocktail"
+                         src={oneCocktail[0].strDrinkThumb}/>
+                    <h3 className="singleCocktail-cocktail-title">Cocktail
+                        Name: {oneCocktail[0].strDrink} </h3>
+                    <ul className="ingredients-list">
+                        Ingredients:
+                        <li className="ingredients"> {oneCocktail[0].strIngredient1}</li>
+                        <li className="ingredients"> {oneCocktail[0].strIngredient2} </li>
+                        <li className="ingredients"> {oneCocktail[0].strIngredient3} </li>
+                        <li className="ingredients"> {oneCocktail[0].strIngredient4} </li>
+                        <li className="ingredients">{oneCocktail[0].strIngredient5}</li>
+                        <li className="ingredients">{oneCocktail[0].strIngredient6}</li>
+                        <li className="ingredients">{oneCocktail[0].strIngredient7}</li>
+                        <li className="ingredients">{oneCocktail[0].strIngredient8}</li>
+                        <li className="ingredients">{oneCocktail[0].strIngredient9}</li>
+                        <li className="ingredients">{oneCocktail[0].strIngredient10}</li>
+                    </ul>
+                    <button type="button"> Add to my favourites.</button>
+                </>
+                }
             </article>
         </>
     );
