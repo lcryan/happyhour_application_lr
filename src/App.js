@@ -19,13 +19,15 @@ import Help from "./pages/help/Help";
 import NotFound from "./pages/notFound/NotFound";
 import MyAccount from "./pages/myAccount/MyAccount";
 import {useContext} from "react";
-/*import {AuthContext} from "./context/AuthContext";*/
+import {AuthContext} from "./context/AuthContext";
 
 
 
 
 function App() {
-/*    const isAuth = useContext(AuthContext);*/
+
+    const {isAuth} = useContext(AuthContext);
+
     return (
         <div className="App">
             <Navigation/>
@@ -34,7 +36,7 @@ function App() {
                 <Route path="/latest" element={<Latest/>}/>
                 <Route path="/registration" element={<Registration/>}/>
                 <Route path="/login" element={<Login/>}/>
-              {/*  <Route path="myAccount" element={isAuth ? <MyAccount/> : <Navigate to="/"/>}/>*/}
+                <Route path="/myAccount" element={isAuth ? <MyAccount/> : <p>NOT LOGGED IN</p>}/>
                 <Route path="/mixologist" element={<Mixologist/>}/>
                 <Route path="/search" element={<Search/>}/>
                 <Route path="/topTwenty" element={<TopTwenty/>}/>

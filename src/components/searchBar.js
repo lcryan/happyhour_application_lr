@@ -1,3 +1,4 @@
+/*
 import React, {useState} from 'react';
 
 function SearchBar(props) {
@@ -11,4 +12,4 @@ function SearchBar(props) {
     );
 }
 
-export default SearchBar;
+export default SearchBar;*/

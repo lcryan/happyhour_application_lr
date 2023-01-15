@@ -8,7 +8,7 @@ import {NavLink} from "react-router-dom";
 
 function Navigation() {
 
-    /*    const {auth, logout} = useContext(AuthContext);
+    /*    const {isAuth, logout} = useContext(AuthContext);
 
         function handleLogout() {
             logout()

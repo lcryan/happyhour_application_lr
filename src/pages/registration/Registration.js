@@ -2,37 +2,78 @@ import React from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
 import axios from "axios";
-import './Registration.css'
+import './Registration.css';
+import validateForm from './validation'
+import {baseUrl} from "../../constants";
 
 function Registration() {
 
-    //state for form
+    //TODO state for form
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    //state for functionality
+    //TODO state for functionality
 
     const [error, setError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+
 
     async function handleSubmit(e) {
         e.preventDefault();
         setError(false);
         setLoading(true);
 
+        //TODO validate the inputs
+        const formResult = validateForm(email, username, password);
+
+        if (!formResult.status) {
+            //TODO write error messages
+            setError(true)
+            setErrorMessage(formResult.messages.join("\n"))
+            return;
+        }
+
         try {
-            await axios.post(`https://frontend-educational-backend.herokuapp.com/api/auth/signup`, {
+            const response = await axios.post(`${baseUrl}/api/auth/signup`, {
                 email,
                 password,
                 username,
             });
-            navigate('/login');
 
+            switch (response.status) {
+                case 200:
+                    navigate('/login');
+                    break;
+                default:
+                    //TODO
+                    setErrorMessage("TODO message still needed")
+                    break;
+            }
         } catch (error) {
             console.log(error)
             setError(true)
+            const response = error.response;
+            switch (response.status) {
+                case 400:
+                    setError(true)
+                    // TODO handle errors
+                    if (response.data.error) {
+                        setErrorMessage(response.data.error)
+                    } else if (response.data.message) {
+                        setErrorMessage(response.data.message)
+                    } else {
+                        setErrorMessage("We encountered an unexpected error.")//TODO something else went wrong - display generic error message
+                    }
+                    break;
+                default:
+                    //TODO
+                    setErrorMessage("TODO message still needed")
+                    break;
+            }
         }
         setLoading(false);
     }
@@ -75,10 +116,10 @@ function Registration() {
                                    name="password"
                                    value={password}
                                    onChange={(e) => setPassword(e.target.value)}
-                            />
+                            />{password}
                         </label>
 
-                        {error && <p className="error">This account already exists. Please try another email-adres.</p>}
+                        {error && <p className="error">{errorMessage}</p>}
                         <button
                             type="submit"
                             className="submit-button"
