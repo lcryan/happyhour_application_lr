@@ -133,7 +133,7 @@ function Registration() {
                         </button>
                         <button type="button"
                                 className="try-again-button"
-                                onClick={(event) =>refreshPage()}
+                                onClick={refreshPage}
                         > Try again!
                         </button>
                     </form>
