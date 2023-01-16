@@ -5,7 +5,6 @@ import axios from "axios";
 import {baseUrl} from "../constants";
 
 export const AuthContext = createContext({});
-
 function AuthContextProvider({children}) {
 
     const [auth, setAuth] = useState({
@@ -33,13 +32,14 @@ function AuthContextProvider({children}) {
                         Authorization: `Bearer ${jwt}`
                     }
                 })
-                // TODO check that the response values here are valid for our API
+
                 setAuth({
                     isAuth: true,
                     user: response.data
                 })
                 navigate("/")
                 console.log(response)
+
             } catch (error) {
                 console.log(error)
                 // TODO handle the error cases here
@@ -50,8 +50,8 @@ function AuthContextProvider({children}) {
     }
 
     function logout(  ) {
-        // TODO translate this message
-        console.log("De gebruiker is uitgelogd 🔒")
+
+        console.log("The user is logged out 🔒")
         localStorage.clear()
         setAuth({
             isAuth: false,
