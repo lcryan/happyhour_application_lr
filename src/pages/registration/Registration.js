@@ -5,15 +5,13 @@ import axios from "axios";
 import './Registration.css';
 import validateForm from './validation'
 import {baseUrl} from "../../constants";
+import refreshPage from "../../helpers/refreshPage";
 
 function Registration() {
 
-    //TODO state for form
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-
-    //TODO state for functionality
 
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
@@ -21,17 +19,15 @@ function Registration() {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
-
     async function handleSubmit(e) {
         e.preventDefault();
         setError(false);
         setLoading(true);
 
-        //TODO validate the inputs
         const formResult = validateForm(email, username, password);
 
         if (!formResult.status) {
-            //TODO write error messages
+
             setError(true)
             setErrorMessage(formResult.messages.join("\n"))
             return;
@@ -49,29 +45,38 @@ function Registration() {
                     navigate('/login');
                     break;
                 default:
-                    //TODO
-                    setErrorMessage("TODO message still needed")
+                    setErrorMessage("We encountered an unexpected error. Please try again later.")
                     break;
             }
         } catch (error) {
             console.log(error)
             setError(true)
+
             const response = error.response;
             switch (response.status) {
                 case 400:
                     setError(true)
-                    // TODO handle errors
+
                     if (response.data.error) {
                         setErrorMessage(response.data.error)
                     } else if (response.data.message) {
                         setErrorMessage(response.data.message)
                     } else {
-                        setErrorMessage("We encountered an unexpected error.")//TODO something else went wrong - display generic error message
+                        setErrorMessage("We encountered an unexpected error. Please try again later.")
+                    }
+                    break;
+                case 500:
+                    setError(true)
+                    if (response.data.error) {
+                        setErrorMessage(response.data.error)
+                    } else if (response.data.message) {
+                        setErrorMessage(response.data.message)
+                    } else {
+                        setErrorMessage("We encountered an unexpected error. Please try again later.")
                     }
                     break;
                 default:
-                    //TODO
-                    setErrorMessage("TODO message still needed")
+                    setErrorMessage("We encountered an unexpected error. Please try again later.")
                     break;
             }
         }
@@ -116,7 +121,7 @@ function Registration() {
                                    name="password"
                                    value={password}
                                    onChange={(e) => setPassword(e.target.value)}
-                            />{password}
+                            />
                         </label>
 
                         {error && <p className="error">{errorMessage}</p>}
@@ -125,6 +130,11 @@ function Registration() {
                             className="submit-button"
                             disabled={loading}
                         > Sign up!
+                        </button>
+                        <button type="button"
+                                className="try-again-button"
+                                onClick={(event) =>refreshPage()}
+                        > Try again!
                         </button>
                     </form>
                 </div>
