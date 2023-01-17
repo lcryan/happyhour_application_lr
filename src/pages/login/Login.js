@@ -11,9 +11,9 @@ function Login(props) {
 
     const {login} = useContext(AuthContext)
 
-    const [inputEmail, setInputEmail] = useState("");
-    const [inputPassword, setInputPassword] = useState("");
-    const [inputUsername, setInputUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("");
 
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState(false);
@@ -22,16 +22,18 @@ function Login(props) {
     const navigate = useNavigate();
 
 
-    async function handleLogin() {
+    async function handleLogin(e) {
+        e.preventDefault();
+        setError(false)
         try {
             // TODO take the email and password from a form in this page
             const response = await axios.post(`${baseUrl}/api/auth/signin`, {
-                email: inputEmail,
-                password: inputPassword,
-                username: inputUsername,
+                email: email,
+                username: username,
+                password: password,
             })
-            login(response.data.token)
-            navigate('/myAccount')
+            login(response.data.accessToken)
+            console.log(login)
         } catch (e) {
             console.error(e)
         }
@@ -44,15 +46,15 @@ function Login(props) {
                 <p className="text-sign-up"> Happy to have you back!</p>
 
                 <div className="user-input-boxes">
-                    <form className="login-form" onSubmit={handleLogin}>
+                    <form onSubmit={handleLogin}>
                         <label htmlFor="email-field">
                             e-mailadres
                             <input
                                 type="input-email"
                                 id="input-email-field"
                                 name="input-email"
-                                value={inputEmail}
-                                onChange={(e) => setInputEmail(e.target.value)}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </label>
 
@@ -62,8 +64,8 @@ function Login(props) {
                                 type="input-name"
                                 id="input-name-field"
                                 name="input-name"
-                                value={inputUsername}
-                                onChange={(e) => setInputUsername(e.target.value)}
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
                             />
                         </label>
 
@@ -72,16 +74,14 @@ function Login(props) {
                             <input type="input-password"
                                    id="password-field"
                                    name="password"
-                                   value={inputPassword}
-                                   onChange={(e) => setInputPassword(e.target.value)}
+                                   value={password}
+                                   onChange={(e) => setPassword(e.target.value)}
                             />
                         </label>
-
                         {error && <p className="error">{errorMessage}</p>}
                         <button
-                            type="button"
+                            type="submit"
                             className="login-button"
-                            disabled={loading}
                         > Login!
                         </button>
                         <button type="button"

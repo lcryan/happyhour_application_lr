@@ -4,7 +4,7 @@ import Latest from './pages/latest/Latest';
 import Login from './pages/login/Login';
 import Mixologist from './pages/mixologist/Mixologist';
 import Registration from './pages/registration/Registration';
-import Search from './pages/search/Search';
+/*import Search from './pages/search/Search';*/
 import TopTwenty from "./pages/topTwenty/TopTwenty";
 import SingleCocktail from "./pages/singleCocktail/SingleCocktail";
 import Favourites from './pages/favourites/Favourites';
@@ -38,7 +38,7 @@ function App() {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/myAccount" element={isAuth ? <MyAccount/> : <p>NOT LOGGED IN</p>}/>
                 <Route path="/mixologist" element={<Mixologist/>}/>
-                <Route path="/search" element={<Search/>}/>
+               {/* <Route path="/search" element={<Search/>}/>*/}
                 <Route path="/topTwenty" element={<TopTwenty/>}/>
                 <Route path="/singleCocktail/:id" element={<SingleCocktail/>}/>
                 <Route path="/favourites" element={<Favourites/>}/>
