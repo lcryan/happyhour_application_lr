@@ -2,7 +2,7 @@ import React, {createContext, useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import {baseUrl} from "../constants";
-import jwt_decode from "jwt-decode"
+
 
 export const AuthContext = createContext({});
 
@@ -21,15 +21,15 @@ function AuthContextProvider({children}) {
 
         const storedToken = localStorage.getItem('accessToken');
 
-        // als er WEL een token is, haal dan opnieuw de gebruikersdata op
+
         if (storedToken) {
-            const decodedToken = jwt_decode(storedToken)
-            if (Math.floor(Date.now() / 1000) < decodedToken.exp) {
+
+            if (Math.floor(Date.now() / 1000) < storedToken.exp) {
                 console.log("The user is still logged in.")
-                void fetchUserData(storedToken, decodedToken.sub);
+                void fetchUserData(storedToken, "/home");
             } else {
                 console.log("The token has expired")
-                localStorage.removeItem('token')
+                localStorage.removeItem('accessToken')
             }
         } else {
             toggleIsAuth({
@@ -41,23 +41,22 @@ function AuthContextProvider({children}) {
         }
     }, [])
 
-
 //LOGIN FUNCTION
-    function login(jwt) {
+    function login(token) {
         console.log("The user is logged in.")
-        localStorage.setItem('token', jwt);
-        const decodedToken = jwt_decode(jwt);
+        localStorage.setItem('accessToken', token);
 
-        void fetchUserData(jwt, decodedToken.sub, "/myAccount");
+
+        void fetchUserData(token, '/home');
     }
 
-    async function fetchUserData(jwt, id, redirectUrl) {
+    async function fetchUserData(token, redirectUrl) {
 
         try {
-            const response = await axios.get(`${baseUrl}/api/user/${id}`, {
+            const response = await axios.get(`${baseUrl}/api/user`, {
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${jwt}`
+                    Authorization: `Bearer ${token}`
                 },
             })
 
@@ -66,7 +65,6 @@ function AuthContextProvider({children}) {
                 isAuth: true,
                 user: {
                     email: response.data.email,
-                    id: response.data.id,
                     username: response.data.username,
                 },
                 status: 'done',
