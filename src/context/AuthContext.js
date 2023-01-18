@@ -19,7 +19,7 @@ function AuthContextProvider({children}) {
 
     useEffect(() => {
 
-        const storedToken = localStorage.getItem('accessToken'); // so steht es im backend, aber im Moment funktioniert das hier nicht...//
+        const storedToken = localStorage.getItem('accessToken');
 
         // als er WEL een token is, haal dan opnieuw de gebruikersdata op
         if (storedToken) {
@@ -32,7 +32,6 @@ function AuthContextProvider({children}) {
                 localStorage.removeItem('token')
             }
         } else {
-            // als er GEEN token is doen we niks, en zetten we de status op 'done'
             toggleIsAuth({
                 ...isAuth,
                 isAuth: false,

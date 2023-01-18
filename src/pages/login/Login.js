@@ -27,7 +27,7 @@ function Login(props) {
         setError(false)
         try {
             // TODO take the email and password from a form in this page
-            const response = await axios.post(`${baseUrl}/api/auth/signin`, {
+            const response = await axios.post(`${baseUrl}/api/auth/signin"`, {
                 email: email,
                 username: username,
                 password: password,

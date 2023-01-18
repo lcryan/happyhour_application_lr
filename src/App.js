@@ -22,8 +22,6 @@ import {useContext} from "react";
 import {AuthContext} from "./context/AuthContext";
 
 
-
-
 function App() {
 
     const {isAuth} = useContext(AuthContext);
@@ -38,7 +36,7 @@ function App() {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/myAccount" element={isAuth ? <MyAccount/> : <p>NOT LOGGED IN</p>}/>
                 <Route path="/mixologist" element={<Mixologist/>}/>
-               {/* <Route path="/search" element={<Search/>}/>*/}
+                {/* <Route path="/search" element={<Search/>}/>*/}
                 <Route path="/topTwenty" element={<TopTwenty/>}/>
                 <Route path="/singleCocktail/:id" element={<SingleCocktail/>}/>
                 <Route path="/favourites" element={<Favourites/>}/>
