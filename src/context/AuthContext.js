@@ -11,7 +11,7 @@ function AuthContextProvider({children}) {
     const [isAuth, toggleIsAuth] = useState({
         isAuth: false,
         user: null,
-        status: 'pending',
+        status: "pending",
     });
     const navigate = useNavigate();
 
@@ -19,17 +19,16 @@ function AuthContextProvider({children}) {
 
     useEffect(() => {
 
-        const storedToken = localStorage.getItem('accessToken');
-
+        const storedToken= localStorage.getItem('token');
 
         if (storedToken) {
 
             if (Math.floor(Date.now() / 1000) < storedToken.exp) {
                 console.log("The user is still logged in.")
-                void fetchUserData(storedToken, "/home");
+                void fetchUserData(storedToken);
             } else {
                 console.log("The token has expired")
-                localStorage.removeItem('accessToken')
+                localStorage.removeItem('token')
             }
         } else {
             toggleIsAuth({
@@ -44,10 +43,10 @@ function AuthContextProvider({children}) {
 //LOGIN FUNCTION
     function login(token) {
         console.log("The user is logged in.")
-        localStorage.setItem('accessToken', token);
+        localStorage.setItem('token', token);
 
 
-        void fetchUserData(token, '/home');
+        void fetchUserData(token, "/home");
     }
 
     async function fetchUserData(token, redirectUrl) {
@@ -56,7 +55,7 @@ function AuthContextProvider({children}) {
             const response = await axios.get(`${baseUrl}/api/user`, {
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${token}`,
                 },
             })
 
@@ -65,7 +64,7 @@ function AuthContextProvider({children}) {
                 isAuth: true,
                 user: {
                     email: response.data.email,
-                    username: response.data.username,
+                    username: response.data.username
                 },
                 status: 'done',
             });
@@ -99,8 +98,8 @@ function AuthContextProvider({children}) {
         isAuth: isAuth.isAuth,
         user: isAuth.user,
         status: isAuth.status,
-        login,
-        logout
+        login: login,
+        Logout: logout
     };
 
 
