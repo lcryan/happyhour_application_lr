@@ -8,3 +8,15 @@
     flex-shrink: 1;
     outline: none;
 }
+
+.result-container {
+    list-style-type: none;
+    text-align: center;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+    max-height: 200px;
+    background-color: var(--lightgrey);
+    margin-top: 10px;
+}
