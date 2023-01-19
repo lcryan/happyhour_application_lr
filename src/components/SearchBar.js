@@ -19,7 +19,7 @@ function SearchBar() {
             }
             if (searchResult) {
                 setSearchResult(searchResult)
-            } else  {
+            } else {
                 console.log("We couldn't find your cocktail");
             }
         }
@@ -40,6 +40,7 @@ function SearchBar() {
                 onChange={handleChange}
                 className="search-bar"
             />
+            <button type="button" onClick={() => setSearchResult(searchResult)}> Search</button>
         </main>
     );
 }
