@@ -33,7 +33,6 @@ function TopTwenty() {
                     <h1 className="title-top-ten"> Our User's Most Popular cocktails: </h1>
                     <div className="top-ten-cocktails-container">
                         {topTwenty.map((cocktail) => {
-
                             return (
                                 <article className="cocktail-details" key={cocktail.idDrink}>
                                     <Link to={`/singleCocktail/${cocktail.idDrink}`}>
