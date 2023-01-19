@@ -1,11 +1,13 @@
 import React, {useEffect} from 'react';
 import {useState} from "react";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 
 function SearchBar() {
 
     const [searchResult, setSearchResult] = useState("");
+    const navigate = useNavigate("");
 
     useEffect(() => {
 
@@ -20,7 +22,7 @@ function SearchBar() {
             if (searchResult) {
                 setSearchResult(searchResult)
             } else {
-                console.log("We couldn't find your cocktail");
+                console.log("Sorry! We couldn't find your cocktail.");
             }
         }
 
@@ -34,13 +36,18 @@ function SearchBar() {
 
     return (
         <main>
-            <input
-                type="text"
-                placeholder="Search Cocktail here"
-                onChange={handleChange}
-                className="search-bar"
-            />
-            <button type="button" onClick={() => setSearchResult(searchResult)}> Search</button>
+            <div className="search-bar-outer-container">
+                <div className="search-bar-inner-container">
+                    <input
+                        type="text"
+                        placeholder="Search Cocktail here"
+                        onChange={handleChange}
+                        className="search-bar"
+                    />
+                    <button className="search-bar-button" type="button" onClick={() => navigate("/searchPage")}> Search</button>
+                </div>
+            </div>
+
         </main>
     );
 }
