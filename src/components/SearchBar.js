@@ -44,7 +44,9 @@ function SearchBar() {
                         onChange={handleChange}
                         className="search-bar"
                     />
-                    <button className="search-bar-button" type="button" onClick={() => navigate("/searchPage")}> Search</button>
+                    <button className="search-bar-button" type="button"
+                            onClick={() => navigate("/searchPage")}> Search
+                    </button>
                 </div>
             </div>
 
