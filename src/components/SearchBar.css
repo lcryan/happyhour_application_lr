@@ -16,7 +16,9 @@
     width: fit-content;
     height: fit-content;
     overflow: hidden;
-    max-height: 200px;
+    max-height: 150px;
     background-color: var(--lightgrey);
     margin-top: 10px;
+    border: var(--ghostwhite) solid 2px;
+    border-radius: 10px;
 }
