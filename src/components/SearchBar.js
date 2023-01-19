@@ -51,15 +51,14 @@ function SearchBar() {
                         onChange={handleChange}
                         className="search-bar"
                     />
-
-                    <div className="results">
-                        <ul className="suggest-ul">
+                    <div className="result-container">
+                        <ul className="suggestions-ul">
                             {searchResult && name && name.map((element) => (
                                 <li className="suggest-list" key={element.idDrink}>
                                     <NavLink
                                         onClick={recentInput}
                                         className="suggestions"
-                                        to={`/searchPage/${element.idDrink}`}
+                                        to={`/singleCocktail/${element.idDrink}`}
                                     >
                                         {element.strDrink}
                                     </NavLink>
