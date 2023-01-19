@@ -88,10 +88,11 @@ h1 {
     height: 100px;
 }
 
-.top-ten-button:hover, .mixologist-button:hover,.latest-button:hover {
+.top-ten-button:hover, .mixologist-button:hover, .latest-button:hover {
     cursor: pointer;
     box-shadow: 14px 22px 42px -10px rgba(55, 65, 79, 1);
 }
+
 .help-text {
     margin-top: -30px;
     margin-bottom: 50px;
