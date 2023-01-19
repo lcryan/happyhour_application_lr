@@ -2,6 +2,8 @@ import React from 'react';
 import {useContext} from "react";
 import './Navigation.css'
 import {NavLink} from "react-router-dom";
+import SearchBar from "./SearchBar";
+import './SearchBar.css'
 
 /*import {AuthContext} from "../context/AuthContext";*/
 
@@ -27,8 +29,7 @@ function Navigation() {
                 </ul>
                 <ul className="navbar-elements-right">
                     <li>
-                        <input className="search-bar" placeholder="Search your cocktail here">
-                        </input>
+                        <SearchBar/>
                     </li>
                     <li>
                         <button className="logout-button" type="button">Logout</button>

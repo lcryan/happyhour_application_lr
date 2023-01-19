@@ -23,17 +23,6 @@
     flex-shrink: 0;
 }
 
-.search-bar {
-    background-color: var(--ghostwhite);
-    border-radius: 10px;
-    border-style: none;
-    width: 300px;
-    height: 40px;
-    padding: 10px;
-    flex-shrink: 1;
-    outline: none;
-}
-
 .search-bar:hover, .search-bar:focus {
     border: 2px solid var(--darkturquoise);
     background-color: white;
