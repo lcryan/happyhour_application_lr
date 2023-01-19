@@ -2,6 +2,7 @@ import React, {createContext, useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import {baseUrl} from "../constants";
+import jwtDecode from "jwt-decode";
 
 
 export const AuthContext = createContext({});
@@ -19,11 +20,12 @@ function AuthContextProvider({children}) {
 
     useEffect(() => {
 
-        const storedToken= localStorage.getItem('token');
+        const storedToken = localStorage.getItem('token');
 
         if (storedToken) {
 
-            if (Math.floor(Date.now() / 1000) < storedToken.exp) {
+            const decodedToken = jwtDecode(storedToken)
+            if (Math.floor(Date.now() / 1000) < decodedToken.exp) {
                 console.log("The user is still logged in.")
                 void fetchUserData(storedToken);
             } else {

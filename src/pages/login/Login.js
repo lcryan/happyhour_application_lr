@@ -32,7 +32,9 @@ function Login(props) {
                 username: username,
                 password: password,
             })
-            login(response.data)
+            console.log(response.data)
+            /*login(response.data)*/
+
 
         } catch (e) {
             console.error(e)
