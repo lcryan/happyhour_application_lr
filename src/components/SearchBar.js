@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useState} from "react";
 import axios from "axios";
 import {NavLink} from "react-router-dom";
+import {DB_SEARCH_URL} from "../constants";
 
 
 function SearchBar() {
@@ -14,7 +15,7 @@ function SearchBar() {
 
         async function getSearchResult() {
             try {
-                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=${searchResult}`)
+                const response = await axios.get(`${DB_SEARCH_URL}${searchResult}`)
                 console.log(response.data)
                 setName(response.data.drinks)
 
