@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import SearchBar from "../../components/SearchBar";
-import {DB_BASE_URL, DB_SEARCH_INGREDIENT_URL, DB_SEARCH_URL} from "../../constants";
+import {DB_SEARCH_INGREDIENT_URL} from "../../constants";
 import axios from "axios";
 
 
