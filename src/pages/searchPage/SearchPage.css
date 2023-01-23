@@ -1,8 +1,26 @@
-.outer-container-search-bars {
+
+.title-search-page {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-top: 100px;
+    padding-bottom: 0;
+}
+
+.outer-container-search-bars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
     align-content: center;
-    margin-top: 150px;
+    margin-top: 50px;
+}
+
+.name-box {
+    padding-right: 30px;
+}
+
+.ingredient-box {
+    padding-left: 30px;
 }
