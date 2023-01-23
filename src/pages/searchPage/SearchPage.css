@@ -8,6 +8,11 @@
     padding-bottom: 0;
 }
 
+.subtitle-search-page {
+    margin-top: 20px;
+    color: var(--lighterblack);
+}
+
 .outer-container-search-bars {
     display: flex;
     justify-content: center;
