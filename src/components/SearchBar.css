@@ -19,6 +19,5 @@
     max-height: 150px;
     background-color: var(--lightgrey);
     margin-top: 10px;
-    border: var(--lightgrey) solid 2px;
     border-radius: 10px;
 }
