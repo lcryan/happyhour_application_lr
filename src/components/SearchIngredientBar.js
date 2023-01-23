@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {DB_SEARCH_INGREDIENT_URL} from "../constants";
 import './SearchIngredientBar.css'
+import OneCocktailCard from "./OneCocktailCard";
+import {Link} from "react-router-dom";
 
 function SearchIngredientBar() {
 
@@ -50,14 +52,17 @@ function SearchIngredientBar() {
                            className="ingredient-bar"
                     />
                     <div className="ingredient-container">
-                        <ul className="ingredient-suggestion">
+                        <div className="ingredient-suggestion">
                             {ingredient && nameIngredient && nameIngredient.map((element) => (
-                                <li className="list-ingredient-sug" key={element.idDrink}>
-                                    <p>{element.strDrink}</p>
-                                </li>
+                                <Link to={`/singleCocktail/${element.idDrink}`}>
+                                <OneCocktailCard
+                                    strDrink={element.strDrink}
+                                    keyStr={element.idDrink}
+                                    imgStr={element.strDrinkThumb}
+                                />
+                                </Link>
                             ))}
-
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </article>
