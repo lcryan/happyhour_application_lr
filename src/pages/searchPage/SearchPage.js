@@ -9,10 +9,16 @@ function SearchPage() {
     return (
 
         <>
-            <div className="outer-container-search-bars">
-            <SearchBar/>
-            <SearchIngredientBar/>
-            </div>
+            <article className="outer-container-search-bars">
+                <div className="name-box">
+                    <h4>Search by name</h4>
+                    <SearchBar/>
+                </div>
+                <div className="ingredient-box">
+                    <h4>Search by ingredient</h4>
+                    <SearchIngredientBar/>
+                </div>
+            </article>
         </>
     );
 }
