@@ -7,10 +7,10 @@ function SearchPage() {
 
 
     return (
+
         <>
             <SearchBar/>
             <SearchIngredientBar/>
-
         </>
     );
 }

@@ -57,12 +57,9 @@ function SearchBar() {
                         <ul className="suggestions-ul">
                             {searchResult && name && name.map((element) => (
                                 <li className="suggest-list" key={element.idDrink}>
-                                    <Link to={`/searchPage/${element.idDrink}`}>
-                                        <p> {element.strDrink}</p>
-
-
-
-                                    </Link>
+                                    <NavLink to={`/searchPage/${element.idDrink}`}>
+                                      {element.strDrink}
+                                    </NavLink>
                                 </li>
                             ))}
                         </ul>
