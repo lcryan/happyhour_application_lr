@@ -17,15 +17,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     margin-top: 50px;
 }
 
 .name-box {
-    padding-right: 30px;
+
 }
 
 .ingredient-box {
-    padding-left: 30px;
+
 }
