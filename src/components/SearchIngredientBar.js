@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {DB_SEARCH_INGREDIENT_URL} from "../constants";
 
+
 function SearchIngredientBar() {
 
     const [ingredient, setIngredient] = useState("");
@@ -14,8 +15,7 @@ function SearchIngredientBar() {
             try {
                 const response = await axios.get(`${DB_SEARCH_INGREDIENT_URL}${ingredient}`)
                 console.log(response.data)
-                setIngredient(response.data.drinks)
-
+                setNameIngredient(response.data.drinks)
             } catch (error) {
                 console.log(error)
             }
@@ -51,32 +51,16 @@ function SearchIngredientBar() {
                     />
                     <div className="ingredient-container">
                         <ul className="ingredient-suggestion">
-                            {ingredient && nameIngredient && nameIngredient.map((element)=>(
-                                <li className="list-ingredient-sug">
-                                    <></>
-
-
-
-
-
+                            {ingredient && nameIngredient && nameIngredient.map((element) => (
+                                <li className="list-ingredient-sug" key={element.idDrink}>
+                                    {element.strDrink}
                                 </li>
                             ))}
 
-
-
                         </ul>
-
-
-
                     </div>
-
-
                 </div>
-
-
             </article>
-
-
         </main>
     );
 }

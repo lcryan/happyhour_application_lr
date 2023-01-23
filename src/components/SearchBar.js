@@ -59,7 +59,7 @@ function SearchBar() {
                                     <NavLink
                                         onClick={recentInput}
                                         className="suggestions"
-                                        to={`/singleCocktail/${element.idDrink}`}
+                                        to={`/searchPage/${element.idDrink}`}
                                     >
                                         {element.strDrink}
                                     </NavLink>
