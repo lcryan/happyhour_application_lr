@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import {useState} from "react";
 import axios from "axios";
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {DB_SEARCH_URL} from "../constants";
+import OneCocktailCard from "./OneCocktailCard";
 
 
 function SearchBar() {
@@ -56,13 +57,12 @@ function SearchBar() {
                         <ul className="suggestions-ul">
                             {searchResult && name && name.map((element) => (
                                 <li className="suggest-list" key={element.idDrink}>
-                                    <NavLink
-                                        onClick={recentInput}
-                                        className="suggestions"
-                                        to={`/searchPage/${element.idDrink}`}
-                                    >
-                                        {element.strDrink}
-                                    </NavLink>
+                                    <Link to={`/searchPage/${element.idDrink}`}>
+                                        <p> {element.strDrink}</p>
+
+
+
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

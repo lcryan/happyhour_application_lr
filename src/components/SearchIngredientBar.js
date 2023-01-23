@@ -53,7 +53,9 @@ function SearchIngredientBar() {
                         <ul className="ingredient-suggestion">
                             {ingredient && nameIngredient && nameIngredient.map((element) => (
                                 <li className="list-ingredient-sug" key={element.idDrink}>
-                                    {element.strDrink}
+                                    <p>{element.strDrink}</p>
+                                    <img src={element.strDrinkThumb}/>
+                                    <p>{element.strIngredient1}</p>
                                 </li>
                             ))}
 
