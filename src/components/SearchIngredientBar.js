@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {DB_SEARCH_INGREDIENT_URL} from "../constants";
-
+import './SearchIngredientBar.css'
 
 function SearchIngredientBar() {
 
@@ -54,8 +54,6 @@ function SearchIngredientBar() {
                             {ingredient && nameIngredient && nameIngredient.map((element) => (
                                 <li className="list-ingredient-sug" key={element.idDrink}>
                                     <p>{element.strDrink}</p>
-                                    <img src={element.strDrinkThumb}/>
-                                    <p>{element.strIngredient1}</p>
                                 </li>
                             ))}
 
