@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import SearchBar from "../../components/SearchBar";
 import SearchIngredientBar from "../../components/SearchIngredientBar";
-import OneCocktailCard from "../../components/OneCocktailCard";
+import './SearchPage.css'
 
 function SearchPage() {
 
@@ -9,8 +9,10 @@ function SearchPage() {
     return (
 
         <>
+            <div className="outer-container-search-bars">
             <SearchBar/>
             <SearchIngredientBar/>
+            </div>
         </>
     );
 }

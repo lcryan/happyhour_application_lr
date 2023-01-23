@@ -1,0 +1,8 @@
+.outer-container-search-bars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    align-content: center;
+    margin-top: 150px;
+}
