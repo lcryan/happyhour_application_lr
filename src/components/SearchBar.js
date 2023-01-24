@@ -1,10 +1,8 @@
 import React, {useEffect} from 'react';
 import {useState} from "react";
 import axios from "axios";
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {DB_SEARCH_URL} from "../constants";
-import OneCocktailCard from "./OneCocktailCard";
-
 
 function SearchBar() {
 
@@ -59,8 +57,8 @@ function SearchBar() {
                                 <li className="suggest-list" key={element.idDrink}>
                                     <NavLink
                                         onClick={recentInput}
-                                        to={`/searchPage/${element.idDrink}`}
-                                    >
+                                        to={`/searchPage/${element.idDrink}`}>
+
                                         {element.strDrink}
                                     </NavLink>
                                 </li>
