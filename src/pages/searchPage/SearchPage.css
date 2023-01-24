@@ -4,12 +4,16 @@
     align-items: center;
     flex-direction: column;
     padding-top: 100px;
-    padding-bottom: 0;
 }
 
 .subtitle-search-page {
     margin-top: 20px;
-    color: var(--lighterblack);
+    color: var(--lightgrey);
+}
+
+.sub-subtitle {
+    margin-top: 20px;
+
 }
 
 .header-search-page {
@@ -19,6 +23,7 @@
     flex-direction: column;
     align-content: center;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .title-search-letter-bar {
