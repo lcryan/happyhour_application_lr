@@ -51,18 +51,18 @@ function SearchIngredientBar() {
                            onChange={handleChange}
                            className="ingredient-bar"
                     />
-                    <div className="ingredient-container">
-                        <div className="ingredient-suggestion">
-                            {ingredient && nameIngredient && nameIngredient.map((element) => (
-                                <Link to={`/singleCocktail/${element.idDrink}`}>
+                </div>
+                <div className="ingredient-container">
+                    <div className="ingredient-suggestion">
+                        {ingredient && nameIngredient && nameIngredient.map((element) => (
+                            <Link to={`/singleCocktail/${element.idDrink}`}>
                                 <OneCocktailCard
                                     strDrink={element.strDrink}
                                     keyStr={element.idDrink}
                                     imgStr={element.strDrinkThumb}
                                 />
-                                </Link>
-                            ))}
-                        </div>
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </article>
