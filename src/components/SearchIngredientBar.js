@@ -37,9 +37,6 @@ function SearchIngredientBar() {
         setIngredient(e.target.value);
     };
 
-    const recentInput = () => {
-        setIngredient("");
-    }
 
     return (
         <main>
