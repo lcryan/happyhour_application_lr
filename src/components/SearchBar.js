@@ -3,6 +3,8 @@ import {useState} from "react";
 import axios from "axios";
 import {NavLink} from "react-router-dom";
 import {DB_SEARCH_URL} from "../constants";
+import OneCocktailCard from "./OneCocktailCard";
+import {myCocktail} from "../helpers";
 
 function SearchBar() {
 
@@ -53,13 +55,12 @@ function SearchBar() {
                     />
                     <div className="result-container">
                         <ul className="suggestions-ul">
-                            {searchResult && name && name.map((element) => (
-                                <li className="suggest-list" key={element.idDrink}>
+                            {searchResult && name && name.map((oneCocktail) => (
+                                <li className="suggest-list" key={oneCocktail.idDrink}>
                                     <NavLink
                                         onClick={recentInput}
-                                        to={`/searchPage/${element.idDrink}`}>
-
-                                        {element.strDrink}
+                                        to={`/searchPage/${oneCocktail.idDrink}`}>
+                                        {oneCocktail.strDrink}
                                     </NavLink>
                                 </li>
                             ))}

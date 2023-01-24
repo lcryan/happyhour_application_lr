@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import SearchBar from "../../components/SearchBar";
 import SearchIngredientBar from "../../components/SearchIngredientBar";
 import './SearchPage.css'
+import SingleCocktail from "../singleCocktail/SingleCocktail";
 
 function SearchPage() {
 
@@ -20,10 +21,13 @@ function SearchPage() {
                 <div className="ingredient-box">
                     <h4>Search by ingredient</h4>
                 </div>
-
-              <section className="ingredient-results">
+                <section className="ingredient-results">
                     <SearchIngredientBar/>
-               </section>
+                </section>
+                <div className="output-searchbar-home">
+                    <SingleCocktail/>
+                </div>
+
 
             </article>
 
