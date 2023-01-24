@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import SearchBar from "../../components/SearchBar";
+import SearchByLetterBar from "../../components/SearchByLetterBar";
 import SearchIngredientBar from "../../components/SearchIngredientBar";
 import './SearchPage.css'
 import SingleCocktail from "../singleCocktail/SingleCocktail";
@@ -15,8 +14,8 @@ function SearchPage() {
                 <h3 className="subtitle-search-page">Find cocktails that you really want to drink. We drink to
                     that!</h3>
                 <div className="name-box">
-                    <h4>Search by name</h4>
-                    <SearchBar/>
+                    <h4>Search by first letter only</h4>
+                    <SearchByLetterBar/>
                 </div>
                 <div className="ingredient-box">
                     <h4>Search by ingredient</h4>
