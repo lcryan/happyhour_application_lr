@@ -1,4 +1,4 @@
-.result-box {
+.letter-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -10,7 +10,7 @@
     align-items: center;
     flex-shrink: 0;
     flex-grow: 0;
-    border: 3px solid ghostwhite;
+
 }
 
 .search-bar-page {
@@ -22,4 +22,13 @@
     padding: 10px;
     flex-shrink: 1;
     outline: none;
+}
+
+.letter-search-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
 }

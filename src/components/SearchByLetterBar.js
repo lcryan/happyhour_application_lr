@@ -39,28 +39,28 @@ function SearchByLetterBar() {
 
     return (
         <main>
-            <div className="search-bar-outer-container">
-                <div className="search-bar-inner-container">
-                    <input
-                        type="text"
-                        placeholder="Search for cocktail name here"
-                        value={cocktailName}
-                        onChange={handleChange}
-                        className="search-bar-page"
-                    />
-                    <div className="result-box">
-                        {cocktailName && name && name.map((result) => (
-                            <Link to={`/singleCocktail/${result.idDrink}`}>
-                                <OneCocktailCard
-                                    strDrink={result.strDrink}
-                                    keyStr={result.idDrink}
-                                    imgStr={result.strDrinkThumb}
-                                />
-                            </Link>
-                        ))}
-                    </div>
+            <article className="letter-search-bar">
+                <input type="text"
+                       placeholder="Search for cocktail name here"
+                       value={cocktailName}
+                       onChange={handleChange}
+                       className="search-bar-page"
+                />
+            </article>
+
+            <article className="results-box">
+                <div className="letter-container">
+                    {cocktailName && name && name.map((result) => (
+                        <Link to={`/singleCocktail/${result.idDrink}`}>
+                            <OneCocktailCard
+                                strDrink={result.strDrink}
+                                keyStr={result.idDrink}
+                                imgStr={result.strDrinkThumb}
+                            />
+                        </Link>
+                    ))}
                 </div>
-            </div>
+            </article>
         </main>
     );
 }

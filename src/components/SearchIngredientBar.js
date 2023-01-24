@@ -39,18 +39,18 @@ function SearchIngredientBar() {
 
 
     return (
-        <main>
-            <article className="ingredient-search-outer">
-                <div className="ingredient-search-inner">
+        <>
+                <article className="ingredient-search-bar">
                     <input type="text"
                            placeholder="Search cocktail by ingredient"
                            value={ingredient}
                            onChange={handleChange}
-                           className="ingredient-bar"
+                           className="search-bar-ingredient"
                     />
-                </div>
-                <div className="ingredient-container">
-                    <div className="ingredient-suggestion">
+                </article>
+
+                <article className="results-outer-box">
+                    <div className="ingredient-container">
                         {ingredient && nameIngredient && nameIngredient.map((element) => (
                             <Link to={`/singleCocktail/${element.idDrink}`}>
                                 <OneCocktailCard
@@ -61,9 +61,9 @@ function SearchIngredientBar() {
                             </Link>
                         ))}
                     </div>
-                </div>
-            </article>
-        </main>
+                </article>
+
+        </>
     );
 }
 
