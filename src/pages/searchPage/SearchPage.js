@@ -9,20 +9,25 @@ function SearchPage() {
     return (
 
         <>
-            <div className="title-search-page">
+            <article className="header-searchbars">
                 <h1 className="h1-search-page"> Search your heart out! </h1>
-                <h3 className="subtitle-search-page">Find cocktails that you really want to drink. We drink to that!</h3>
-            </div>
-            <article className="outer-container-search-bars">
+                <h3 className="subtitle-search-page">Find cocktails that you really want to drink. We drink to
+                    that!</h3>
                 <div className="name-box">
                     <h4>Search by name</h4>
                     <SearchBar/>
                 </div>
                 <div className="ingredient-box">
                     <h4>Search by ingredient</h4>
-                    <SearchIngredientBar/>
                 </div>
+
+              <section className="ingredient-results">
+                    <SearchIngredientBar/>
+               </section>
+
             </article>
+
+
         </>
     );
 }
