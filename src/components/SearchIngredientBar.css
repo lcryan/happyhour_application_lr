@@ -16,14 +16,10 @@
     align-content: center;
 }
 
-.results-outer-box {
-    margin-top: 20px;
-    border: 2px dotted white;
-}
-
 .ingredient-container {
+    margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 40px;
     grid-row-gap: 40px;
