@@ -3,8 +3,6 @@ import {useState} from "react";
 import axios from "axios";
 import {NavLink} from "react-router-dom";
 import {DB_SEARCH_URL} from "../constants";
-import OneCocktailCard from "./OneCocktailCard";
-import {myCocktail} from "../helpers";
 
 function SearchBar() {
 
