@@ -21,6 +21,7 @@ function AuthContextProvider({children}) {
     useEffect(() => {
 
         const storedToken = localStorage.getItem('token');
+        const username = localStorage.getItem('username')
 
         if (storedToken) {
 
