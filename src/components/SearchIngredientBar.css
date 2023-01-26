@@ -1,16 +1,25 @@
-.title-latest {
+.search-bar-ingredient {
+    background-color: var(--ghostwhite);
+    border-radius: 10px;
+    border-style: none;
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    outline: none;
+}
+
+.ingredient-search-bar {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
-    color: var(--navajowhite);
+    align-content: center;
 }
 
-.latest-cocktails-container {
-    margin-top: 100px;
+.ingredient-container {
+    margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 40px;
     grid-row-gap: 40px;
@@ -20,15 +29,5 @@
     align-items: center;
     flex-shrink: 0;
     flex-grow: 0;
-}
-
-.cocktail-foto-latest-link {
-    width: 200px;
-    border-radius: 30px;
-    border: 2px;
-}
-
-.latest-cocktail-name {
-    margin-top: 10px;
 }
 

@@ -2,10 +2,14 @@
     background-color: var(--black);
     font-weight: bolder;
     font-size: 10px;
-    color: var(--lighterturquoise) ;
+    color: var(--lighterturquoise);
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+
+}
+
+.footer {
+    margin-top: auto;
 }

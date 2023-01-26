@@ -10,22 +10,25 @@
 :root {
     --darkestgrey: #222831;
     --black: #292929;
-    --darkturquoise: #358e85;
+    --darkturquoise: #0abab5;
     --lightgrey: #37414f;
     --lighterblack: #0d0f13;
     --lighterturquoise: #28e3da;
-    --navajowhite: #FFDEADFF;
+    --ghostwhite: #f8f8ff;
 }
 
-body, button, textarea {
+body {
+    background-color: var(--darkturquoise);
     font-family: "Cabin", sans-serif;
     font-weight: 300;
     color: var(--black);
     flex-basis: 1200px;
 }
 
-body {
-    background-color: var(--darkturquoise);
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,7 +51,7 @@ a:visited {
 
 nav a,
 a:hover {
-    color: var(--navajowhite);
+    color: var(--ghostwhite);
 }
 
 nav a,

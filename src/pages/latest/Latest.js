@@ -2,6 +2,10 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios"
 import './Latest.css'
 
+import OneCocktailCard from "../../components/OneCocktailCard";
+import {Link} from "react-router-dom";
+
+
 function Latest() {
 
     const [data, setData] = useState([])
@@ -12,9 +16,12 @@ function Latest() {
             try {
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/latest.php`);
                 console.log(response)
+                if (response) {
+                    setData(response.data.drinks || [])
+                } else {
+                    console.log("no data found")
+                }
                 setData(response.data.drinks)
-
-
             } catch (e) {
                 console.error(e);
             }
@@ -23,6 +30,28 @@ function Latest() {
         void getAllCocktails();
     }, [])
 
+    const getDrinks = (drinks) => {
+        if (!drinks.length || drinks.length === 0) {
+            return (<>
+                <p>nothing found</p>
+            </>)
+        } else {
+            return data.map((cocktail) => {
+                return (
+                    <article className="cocktail-info" key={cocktail.idDrink}>
+                        <Link to={`/singleCocktail/${cocktail.idDrink}`}>
+                            <OneCocktailCard
+                                keyStr={cocktail.idDrink}
+                                imgStr={cocktail.strDrinkThumb}
+                                strDrink={cocktail.strDrink}
+                            />
+                        </Link>
+                    </article>
+
+                )
+            })
+        }
+    }
 
     return (
         <>
@@ -30,15 +59,7 @@ function Latest() {
                 <div className="inner-content-container-latest-cocktails">
                     <h1 className="title-latest"> Our latest Cocktails are: </h1>
                     <div className="latest-cocktails-container">
-                        {data.map((cocktail) => {
-                            return (
-                                <article className="latest-cocktail" key={cocktail.idDrink}>
-                                    <img src={cocktail.strDrinkThumb} alt="foto of according cocktail"
-                                         className="cocktail-foto"/>
-                                    <p>{cocktail.strDrink}</p>
-                                </article>
-                            )
-                        })}
+                        {getDrinks(data)}
                     </div>
                 </div>
             </section>

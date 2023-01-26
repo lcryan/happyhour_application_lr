@@ -1,42 +1,40 @@
-import React from 'react';
-
+import React from 'react'
 
 import './Home.css'
 import LogoImage from "../../assets/logo/TestLogo.png";
-import Blue from "../../assets/BlueHawaiiCocktail.png";
 
 import {useNavigate} from 'react-router-dom';
+import RandomisedCocktail from "../../components/RandomisedCocktail";
 
 
 function Home() {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     return (
-
         <>
             <header className="homepage-header">
                 <img className="logo-image" src={LogoImage} alt="the happy hour logo"/>
                 <h1 className="header-homepage"> Welcome to your HappyHour.</h1>
             </header>
-
-            <section className="overview-section">
-                <article className="random-cocktail-article">
-                    <p className="cocktail-name">Blue Hawaii</p>
-                    <img className="day-cocktail-image" alt="illustration blue hawaii cocktail" src={Blue}/>
-                    <button className="randomizer-button" onClick={() => navigate("/randomizer")}
-                            type='button'>Randomizer
-                    </button>
-                </article>
-                <article className="menu-buttons">
-                    <p className="help-text">Choose to your liking from below...</p>
-                    <button className="latest-button" onClick={() => navigate("/latest")}>Latest Cocktails</button>
-                    <button className="top-ten-button" onClick={() => navigate("/topten")}>Our Top Ten</button>
-                    <button className="mixologist-button" onClick={() => navigate("/mixologist")}> Go to our
-                        MIXOLOGIST
-                    </button>
-                </article>
-            </section>
+            <main>
+                <section className="overview-section">
+                    <article className="random-cocktail-article">
+                        <div className="one-random-cocktail">
+                            <RandomisedCocktail/>
+                        </div>
+                    </article>
+                    <article className="menu-buttons">
+                        <p className="help-text">Choose to your liking from below...</p>
+                        <button className="latest-button" onClick={() => navigate("/latest")}>Latest Cocktails</button>
+                        <button className="top-ten-button" onClick={() => navigate("/topTwenty")}>Our User's Top 20
+                        </button>
+                        <button className="mixologist-button" onClick={() => navigate("/mixologist")}> Go to our
+                            MIXOLOGIST
+                        </button>
+                    </article>
+                </section>
+            </main>
         </>
     );
 }

@@ -1,1 +1,1 @@
-Text about HappyHour App here
+Welcome to  the HappyHour App ! 

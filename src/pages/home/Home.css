@@ -13,13 +13,9 @@ h1 {
 }
 
 .logo-image {
-    margin-top: 100px;
+    margin-top: 40px;
     width: 150px;
-    margin-bottom: 50px;
-}
-
-.day-cocktail-image {
-    width: 400px;
+    margin-bottom: 10px;
 }
 
 .overview-section {
@@ -33,7 +29,7 @@ h1 {
     background-color: var(--darkturquoise);
     margin-left: 150px;
     margin-top: 100px;
-    border: var(--lighterturquoise) 2px solid;
+    border: var(--lighterturquoise) 5px solid;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -41,16 +37,18 @@ h1 {
     color: var(--lighterturquoise);
     font-weight: bolder;
     font-size: 20px;
+    width: 400px;
+    padding: 30px 50px;
+    margin-bottom: 40px;
 }
 
-.cocktail-name {
-    margin-right: 200px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.one-random-cocktail img {
+    width: 300px;
+    min-height: 300px;
 }
 
 .randomizer-button {
-    color: var(--navajowhite);
+    color: var(--ghostwhite);
     background-color: var(--lightgrey);
     border-radius: 20px;
     padding: 10px;
@@ -60,7 +58,11 @@ h1 {
     max-height: 50px;
     width: 200px;
     border-style: none;
+}
+
+.randomizer-button:hover {
     box-shadow: 14px 22px 42px -10px rgba(55, 65, 79, 1);
+    cursor: pointer;
 }
 
 .menu-buttons {
@@ -68,7 +70,7 @@ h1 {
     flex-direction: column;
     max-height: 450px;
     margin-right: 150px;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .latest-button, .top-ten-button {
@@ -79,10 +81,15 @@ h1 {
 .latest-button, .top-ten-button, .mixologist-button {
     background-color: var(--lightgrey);
     font-size: 20px;
-    color: var(--navajowhite);
+    color: var(--ghostwhite);
     font-weight: bolder;
     border-radius: 40px;
     border-style: none;
+    height: 100px;
+}
+
+.top-ten-button:hover, .mixologist-button:hover, .latest-button:hover {
+    cursor: pointer;
     box-shadow: 14px 22px 42px -10px rgba(55, 65, 79, 1);
 }
 
@@ -90,7 +97,6 @@ h1 {
     margin-top: -30px;
     margin-bottom: 50px;
     font-size: 20px;
-    color: var(--lighterturquoise);
+    color: var(--ghostwhite);
     font-weight: bolder;
-
 }
