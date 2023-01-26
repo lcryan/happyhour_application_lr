@@ -3,6 +3,9 @@ import Button from "./Button";
 import './Bartender.css'
 import PartyButton from '../../src/assets/buttonPictures/PartyButton.png'
 
+
+
+
 function Bartender(props) {
     return (
 
