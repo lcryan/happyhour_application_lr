@@ -70,6 +70,7 @@ function SingleCocktail() {
                                 <li className="ingredients">{oneCocktail[0].strIngredient10}</li>
                             </ul>
                             <button type="button" className="button-single-cocktail"> Add to favourites</button>
+
                         </div>
                     </>
                     }
