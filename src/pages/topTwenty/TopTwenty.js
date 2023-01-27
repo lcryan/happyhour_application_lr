@@ -11,9 +11,13 @@ function TopTwenty() {
 
     useEffect(() => {
 
+        const controller = new AbortController();
+
         async function getTopTwenty() {
+
             try {
-                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/popular.php`);
+                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/popular.php`,
+                    {signal: controller.signal});
                 /* console.log(response)*/
                 setTopTwenty(response.data.drinks)
 
@@ -23,6 +27,9 @@ function TopTwenty() {
         }
 
         void getTopTwenty();
+        return function cleanup() {
+            controller.abort()
+        }
     }, [])
 
 

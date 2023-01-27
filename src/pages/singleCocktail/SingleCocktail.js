@@ -12,12 +12,17 @@ function SingleCocktail() {
     const [oneCocktail, setOneCocktail] = useState({});
     const [loading, setLoading] = useState(false);
     const {id} = useParams();
+
     useEffect(() => {
 
+        const controller = new AbortController();
+
         async function getOneCocktail() {
+
             try {
 
-                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
+                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
+                    , {signal: controller.signal})
                 console.log(response.data)
                 console.log(id)
                 setOneCocktail(response.data.drinks)
@@ -35,7 +40,11 @@ function SingleCocktail() {
 
         }
 
-        void getOneCocktail()
+        void getOneCocktail();
+
+        return function cleanup() {
+            controller.abort()
+        }
 
     }, [id]);
 

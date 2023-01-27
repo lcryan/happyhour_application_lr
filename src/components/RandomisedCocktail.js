@@ -4,6 +4,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 
 function RandomisedCocktail() {
+
     const [randomCocktail, setRandomCocktail] = useState([]);
 
     const apiUrl = `https://www.thecocktaildb.com/api/json/v2/9973533/random.php`;

@@ -12,9 +12,12 @@ function SearchBar() {
 
     useEffect(() => {
 
+        const controller = new AbortController();
+
         async function getSearchResult() {
             try {
-                const response = await axios.get(`${DB_SEARCH_URL}${searchResult}`)
+                const response = await axios.get(`${DB_SEARCH_URL}${searchResult}`,
+                    {signal: controller.signal})
                 console.log(response.data)
                 setName(response.data.drinks)
 
@@ -28,7 +31,11 @@ function SearchBar() {
             }
         }
 
-        void getSearchResult()
+        void getSearchResult();
+
+        return function cleanup() {
+            controller.abort();
+        }
     }, [searchResult]);
 
     const handleChange = (e) => {
