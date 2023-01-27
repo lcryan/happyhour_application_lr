@@ -13,9 +13,12 @@ function SearchByLetterBar() {
 
     useEffect(() => {
 
+        const controller = new AbortController();
+
         async function getCocktail() {
             try {
-                const response = await axios.get(`${DB_SEARCH_BY_FIRST_LETTER_URL}${cocktailName}`)
+                const response = await axios.get(`${DB_SEARCH_BY_FIRST_LETTER_URL}${cocktailName}`,
+                    {signal: controller.signal})
                 console.log(response.data)
                 setName(response.data.drinks)
 
@@ -29,7 +32,11 @@ function SearchByLetterBar() {
             }
         }
 
-        void getCocktail()
+        void getCocktail();
+
+        return function cleanup() {
+            controller.abort();
+        }
     }, [cocktailName]);
 
     const handleChange = (e) => {
