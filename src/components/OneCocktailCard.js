@@ -11,7 +11,6 @@ function OneCocktailCard({keyStr, imgStr, strDrink, children}) {
                 <p>{strDrink}</p>
                 {children}
             </article>
-
         </>
 
 
