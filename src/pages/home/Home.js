@@ -13,12 +13,15 @@ function Home() {
 
     return (
         <>
-            <header className="homepage-header">
-                <img className="logo-image" src={LogoImage} alt="the happy hour logo"/>
-                <h1 className="header-homepage"> Welcome to your HappyHour.</h1>
-            </header>
-            <main>
-                <section className="overview-section">
+            <div className="outer-container-hompage">
+
+                <article className="homepage-title">
+                    <img className="logo-image" src={LogoImage} alt="the happy hour logo"/>
+                    <h1 className="header-homepage"> Welcome to your HappyHour.</h1>
+                </article>
+
+                <div className="inner-container-homepage">
+                <article className="overview-container">
                     <article className="random-cocktail-article">
                         <div className="one-random-cocktail">
                             <RandomisedCocktail/>
@@ -33,8 +36,9 @@ function Home() {
                             MIXOLOGIST
                         </button>
                     </article>
-                </section>
-            </main>
+                </article>
+                </div>
+            </div>
         </>
     );
 }
