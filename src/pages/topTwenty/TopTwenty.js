@@ -32,13 +32,13 @@ function TopTwenty() {
             }
         }
 
-        setLoading(false); //TODO ask Scott where to set up the loading...
+        setLoading(false); //TODO ask Scott where to set up the loading...loading messages didn't work
 
         void getTopTwenty();
         return function cleanup() {
             controller.abort()
         }
-    }, [])
+    }, []);
 
 
     return (
