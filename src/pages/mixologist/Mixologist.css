@@ -1,14 +1,20 @@
+
+
+
 .header-mixologist {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
     line-height: 1.6;
     margin-top: 100px;
+
 }
 
 .bartender-select-buttons {
     margin-bottom: 100px;
+    width: 600px;
 }
 
 .bartender-icon {

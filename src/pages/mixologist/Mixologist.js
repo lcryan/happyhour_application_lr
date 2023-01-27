@@ -7,9 +7,9 @@ function Mixologist(props) {
     return (
         <div>
 
+
             <section className="header-mixologist">
-<p>TEST</p>
-                <p>TEST FOR PUSH</p>
+
                 <h1>Hello, I am your Mixologist!</h1>
                 <img src={BartenderPng} className="bartender-icon"/>
                 <h2>Let me assist you and help you making better choices.</h2>
@@ -18,8 +18,10 @@ function Mixologist(props) {
 
             <section className="bartender-select-buttons">
                 <Bartender/>
+
             </section>
         </div>
+
     );
 }
 
