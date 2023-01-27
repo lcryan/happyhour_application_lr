@@ -11,10 +11,13 @@ function Latest() {
     const [data, setData] = useState([])
 
     useEffect(() => {
+        const controller = new AbortController();
 
         async function getAllCocktails() {
             try {
-                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/latest.php`);
+                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/latest.php`, {
+                    signal: controller.signal
+                });
                 console.log(response)
                 if (response) {
                     setData(response.data.drinks || [])
@@ -28,6 +31,9 @@ function Latest() {
         }
 
         void getAllCocktails();
+        return function cleanup() {
+            controller.abort();
+        }
     }, [])
 
     const getDrinks = (drinks) => {
