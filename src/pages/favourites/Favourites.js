@@ -1,17 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
+import './Favourites.css'
 
 function Favourites() {
 
-    const [favouriteCocktail, setFavouriteCocktail] = useState();
-
-    useEffect(() => {
-        localStorage.setItem('dataKey', JSON.stringify(favouriteCocktail))
-    })
+    const favouriteData = useRef();
+    const handleClick = () => {
+        console.log(favouriteData.current.value, "initial value")
+        localStorage.setItem("InputValue", favouriteData.current.value)
+    }
 
 
     return (
         <>
-            <h1>User's Favourite's List</h1>
+            <div className="inner-container-favourites">
+                <input ref={favouriteData}></input>
+                <button onClick={handleClick}>Add to favourites</button>
+            </div>
         </>
     );
 }
