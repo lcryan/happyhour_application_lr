@@ -1,3 +1,14 @@
+.single-cocktail-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1.6;
+    margin-top: 100px;
+    color: var(--ghostwhite);
+    font-size: 30px;
+}
+
 .outer-container-single-cocktail {
     display: flex;
     flex-direction: row;
@@ -6,7 +17,7 @@
 
 .container-single-cocktail {
     display: flex;
-    width: 600px;
+    width: 800px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -25,7 +36,7 @@
 }
 
 .content-single-cocktail {
-    width: 50%;
+    width: 80%;
     padding: 30px;
 }
 
@@ -45,7 +56,17 @@
     padding: 10px;
 }
 
-.button-single-cocktail:hover{
+.button-single-cocktail:hover {
     cursor: pointer;
     box-shadow: 14px 22px 42px -10px rgba(55, 65, 79, 1);
+}
+
+.back-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

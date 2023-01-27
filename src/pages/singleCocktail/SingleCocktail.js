@@ -1,8 +1,10 @@
 import './SingleCocktail.css';
 import {useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import axios from "axios";
 import React from 'react';
+import Button from "../../components/Button";
+import BackArrow from "../../assets/icons/BackArrow2.svg"
 
 
 function SingleCocktail() {
@@ -44,9 +46,16 @@ function SingleCocktail() {
         return <h3>No cocktail to display</h3>
     }
 
+
     return (
 
         <>
+
+            <article className="single-cocktail-title">
+                <h1>Are you ready for this ?</h1>
+                <h3>It looks delicious! Good choice!</h3>
+            </article>
+
             <section className="outer-container-single-cocktail">
                 <article className="container-single-cocktail">
                     {Object.keys(oneCocktail).length > 0 && <>
@@ -69,13 +78,17 @@ function SingleCocktail() {
                                 <li className="ingredients">{oneCocktail[0].strIngredient9}</li>
                                 <li className="ingredients">{oneCocktail[0].strIngredient10}</li>
                             </ul>
-                            <button type="button" className="button-single-cocktail"> Add to favourites</button>
-
+                            <Button type="button" className="button-single-cocktail">Add to favourites</Button>
                         </div>
                     </>
                     }
+
                 </article>
+
             </section>
+            <div className="back-arrow">
+                <Link to="/"><img src={BackArrow} className="back-arrow" alt="grey arrow directed back"/></Link>
+            </div>
         </>
     );
 }
