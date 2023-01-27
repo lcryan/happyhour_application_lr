@@ -62,7 +62,7 @@ function Registration() {
                     } else if (response.data.message) {
                         setErrorMessage(response.data.message)
                     } else {
-                        setErrorMessage("We encountered an unexpected error. Please try again later.")
+                        setErrorMessage("We couldn't find the page you have requested. Please try again.")
                     }
                     break;
                 case 500:
