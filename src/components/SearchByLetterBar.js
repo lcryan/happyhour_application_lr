@@ -28,7 +28,7 @@ function SearchByLetterBar() {
             if (cocktailName) {
                 setCocktailName(cocktailName)
             } else {
-                console.log("Sorry! We couldn't find your cocktail.");
+                console.log("Sorry! We couldn't find your cocktail."); //TODO set error message for user here!
             }
         }
 

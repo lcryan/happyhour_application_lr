@@ -25,9 +25,10 @@ function SearchBar() {
                 console.log(error)
             }
             if (searchResult) {
-                setSearchResult(searchResult)
+                setSearchResult(searchResult) //TODO make error messages, if input is wrong !
+
             } else {
-                console.log("Sorry! We couldn't find your cocktail.");
+                return "We couldn't find your cocktail"
             }
         }
 
