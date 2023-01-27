@@ -12,10 +12,14 @@ function SearchIngredientBar() {
 
 
     useEffect(() => {
+
+        const controller = new AbortController();
+
         async function getIngredients() {
 
             try {
-                const response = await axios.get(`${DB_SEARCH_INGREDIENT_URL}${ingredient}`)
+                const response = await axios.get(`${DB_SEARCH_INGREDIENT_URL}${ingredient}`,
+                    {signal: controller.signal})
                 console.log(response.data)
                 setNameIngredient(response.data.drinks)
             } catch (error) {
@@ -29,7 +33,10 @@ function SearchIngredientBar() {
 
         }
 
-        void getIngredients()
+        void getIngredients();
+        return function cleanup() {
+            controller.abort();
+        }
     }, [ingredient])
 
     const handleChange = (e) => {
@@ -40,28 +47,28 @@ function SearchIngredientBar() {
 
     return (
         <>
-                <article className="ingredient-search-bar">
-                    <input type="text"
-                           placeholder="Search cocktail by ingredient"
-                           value={ingredient}
-                           onChange={handleChange}
-                           className="search-bar-ingredient"
-                    />
-                </article>
+            <article className="ingredient-search-bar">
+                <input type="text"
+                       placeholder="Search cocktail by ingredient"
+                       value={ingredient}
+                       onChange={handleChange}
+                       className="search-bar-ingredient"
+                />
+            </article>
 
-                <article className="results-outer-box">
-                    <div className="ingredient-container">
-                        {ingredient && nameIngredient && nameIngredient.map((element) => (
-                            <Link to={`/singleCocktail/${element.idDrink}`}>
-                                <OneCocktailCard
-                                    strDrink={element.strDrink}
-                                    keyStr={element.idDrink}
-                                    imgStr={element.strDrinkThumb}
-                                />
-                            </Link>
-                        ))}
-                    </div>
-                </article>
+            <article className="results-outer-box">
+                <div className="ingredient-container">
+                    {ingredient && nameIngredient && nameIngredient.map((element) => (
+                        <Link to={`/singleCocktail/${element.idDrink}`}>
+                            <OneCocktailCard
+                                strDrink={element.strDrink}
+                                keyStr={element.idDrink}
+                                imgStr={element.strDrinkThumb}
+                            />
+                        </Link>
+                    ))}
+                </div>
+            </article>
 
         </>
     );
