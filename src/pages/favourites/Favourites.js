@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react';
 
 function Favourites() {
 
-    const [favoriteCocktail, setFavouriteCocktail] = useState();
+    const [favouriteCocktail, setFavouriteCocktail] = useState();
 
     useEffect(() => {
-        localStorage.setItem('dataKey', JSON.stringify(favoriteCocktail))
+        localStorage.setItem('dataKey', JSON.stringify(favouriteCocktail))
     })
 
 
