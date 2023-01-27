@@ -22,7 +22,7 @@ body {
     font-family: "Cabin", sans-serif;
     font-weight: 300;
     color: var(--black);
-    flex-basis: 1200px;
+   /* flex-basis: 1200px;*/
 }
 
 .App {
@@ -40,8 +40,6 @@ a:link {
     color: whitesmoke;
 }
 
-/*NOTE: the visited link is still not functional! */
-
 nav a,
 a:visited {
     color: var(--lighterturquoise);
@@ -58,4 +56,3 @@ nav a,
 a:active {
     color: whitesmoke;
 }
-
