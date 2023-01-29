@@ -16,8 +16,6 @@ function AuthContextProvider({children}) {
     });
     const navigate = useNavigate();
 
-    // MOUNTING EFFECT
-
     useEffect(() => {
 
         const storedToken = localStorage.getItem('token');
@@ -25,7 +23,7 @@ function AuthContextProvider({children}) {
 
         if (storedToken) {
 
-            // TODO error handling here, what if storedToken is not a tokem?
+            // TODO error handling here, what if storedToken is not a token?
             const decodedToken = jwtDecode(storedToken)
             if (Math.floor(Date.now() / 1000) < decodedToken.exp) {
                 console.log("The user is still logged in.")
@@ -64,7 +62,7 @@ function AuthContextProvider({children}) {
             })
 
             // TODO error handling.
-            // TOD WHat if the response returns but is not the format we expect?
+            // TODO What if the response returns but is not the format we expect?
 
             toggleIsAuth({
                 ...isAuth,
@@ -98,7 +96,7 @@ function AuthContextProvider({children}) {
             user: null,
             status: 'done'
         });
-        navigate('/login') //TODO navigate to not logged in page instead of home!//
+        navigate('/login')
     }
 
     const contextData = {
