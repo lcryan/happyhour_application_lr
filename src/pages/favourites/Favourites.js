@@ -1,21 +1,18 @@
-import React, {useEffect, useRef, useState} from 'react';
-import './Favourites.css'
+import React, {useContext} from 'react';
+import {AuthContext} from "../../context/AuthContext";
 
-function Favourites() {
+function Favourites(props) {
 
-    const favouriteData = useRef();
-    const handleClick = () => {
-        console.log(favouriteData.current.value, "initial value")
-        localStorage.setItem("InputValue", favouriteData.current.value)
-    }
-
+    const {user, isAuth} = useContext(AuthContext)
 
     return (
         <>
-            <div className="inner-container-favourites">
-                <input ref={favouriteData}></input>
-                <button onClick={handleClick}>Add to favourites</button>
-            </div>
+            {isAuth ?
+                <h1>Welcome {user.username}, your favourites are:</h1>
+                :
+                <p>You are not logged in.</p>
+
+            }
         </>
     );
 }

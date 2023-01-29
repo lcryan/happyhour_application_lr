@@ -25,6 +25,7 @@ function AuthContextProvider({children}) {
 
         if (storedToken) {
 
+            // TODO error handling here, what if storedToken is not a tokem?
             const decodedToken = jwtDecode(storedToken)
             if (Math.floor(Date.now() / 1000) < decodedToken.exp) {
                 console.log("The user is still logged in.")
@@ -48,19 +49,22 @@ function AuthContextProvider({children}) {
         console.log("The user is logged in.")
         localStorage.setItem('token', token);
 
-
-        void fetchUserData(token, "/home");
+        void fetchUserData(token, "/myAccount");
     }
 
     async function fetchUserData(token, redirectUrl) {
 
         try {
+
             const response = await axios.get(`${BASE_URL}/api/user`, {
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
                 },
             })
+
+            // TODO error handling.
+            // TOD WHat if the response returns but is not the format we expect?
 
             toggleIsAuth({
                 ...isAuth,
@@ -102,9 +106,8 @@ function AuthContextProvider({children}) {
         user: isAuth.user,
         status: isAuth.status,
         login: login,
-        Logout: logout
+        logout: logout
     };
-
 
     return (
         <AuthContext.Provider value={contextData}>

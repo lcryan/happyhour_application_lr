@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {AuthContext} from "../../context/AuthContext";
 
 function MyAccount() {
+    const {user, isAuth} = useContext(AuthContext)
+
     return (
-        <>
-        <h1>My Account - my Profile</h1>
-        </>
+            <>
+                {isAuth ?
+                    <h1>Welcome {user.username}</h1>
+                    : <h1>not logged in</h1>
+                }
+            </>
     );
 }
 

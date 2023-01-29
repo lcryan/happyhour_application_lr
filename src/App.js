@@ -32,11 +32,11 @@ function App() {
                 <Route path="/latest" element={<Latest/>}/>
                 <Route path="/registration" element={<Registration/>}/>
                 <Route path="/login" element={<Login/>}/>
-                <Route path="/myAccount" element={isAuth ? <MyAccount/> : <p>NOT LOGGED IN</p>}/>
+                <Route path="/myAccount" element={isAuth ? <MyAccount/> : <Login/>}/>
                 <Route path="/mixologist" element={<Mixologist/>}/>
                 <Route path="/topTwenty" element={<TopTwenty/>}/>
                 <Route path="/singleCocktail/:id" element={<SingleCocktail/>}/>
-                <Route path="/favourites" element={<Favourites/>}/>
+                <Route path="/favourites" element={isAuth ? <Favourites/> : <Login/>}/>
                 <Route path="/help" element={<Help/>}/>
                 <Route path="*" element={<NotFound/>}/>
                 <Route path="/myAccount" element={<MyAccount/>}/>

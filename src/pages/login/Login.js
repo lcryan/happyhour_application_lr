@@ -11,7 +11,7 @@ function Login(props) {
 
     const {login} = useContext(AuthContext)
 
-    const [email, setEmail] = useState("");
+
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
 
@@ -28,12 +28,11 @@ function Login(props) {
         try {
             // TODO take the email and password from a form in this page
             const response = await axios.post(`${BASE_URL}/api/auth/signin`, {
-                email: email,
                 username: username,
                 password: password,
             })
             console.log(response.data)
-            login(response.data)
+            login(response.data.accessToken)
 
 
         } catch (e) {
@@ -49,16 +48,6 @@ function Login(props) {
 
                 <div className="user-input-boxes">
                     <form onSubmit={handleLogin}>
-                        <label htmlFor="email-field">
-                            e-mailadres
-                            <input
-                                type="input-email"
-                                id="input-email-field"
-                                name="input-email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </label>
 
                         <label htmlFor="input-username-field">
                             username
