@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useState} from "react";
 import axios from "axios";
 import {NavLink} from "react-router-dom";
@@ -9,39 +9,26 @@ function SearchBar() {
     const [searchResult, setSearchResult] = useState("");
     const [name, setName] = useState([]);
 
+    const controller = new AbortController();
 
-    useEffect(() => {
+    async function getSearchResult(searchResult) {
+        try {
+            const response = await axios.get(`${DB_SEARCH_URL}${searchResult}`,
+                {signal: controller.signal})
+            console.log(response.data)
+            setName(response.data.drinks)
 
-        const controller = new AbortController();
+            // TODO error handling
 
-        async function getSearchResult() {
-            try {
-                const response = await axios.get(`${DB_SEARCH_URL}${searchResult}`,
-                    {signal: controller.signal})
-                console.log(response.data)
-                setName(response.data.drinks)
-
-            } catch (error) {
-                console.log(error)
-            }
-            if (searchResult) {
-                setSearchResult(searchResult) //TODO make error messages, if input is wrong !
-
-            } else {
-                return "We couldn't find your cocktail"
-            }
+        } catch (error) {
+            console.log(error)
         }
-
-        void getSearchResult();
-
-        return function cleanup() {
-            controller.abort();
-        }
-    }, [searchResult]);
+    }
 
     const handleChange = (e) => {
         e.preventDefault();
         setSearchResult(e.target.value);
+        getSearchResult(e.target.value);
     };
 
     const recentInput = () => {
