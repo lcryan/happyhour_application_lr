@@ -2,6 +2,7 @@ import React from 'react';
 import Bartender from "../../components/Bartender";
 import './Mixologist.css'
 import BartenderPng from '../../assets/icons/Bartender_black.png'
+import Questionnaire from "../../components/Questionnaire/Questionnaire";
 
 function Mixologist(props) {
     return (
@@ -17,7 +18,7 @@ function Mixologist(props) {
             </section>
 
             <section className="bartender-select-buttons">
-                <Bartender/>
+                <Questionnaire />
 
             </section>
         </div>

@@ -1,14 +1,13 @@
 import React from 'react';
+import DrinkCategoryQuestion from './DrinkCategoryQuestion'
+
 
 function Questionnaire(props) {
 
-
-
-
-
+    const filters = []
     return (
-        <div></div>
-    );
+        <DrinkCategoryQuestion filters={filters} />
+    )
 }
 
 export default Questionnaire;
