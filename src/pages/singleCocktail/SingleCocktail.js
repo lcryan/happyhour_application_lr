@@ -3,13 +3,14 @@ import {useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom";
 import axios from "axios";
 import React from 'react';
-import Button from "../../components/Button";
 import BackArrow from "../../assets/icons/BackArrow2.svg"
 import AddToFavourites from "../../components/AddToFavourites";
 
 
 function SingleCocktail() {
 
+
+    const [favourites, setFavourites] = useState([]);
     const [oneCocktail, setOneCocktail] = useState({});
     const [loading, setLoading] = useState(false);
     const {id} = useParams();
@@ -26,7 +27,7 @@ function SingleCocktail() {
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
                     , {signal: controller.signal})
                 console.log(response.data)
-                console.log(id)
+                /*console.log(id)*/
                 setOneCocktail(response.data.drinks)
 
                 if (oneCocktail) {
@@ -58,22 +59,23 @@ function SingleCocktail() {
     }
 
 
+    const addFavouriteCocktail = (cocktail) => {
+        const newFavouriteList = [...favourites, cocktail];
+        setFavourites(newFavouriteList);
+    };
+
     return (
 
         <>
-
-            <article className="single-cocktail-title">
-                <h1>Are you ready for this ?</h1>
-                <h3>It looks delicious! Good choice!</h3>
-            </article>
-
             <section className="outer-container-single-cocktail">
                 <article className="container-content-single-cocktail">
                     {Object.keys(oneCocktail).length > 0 && <>
                         <div className="image-container">
                             <img className="foto-singleCocktail" alt="foto of single-cocktail"
                                  src={oneCocktail[0].strDrinkThumb}/>
-                            <div className="overlay"><AddToFavourites/></div>
+                            <div onClick={() => addFavouriteCocktail(oneCocktail[0])} className="overlay">
+                                <AddToFavourites/>
+                            </div>
                         </div>
 
                         <div className="content-single-cocktail">
@@ -91,7 +93,6 @@ function SingleCocktail() {
                                 <li className="ingredients">{oneCocktail[0].strIngredient9}</li>
                                 <li className="ingredients">{oneCocktail[0].strIngredient10}</li>
                             </ul>
-                            <Button type="button" className="button-single-cocktail">Add to favourites</Button>
                         </div>
                     </>
                     }
