@@ -58,12 +58,6 @@ function SingleCocktail() {
         return <h3>No cocktail to display</h3>
     }
 
-
-    const addFavouriteCocktail = (cocktail) => {
-        const newFavouriteList = [...favourites, cocktail];
-        setFavourites(newFavouriteList);
-    };
-
     return (
 
         <>
@@ -73,7 +67,7 @@ function SingleCocktail() {
                         <div className="image-container">
                             <img className="foto-singleCocktail" alt="foto of single-cocktail"
                                  src={oneCocktail[0].strDrinkThumb}/>
-                            <div onClick={() => addFavouriteCocktail(oneCocktail[0])} className="overlay">
+                            <div className="overlay">
                                 <AddToFavourites/>
                             </div>
                         </div>
