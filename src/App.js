@@ -1,4 +1,4 @@
-import {Routes, Route, Navigate} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import Home from './pages/home/Home';
 import Latest from './pages/latest/Latest';
 import Login from './pages/login/Login';
@@ -19,6 +19,7 @@ import MyAccount from "./pages/myAccount/MyAccount";
 import {useContext} from "react";
 import {AuthContext} from "./context/AuthContext";
 
+import {GlobalProvider} from "./context/GlobalContext";
 
 function App() {
 
@@ -27,21 +28,23 @@ function App() {
     return (
         <div className="App">
             <Navigation/>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/latest" element={<Latest/>}/>
-                <Route path="/registration" element={<Registration/>}/>
-                <Route path="/login" element={<Login/>}/>
-                <Route path="/myAccount" element={isAuth ? <MyAccount/> : <Login/>}/>
-                <Route path="/mixologist" element={<Mixologist/>}/>
-                <Route path="/topTwenty" element={<TopTwenty/>}/>
-                <Route path="/singleCocktail/:id" element={<SingleCocktail/>}/>
-                <Route path="/favourites" element={isAuth ? <Favourites/> : <Login/>}/>
-                <Route path="/help" element={<Help/>}/>
-                <Route path="*" element={<NotFound/>}/>
-                <Route path="/myAccount" element={<MyAccount/>}/>
-                <Route path="/searchPage/:id" element={<SearchPage/>}/>
-            </Routes>
+            <GlobalProvider>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/latest" element={<Latest/>}/>
+                    <Route path="/registration" element={<Registration/>}/>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/myAccount" element={isAuth ? <MyAccount/> : <Login/>}/>
+                    <Route path="/mixologist" element={<Mixologist/>}/>
+                    <Route path="/topTwenty" element={<TopTwenty/>}/>
+                    <Route path="/singleCocktail/:id" element={<SingleCocktail/>}/>
+                    <Route path="/favourites" element={isAuth ? <Favourites/> : <Login/>}/>
+                    <Route path="/help" element={<Help/>}/>
+                    <Route path="*" element={<NotFound/>}/>
+                    <Route path="/myAccount" element={<MyAccount/>}/>
+                    <Route path="/searchPage/:id" element={<SearchPage/>}/>
+                </Routes>
+            </GlobalProvider>
             <Footer/>
         </div>
     );
