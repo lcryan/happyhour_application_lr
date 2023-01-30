@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios"
 import './Latest.css'
-
 import OneCocktailCard from "../../components/OneCocktailCard";
 import {Link} from "react-router-dom";
 
