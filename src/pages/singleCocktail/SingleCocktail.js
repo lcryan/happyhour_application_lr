@@ -9,8 +9,6 @@ import AddToFavourites from "../../components/AddToFavourites";
 
 function SingleCocktail() {
 
-
-    const [favourites, setFavourites] = useState([]);
     const [oneCocktail, setOneCocktail] = useState({});
     const [loading, setLoading] = useState(false);
     const {id} = useParams();
