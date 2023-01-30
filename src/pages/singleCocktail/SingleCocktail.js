@@ -5,6 +5,7 @@ import axios from "axios";
 import React from 'react';
 import Button from "../../components/Button";
 import BackArrow from "../../assets/icons/BackArrow2.svg"
+import AddToFavourites from "../../components/AddToFavourites";
 
 
 function SingleCocktail() {
@@ -12,6 +13,7 @@ function SingleCocktail() {
     const [oneCocktail, setOneCocktail] = useState({});
     const [loading, setLoading] = useState(false);
     const {id} = useParams();
+
 
     useEffect(() => {
 
@@ -66,12 +68,14 @@ function SingleCocktail() {
             </article>
 
             <section className="outer-container-single-cocktail">
-                <article className="container-single-cocktail">
+                <article className="container-content-single-cocktail">
                     {Object.keys(oneCocktail).length > 0 && <>
-                        <div className="image-single-cocktail">
+                        <div className="image-container">
                             <img className="foto-singleCocktail" alt="foto of single-cocktail"
                                  src={oneCocktail[0].strDrinkThumb}/>
+                            <div className="overlay"><AddToFavourites/></div>
                         </div>
+
                         <div className="content-single-cocktail">
                             <h3 className="singleCocktail-cocktail-title">Cocktail Name: {oneCocktail[0].strDrink} </h3>
                             <ul className="ingredients-list">
