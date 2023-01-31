@@ -3,7 +3,7 @@ export default (state, action) => {
         case "ADD_COCKTAIL_TO_FAVOURITES":
             return {
                 ...state,
-                favouritesList: [action.payload, ...state.favouritesList]
+                favouritesList: [action.payload, ...state.favouritesList] //spread adds to the already existing watchlist
             }
 
         default:

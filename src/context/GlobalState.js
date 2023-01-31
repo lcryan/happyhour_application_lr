@@ -1,4 +1,4 @@
-import React, {createContext, useReducer} from 'react';
+import React, {createContext, useReducer,useEffect} from 'react';
 import AppReducer from "./AppReducer";
 
 // initial state
@@ -8,13 +8,13 @@ const initialState = {
     addedToFavourites: [],
 }
 
-// create GlobalContext
+// create GlobalState
 
 export const GlobalContext = createContext(initialState);
 
 // create provider components
-export const GlobalProvider = props => {
-    const [state, dispatch] = useReducer(AppReducer, initialState)
+export const GlobalProvider = (props) => {
+    const [state, dispatch] = useReducer(AppReducer,initialState);
 
     //actions
 
@@ -25,8 +25,8 @@ export const GlobalProvider = props => {
     return (
         <GlobalContext.Provider
             value={{
-                addedToFavourites: state.addedToFavourites,
                 favouritesList: state.favouritesList,
+                addedToFavourites: state.addedToFavourites,
                 addCocktailToFavourites
             }}>
             {props.children}
