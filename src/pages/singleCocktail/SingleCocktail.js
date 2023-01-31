@@ -8,10 +8,11 @@ import BackArrow from "../../assets/icons/BackArrow2.svg";
 import AddToFavourites from "../../components/AddToFavourites";
 
 
-function SingleCocktail({cocktailData}) {
+function SingleCocktail() {
 
     const {
-        addCocktailToFavourites
+        addToFavourites,
+        removeFromFavourites
     } = useContext(GlobalContext)
 
     const [oneCocktail, setOneCocktail] = useState({});
@@ -29,12 +30,9 @@ function SingleCocktail({cocktailData}) {
 
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
                     , {signal: controller.signal})
-                console.log(response.data)
-                /*console.log(id)*/
-                setOneCocktail(response.data.drinks)
 
-                if (oneCocktail) {
-                    setOneCocktail(response.data.drinks)
+                if (response.data.drinks.length === 1) {
+                    setOneCocktail(response.data.drinks[0])
                     setLoading(false);
                 } else {
                     setOneCocktail(null);
@@ -66,33 +64,32 @@ function SingleCocktail({cocktailData}) {
         <>
             <section className="outer-container-single-cocktail">
                 <article className="container-content-single-cocktail">
-                    {Object.keys(oneCocktail).length > 0 && <>
+                    <>
                         <div className="image-container">
                             <img className="foto-singleCocktail" alt="foto of single-cocktail"
-                                 src={oneCocktail[0].strDrinkThumb}/>
-                            <button className="overlay" onClick={() => addCocktailToFavourites(cocktailData)}>
+                                 src={oneCocktail.strDrinkThumb}/>
+                            <button className="overlay" onClick={() => addToFavourites(oneCocktail)}>
                                 <AddToFavourites/>
                             </button>
                         </div>
 
                         <div className="content-single-cocktail">
-                            <h3 className="singleCocktail-cocktail-title">Cocktail Name: {oneCocktail[0].strDrink} </h3>
+                            <h3 className="singleCocktail-cocktail-title">Cocktail Name: {oneCocktail.strDrink} </h3>
                             <ul className="ingredients-list">
                                 Ingredients:
-                                <li className="ingredients"> {oneCocktail[0].strIngredient1}</li>
-                                <li className="ingredients"> {oneCocktail[0].strIngredient2} </li>
-                                <li className="ingredients"> {oneCocktail[0].strIngredient3} </li>
-                                <li className="ingredients"> {oneCocktail[0].strIngredient4} </li>
-                                <li className="ingredients">{oneCocktail[0].strIngredient5}</li>
-                                <li className="ingredients">{oneCocktail[0].strIngredient6}</li>
-                                <li className="ingredients">{oneCocktail[0].strIngredient7}</li>
-                                <li className="ingredients">{oneCocktail[0].strIngredient8}</li>
-                                <li className="ingredients">{oneCocktail[0].strIngredient9}</li>
-                                <li className="ingredients">{oneCocktail[0].strIngredient10}</li>
+                                <li className="ingredients"> {oneCocktail.strIngredient1}</li>
+                                <li className="ingredients"> {oneCocktail.strIngredient2} </li>
+                                <li className="ingredients"> {oneCocktail.strIngredient3} </li>
+                                <li className="ingredients"> {oneCocktail.strIngredient4} </li>
+                                <li className="ingredients">{oneCocktail.strIngredient5}</li>
+                                <li className="ingredients">{oneCocktail.strIngredient6}</li>
+                                <li className="ingredients">{oneCocktail.strIngredient7}</li>
+                                <li className="ingredients">{oneCocktail.strIngredient8}</li>
+                                <li className="ingredients">{oneCocktail.strIngredient9}</li>
+                                <li className="ingredients">{oneCocktail.strIngredient10}</li>
                             </ul>
                         </div>
                     </>
-                    }
 
                 </article>
 
