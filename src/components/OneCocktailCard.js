@@ -1,16 +1,20 @@
 import React from 'react';
 import './OneCocktailCard.css'
+import AddToFavourites from "./AddToFavourites";
 
-function OneCocktailCard({keyStr, imgStr, strDrink, children}) {
+function OneCocktailCard({ children, cocktail}) {
     return (
         <>
             <article className="latest-cocktail"
-                     key={keyStr}>
-                <img src={imgStr} alt="foto of according cocktail"
+                     key={cocktail.idDrink}>
+                <img src={cocktail.strDrinkThumb} alt="foto of according cocktail"
                      className="cocktail-foto"/>
-                <p>{strDrink}</p>
+                <AddToFavourites cocktail={cocktail}/>
+                {/*// TODO restyle overlay into CA*/}
+                <p>{cocktail.strDrink}</p>
                 {children}
             </article>
+
         </>
 
 

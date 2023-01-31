@@ -59,10 +59,7 @@ function SearchByLetterBar() {
                 <div className="letter-container">
                     {cocktailName && name && name.map((result) => (
                         <Link to={`/singleCocktail/${result.idDrink}`}>
-                            <OneCocktailCard
-                                strDrink={result.strDrink}
-                                keyStr={result.idDrink}
-                                imgStr={result.strDrinkThumb}
+                            <OneCocktailCard cocktail={result}
                             />
                         </Link>
                     ))}

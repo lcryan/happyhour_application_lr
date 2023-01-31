@@ -2,18 +2,12 @@ import './SingleCocktail.css';
 import {useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom";
 import axios from "axios";
-import React, {useContext} from 'react';
-import {GlobalContext} from "../../context/GlobalState";
+import React from 'react';
 import BackArrow from "../../assets/icons/BackArrow2.svg";
 import AddToFavourites from "../../components/AddToFavourites";
 
 
 function SingleCocktail() {
-
-    const {
-        addToFavourites,
-        removeFromFavourites
-    } = useContext(GlobalContext)
 
     const [oneCocktail, setOneCocktail] = useState({});
     const [loading, setLoading] = useState(false);
@@ -68,11 +62,8 @@ function SingleCocktail() {
                         <div className="image-container">
                             <img className="foto-singleCocktail" alt="foto of single-cocktail"
                                  src={oneCocktail.strDrinkThumb}/>
-                            <button className="overlay" onClick={() => addToFavourites(oneCocktail)}>
-                                <AddToFavourites/>
-                            </button>
+                            <AddToFavourites cocktail={oneCocktail}/>
                         </div>
-
                         <div className="content-single-cocktail">
                             <h3 className="singleCocktail-cocktail-title">Cocktail Name: {oneCocktail.strDrink} </h3>
                             <ul className="ingredients-list">

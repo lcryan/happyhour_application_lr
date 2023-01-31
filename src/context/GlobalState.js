@@ -1,7 +1,4 @@
-import React, {createContext} from 'react';
-
-
-
+import React, {createContext, useState} from 'react';
 
 const initialState = {
     favouritesList: [],
@@ -10,47 +7,63 @@ const initialState = {
 
 export const GlobalContext = createContext(initialState);
 
-// create provider components
+const localStorageKey = 'favourites'
+
 export const GlobalProvider = (props) => {
-    const favourites = []
 
-    // TODO get the list of favourites from localstorge
-    // if it exists
-    // if it doesnt exist initialise empty array
+    let [favourites, setFavourites] = useState([]);
 
+    try {
+        const store = JSON.parse(localStorage.getItem(localStorageKey))
 
-    // TODO create function isFavourite()
-    // which checks the favourites array to
-    // see if the requested cocktail is favourited already or not
-    // export function as part of context to be used in other places
+        if (store && Array.isArray(store)) {
+            favourites = store
+        }
+    } catch (error) {
+        console.log(error)
+    }
 
+    function isFavourite(cocktail) {
+        if (cocktail) {
+            const myFav = favourites.find((x) => x.idDrink === cocktail.idDrink)
+            return myFav ? true : false
+        }
+        return false
+    }
 
     // TODO implement toggleFavoutire() function that combines the other functions into an
     // easy to use function for use in event handlers on clicks
 
 
     const addToFavourites = (cocktail) => {
-        // Check if cocktail is in favourites already
-
-        // if already favourite do nothing
-
-        // if not in favourites ad to favourites and update local storage
-        console.log("add")
-        console.log(cocktail)
-        favourites.push(cocktail)
-        console.log(favourites)
+        if (favourites.length < 10) {
+            if (!isFavourite(cocktail)) {
+                favourites.push(cocktail)
+                setFavourites(favourites)
+                localStorage.setItem(localStorageKey, JSON.stringify(favourites))
+            }
+            console.log("add")
+            console.log(cocktail)
+            return ""  // magic string to be avoided in the future
+        }
+        return "Sorry, you cannot add more favourite cocktails."
     }
 
     const removeFromFavourites = (cocktail) => {
+        favourites = favourites.filter(x => x.idDrink !== cocktail.idDrink)
+        setFavourites(favourites)
+        localStorage.setItem(localStorageKey, JSON.stringify(favourites))
         // loop through array and delete (loop, map, filter)
         // save to localstorage
         console.log("remove")
         console.log(cocktail)
+        return favourites
     }
 
     const contextData = {
         addToFavourites,
         removeFromFavourites,
+        isFavourite,
         favourites
     };
 
@@ -59,7 +72,5 @@ export const GlobalProvider = (props) => {
             value={contextData}>
             {props.children}
         </GlobalContext.Provider>
-
     )
-
 }

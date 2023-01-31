@@ -45,10 +45,7 @@ function Latest() {
                 return (
                     <article className="cocktail-info" key={cocktail.idDrink}>
                         <Link to={`/singleCocktail/${cocktail.idDrink}`}>
-                            <OneCocktailCard
-                                keyStr={cocktail.idDrink}
-                                imgStr={cocktail.strDrinkThumb}
-                                strDrink={cocktail.strDrink}
+                            <OneCocktailCard cocktail={cocktail}
                             />
                         </Link>
                     </article>

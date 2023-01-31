@@ -60,10 +60,7 @@ function SearchIngredientBar() {
                 <div className="ingredient-container">
                     {ingredient && nameIngredient && nameIngredient.map((element) => (
                         <Link to={`/singleCocktail/${element.idDrink}`}>
-                            <OneCocktailCard
-                                strDrink={element.strDrink}
-                                keyStr={element.idDrink}
-                                imgStr={element.strDrinkThumb}
+                            <OneCocktailCard cocktail={element}
                             />
                         </Link>
                     ))}

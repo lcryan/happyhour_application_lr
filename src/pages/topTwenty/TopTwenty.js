@@ -50,10 +50,9 @@ function TopTwenty() {
                         return (
                             <article className="cocktail-details" key={cocktail.idDrink}>
                                 <Link to={`/singleCocktail/${cocktail.idDrink}`}>
-                                    <OneCocktailCard
-                                        keyStr={cocktail.idDrink}
-                                        imgStr={cocktail.strDrinkThumb}
-                                        strDrink={cocktail.strDrink}
+                                    <OneCocktailCard cocktail={
+                                        cocktail
+                                    }
                                     />
                                 </Link>
                             </article>

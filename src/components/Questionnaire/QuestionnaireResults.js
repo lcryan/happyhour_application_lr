@@ -36,9 +36,7 @@ function QuestionnaireResults(props) {
                 <article className="cocktail-details" key={cocktail.idDrink}>
                     <Link to={`/singleCocktail/${cocktail.idDrink}`}>
                         <OneCocktailCard
-                            keyStr={cocktail.idDrink}
-                            imgStr={cocktail.strDrinkThumb}
-                            strDrink={cocktail.strDrink}
+                            cocktail={cocktail}
                         />
                     </Link>
                 </article>

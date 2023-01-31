@@ -33,10 +33,7 @@ function RandomisedCocktail() {
 
         <article className="cocktail-details" key={randomCocktail.idDrink}>
             <Link to={`/singleCocktail/${randomCocktail.idDrink}`}>
-                <OneCocktailCard
-                    strDrink={randomCocktail.strDrink}
-                    keyStr={randomCocktail.idDrink}
-                    imgStr={randomCocktail.strDrinkThumb}
+                <OneCocktailCard cocktail={randomCocktail}
                 />
             </Link>
         </article>
