@@ -33,4 +33,5 @@ export const GlobalProvider = (props) => {
         </GlobalContext.Provider>
 
     )
+
 }
