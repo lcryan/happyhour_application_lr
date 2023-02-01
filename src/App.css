@@ -8,17 +8,18 @@
 }
 
 :root {
-    --darkestgrey: #222831;
+    --darkestgrey: #708090;
     --black: #292929;
-    --darkturquoise: #0abab5;
-    --lightgrey: #37414f;
+    --darkturquoise: #480aba;
+    --lightgrey: #545b72;
     --lighterblack: #0d0f13;
-    --lighterturquoise: #28e3da;
+    --lighterturquoise: #d0abff;
     --ghostwhite: #f8f8ff;
 }
 
 body {
-    background-color: var(--darkturquoise);
+    background: rgb(208,171,255);
+    background: linear-gradient(90deg, rgba(208,171,255,1) 0%, rgba(95,10,186,1) 96%);
     font-family: "Cabin", sans-serif;
     font-weight: 300;
     color: var(--black);
@@ -39,7 +40,6 @@ nav a,
 a:link {
     color: whitesmoke;
 }
-
 nav a,
 a:visited {
     color: var(--lighterturquoise);
