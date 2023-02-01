@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faHeart} from '@fortawesome/free-solid-svg-icons';
+import {faHeart, faXmark} from '@fortawesome/free-solid-svg-icons';
 import './AddToFavourites.css'
 import {GlobalContext} from "../context/GlobalState";
 
@@ -18,12 +18,13 @@ const AddToFavourites = ({ cocktail}) => {
         console.log(result)
         setError(result);
     }
+
     if(isFavourite(cocktail)) {
         return (
             <div className="overlay" onClick={() => removeFromFavourites(cocktail)}>
                 <div>
                     <span className="text-favourites">Remove from favourites </span>
-                    <FontAwesomeIcon icon={faHeart} className="heart-icon"/>
+                    <FontAwesomeIcon icon={faXmark} className="x-mark-icon"/>
                 </div>
             </div>
         );

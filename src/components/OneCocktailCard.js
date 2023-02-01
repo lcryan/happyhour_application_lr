@@ -10,14 +10,12 @@ function OneCocktailCard({ children, cocktail}) {
                 <img src={cocktail.strDrinkThumb} alt="foto of according cocktail"
                      className="cocktail-foto"/>
                 <AddToFavourites cocktail={cocktail}/>
-                {/*// TODO restyle overlay into CA*/}
+                {/*!// TODO result here - so all OneCocktailCards show up overlay */}
                 <p>{cocktail.strDrink}</p>
                 {children}
             </article>
 
         </>
-
-
     );
 }
 
