@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './Home.css'
-import LogoImage from "../../assets/logo/Logo HappyHour App_lightgrey.svg";
+import LogoImage from "../../assets/logo/Logo_HappyHour App_lightgrey.svg";
 
 import {useNavigate} from 'react-router-dom';
 import RandomisedCocktail from "../../components/RandomisedCocktail";
