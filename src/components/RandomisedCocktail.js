@@ -2,6 +2,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import OneCocktailCard from "./OneCocktailCard";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import './RandomisedCocktail.css'
 
 function RandomisedCocktail() {
 

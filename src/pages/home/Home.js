@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './Home.css'
-import LogoImage from "../../assets/logo/Logo_HappyHour App_lightgrey.svg";
+import LogoImage from "../../assets/logo/HapyHourLogo_Roger_brown.png";
 
 import {useNavigate} from 'react-router-dom';
 import RandomisedCocktail from "../../components/RandomisedCocktail";
@@ -15,9 +15,9 @@ function Home() {
         <>
             <div className="outer-container-hompage">
 
-                <article className="homepage-title">
+                <article className="header-title">
                     <img className="logo-image" src={LogoImage} alt="the happy hour logo"/>
-                    <h1 className="header-homepage"> Welcome to your HappyHour!</h1>
+                    <h1 className="title-homepage"> Welcome to your HappyHour!</h1>
                 </article>
 
                 <div className="inner-container-homepage">

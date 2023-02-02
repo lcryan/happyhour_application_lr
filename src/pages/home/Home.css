@@ -1,24 +1,23 @@
-.homepage-title {
-    font-weight: lighter;
+.header-title {
+    font-weight: bold;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
-    width: 90%;
-    height: auto;
-    margin: auto;
+   /* width: 90%;*/
+    /*height: auto;
+    margin: auto;*/
 }
 
-h1 {
-    margin-top: 10px;
+.title-homepage{
+  margin-top: -50px;
     font-size: 35px;
+    margin-bottom: 30px;
 }
 
 .logo-image {
-    margin-top: 20px;
-    width: 250px;
-    margin-bottom: 10px;
+    width: 300px;
 }
 
 .overview-container {
@@ -29,15 +28,14 @@ h1 {
 }
 
 .random-cocktail-article {
-    background: rgb(208,171,255);
-    background: linear-gradient(90deg, rgba(208,171,255,1) 0%, rgba(95,10,186,1) 96%);
+    background: rgb(231,165,4);
+    background: linear-gradient(90deg, rgba(231,165,4,1) 16%, rgba(144,27,27,1) 96%);
     margin-left: 150px;
     margin-top: 100px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--lighterturquoise);
     font-weight: bolder;
     font-size: 20px;
     width: 400px;
@@ -48,24 +46,6 @@ h1 {
 .one-random-cocktail img {
     width: 300px;
     min-height: 300px;
-}
-
-.randomizer-button {
-    color: var(--ghostwhite);
-    background-color: var(--lightgrey);
-    border-radius: 20px;
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-weight: bolder;
-    max-height: 50px;
-    width: 200px;
-    border-style: none;
-}
-
-.randomizer-button:hover {
-    box-shadow: 14px 22px 42px -10px rgba(55, 65, 79, 1);
-    cursor: pointer;
 }
 
 .menu-buttons {
@@ -82,9 +62,9 @@ h1 {
 }
 
 .latest-button, .top-ten-button, .mixologist-button {
-    background-color: var(--lightgrey);
+    background-color: var(--roger-brown);
     font-size: 20px;
-    color: var(--ghostwhite);
+    color: var(--trudy-beige);
     font-weight: bolder;
     border-radius: 40px;
     border-style: none;
@@ -93,13 +73,13 @@ h1 {
 
 .top-ten-button:hover, .mixologist-button:hover, .latest-button:hover {
     cursor: pointer;
-    box-shadow: 14px 22px 42px -10px rgba(55, 65, 79, 1);
+    box-shadow: 11px 13px 15px 0 rgba(0,0,0,0.75);
 }
 
 .help-text {
     margin-top: -30px;
     margin-bottom: 50px;
     font-size: 20px;
-    color: var(--ghostwhite);
-    font-weight: bolder;
+    color: var(--trudy-beige);
+    font-weight: bold;
 }
