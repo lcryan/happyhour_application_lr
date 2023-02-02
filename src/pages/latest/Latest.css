@@ -37,7 +37,10 @@
     margin-top: 10px;
 }
 
-.back-arrow-latest {
+.back-arrow {
+    height: 50px;
+}
+.back-arrow-box {
     display: flex;
     justify-content: center;
     align-items: center;

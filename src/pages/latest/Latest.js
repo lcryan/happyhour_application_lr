@@ -7,6 +7,7 @@ import DividerLine from '../../assets/icons/dividerline.svg'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleArrowLeft} from "@fortawesome/free-solid-svg-icons";
 
+
 function Latest() {
 
     const [data, setData] = useState([])
@@ -59,18 +60,21 @@ function Latest() {
 
     return (
         <>
-                <div className="header-latest">
-                    <h1 className="title-latest">The New Kids on the Block are...</h1>
-                    <img src={DividerLine} className="divider-line-latest" alt="beige colored divider line"/>
-                </div>
+            <div className="header-latest">
+                <h1 className="title-latest">The New Kids on the Block are...</h1>
+                <img src={DividerLine} className="divider-line-latest" alt="beige colored divider line"/>
+            </div>
             <section className="outer-content-container-latest-cocktails">
                 <div className="inner-content-container-latest-cocktails">
                     <div className="latest-cocktails-container">
                         {getDrinks(data)}
                     </div>
                 </div>
+
             </section>
-            <FontAwesomeIcon className="back-arrow-latest" icon={faCircleArrowLeft}/>
+            <div className="back-arrow-box">
+                <Link to="/"><FontAwesomeIcon className="back-arrow" icon={faCircleArrowLeft}/></Link>
+            </div>
         </>
     );
 }
