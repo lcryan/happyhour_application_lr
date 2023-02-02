@@ -1,5 +1,5 @@
 .heart-icon {
-    color: darkred;
+    color: var(--don-red);
 }
 
 .overlay {
@@ -15,7 +15,7 @@
     font-size: 20px;
     padding: 20px;
     text-align: center;
-    color: var(--ghostwhite);
+    color: var(--trudy-beige);
 }
 
 .image-container {
