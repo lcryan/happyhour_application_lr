@@ -5,18 +5,17 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-   /* width: 90%;*/
-    /*height: auto;
-    margin: auto;*/
+    margin: auto;
 }
 
-.title-homepage{
-  margin-top: -50px;
+.title-homepage {
+    margin-top: -50px;
     font-size: 35px;
     margin-bottom: 30px;
 }
 
 .logo-image {
+    margin-top: -20px;
     width: 300px;
 }
 
@@ -25,11 +24,12 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .random-cocktail-article {
-    background: rgb(231,165,4);
-    background: linear-gradient(90deg, rgba(231,165,4,1) 16%, rgba(144,27,27,1) 96%);
+    background: rgb(231, 165, 4);
+    background: linear-gradient(90deg, rgba(231, 165, 4, 1) 16%, rgba(144, 27, 27, 1) 96%);
     margin-left: 150px;
     margin-top: 100px;
     border-radius: 20px;
@@ -73,7 +73,7 @@
 
 .top-ten-button:hover, .mixologist-button:hover, .latest-button:hover {
     cursor: pointer;
-    box-shadow: 11px 13px 15px 0 rgba(0,0,0,0.75);
+    box-shadow: 11px 13px 15px 0 rgba(0, 0, 0, 0.75);
 }
 
 .help-text {
@@ -82,4 +82,10 @@
     font-size: 20px;
     color: var(--trudy-beige);
     font-weight: bold;
+}
+
+.divider-line {
+    width: 200px;
+    margin-top: -100px;
+    margin-bottom: -100px;
 }
