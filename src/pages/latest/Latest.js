@@ -3,7 +3,7 @@ import axios from "axios"
 import './Latest.css'
 import OneCocktailCard from "../../components/OneCocktailCard";
 import {Link} from "react-router-dom";
-
+import DividerLine from '../../assets/icons/divider_line_straight_trudy_beige.svg'
 
 function Latest() {
 
@@ -57,9 +57,12 @@ function Latest() {
 
     return (
         <>
+                <div className="header-latest">
+                    <h1 className="title-latest">The New Kids on the Block are...</h1>
+                    <img src={DividerLine} className="divider-line-latest" alt="beige colored divider line"/>
+                </div>
             <section className="outer-content-container-latest-cocktails">
                 <div className="inner-content-container-latest-cocktails">
-                    <h1 className="title-latest"> Our latest Cocktails are: </h1>
                     <div className="latest-cocktails-container">
                         {getDrinks(data)}
                     </div>
