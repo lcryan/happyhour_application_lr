@@ -27,7 +27,7 @@ function Navigation() {
                     <li><NavLink to="/favourites">Favourites</NavLink></li>
                     <li><NavLink to="/myAccount" className={({isActive}) => isActive ? "link--active" : "link"}>My
                         Account</NavLink></li>
-                    <li><NavLink to="/help">Help</NavLink></li>
+                    <li><NavLink to="/about">About</NavLink></li>
                 </ul>
                 <ul className="navbar-elements-right">
                     <li>

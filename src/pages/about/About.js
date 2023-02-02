@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Help() {
+function About() {
     return (
         <>
             <h1>
-                Here Help page with user instructions and FAQ's.
+                About Page
             </h1>
         </>
     );
 }
 
-export default Help;
+export default About;

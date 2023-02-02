@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 import SearchPage from "./pages/searchPage/SearchPage";
 
 import './App.css';
-import Help from "./pages/help/Help";
+import About from "./pages/about/About";
 
 import NotFound from "./pages/notFound/NotFound";
 import MyAccount from "./pages/myAccount/MyAccount";
@@ -39,7 +39,7 @@ function App() {
                 <Route path="/topTwenty" element={<TopTwenty/>}/>
                 <Route path="/singleCocktail/:id" element={<SingleCocktail/>}/>
                 <Route path="/favourites" element={<Favourites/>}/>
-                <Route path="/help" element={<Help/>}/>
+                <Route path="/about" element={<About/>}/>
                 <Route path="*" element={<NotFound/>}/>
                 <Route path="/myAccount" element={<MyAccount/>}/>
                 <Route path="/searchPage/:id" element={<SearchPage/>}/>
