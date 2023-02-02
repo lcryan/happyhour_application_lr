@@ -4,7 +4,8 @@ import axios from 'axios'
 import './TopTwenty.css'
 import {Link} from 'react-router-dom';
 import DividerLine from '../../assets/icons/dividerline.svg'
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faCircleArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
 function TopTwenty() {
 
@@ -62,7 +63,9 @@ function TopTwenty() {
                     )
                 })}
             </div>
-
+            <div className="back-arrow-tt-box">
+                <Link to="/"><FontAwesomeIcon className="back-arrow-tt" icon={faCircleArrowLeft}/></Link>
+            </div>
         </>
     );
 }

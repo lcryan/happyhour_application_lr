@@ -18,11 +18,24 @@
     flex-shrink: 1;
     justify-items: center;
     align-items: center;
-    margin: 150px 50px 200px;
+    margin: 150px 50px 100px;
 }
 
 .divider-line-top-twenty {
     width: 200px;
     margin-bottom: -150px;
     margin-top: -50px;
+}
+
+.back-arrow-tt-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 0;
+    margin-bottom: 100px;
+}
+
+.back-arrow-tt {
+    height: 50px;
 }
