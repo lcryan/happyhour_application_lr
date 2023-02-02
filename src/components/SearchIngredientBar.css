@@ -9,17 +9,15 @@
 }
 
 .ingredient-container {
-    margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 40px;
     grid-row-gap: 40px;
-    margin-left: 50px;
-    margin-right: 50px;
     justify-items: center;
     align-items: center;
     flex-shrink: 0;
     flex-grow: 0;
+    margin: 50px 50px 100px;
 }
 

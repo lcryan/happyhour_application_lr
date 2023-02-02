@@ -66,7 +66,7 @@ function SingleCocktail() {
                             <AddToFavourites cocktail={oneCocktail}/>
                         </div>
                         <div className="content-single-cocktail">
-                            <h3 className="singleCocktail-cocktail-title">Cocktail Name: {oneCocktail.strDrink} </h3>
+                            <h3 className="singleCocktail-cocktail-title">{oneCocktail.strDrink} </h3>
                             <ul className="ingredients-list">
                                 Ingredients:
                                 <li className="ingredients"> {oneCocktail.strIngredient1}</li>
