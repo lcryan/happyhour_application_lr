@@ -3,8 +3,9 @@ import {useState, useEffect} from "react";
 import {Link, useParams} from "react-router-dom";
 import axios from "axios";
 import React from 'react';
-import BackArrow from "../../assets/icons/BackArrow2.svg";
 import AddToFavourites from "../../components/AddToFavourites";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faChevronCircleLeft} from '@fortawesome/free-solid-svg-icons';
 
 
 function SingleCocktail() {
@@ -79,15 +80,14 @@ function SingleCocktail() {
                                 <li className="ingredients">{oneCocktail.strIngredient9}</li>
                                 <li className="ingredients">{oneCocktail.strIngredient10}</li>
                             </ul>
+                            <div className="back-arrow-single">
+                                <Link to="/"><FontAwesomeIcon className="chevron-arrow-left"
+                                                              icon={faChevronCircleLeft}/></Link>
+                            </div>
                         </div>
                     </>
-
                 </article>
-
             </section>
-            <div className="back-arrow">
-                <Link to="/"><img src={BackArrow} className="back-arrow" alt="grey arrow directed back"/></Link>
-            </div>
         </>
     );
 }

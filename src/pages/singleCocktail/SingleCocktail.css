@@ -43,14 +43,9 @@
     font-weight: bolder;
     margin-top: 20px;
     margin-bottom: 20px;
+    line-height: 1.6;
 }
 
-.back-arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    height: 100px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.chevron-arrow-left {
+    height: 30px;
 }
