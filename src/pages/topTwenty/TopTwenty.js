@@ -3,7 +3,7 @@ import OneCocktailCard from '../../components/OneCocktailCard';
 import axios from 'axios'
 import './TopTwenty.css'
 import {Link} from 'react-router-dom';
-import DividerLine from '../../assets/icons/divider_line_straight_trudy_beige.svg'
+import DividerLine from '../../assets/icons/dividerline.svg'
 
 
 function TopTwenty() {

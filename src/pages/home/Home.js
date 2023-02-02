@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Home.css'
 import LogoImage from "../../assets/logo/HapyHourLogo_Roger_brown.png";
-import DividerLine from "../../assets/icons/divider_line_straight_trudy_beige.svg"
+import DividerLine from "../../assets/icons/dividerline.svg"
 
 
 import {useNavigate} from 'react-router-dom';
