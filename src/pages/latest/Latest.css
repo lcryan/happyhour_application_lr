@@ -24,7 +24,7 @@
     align-items: center;
     flex-shrink: 0;
     flex-grow: 0;
-    margin: 150px 50px 200px;
+    margin: 150px 50px 100px;
 }
 
 .cocktail-foto-latest-link {
@@ -37,3 +37,11 @@
     margin-top: 10px;
 }
 
+.back-arrow-latest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 50px;
+    margin-bottom: 100px;
+}

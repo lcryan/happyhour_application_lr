@@ -3,7 +3,9 @@ import axios from "axios"
 import './Latest.css'
 import OneCocktailCard from "../../components/OneCocktailCard";
 import {Link} from "react-router-dom";
-import DividerLine from '../../assets/icons/divider_line_straight_trudy_beige.svg'
+import DividerLine from '../../assets/icons/dividerline.svg'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCircleArrowLeft} from "@fortawesome/free-solid-svg-icons";
 
 function Latest() {
 
@@ -68,6 +70,7 @@ function Latest() {
                     </div>
                 </div>
             </section>
+            <FontAwesomeIcon className="back-arrow-latest" icon={faCircleArrowLeft}/>
         </>
     );
 }
