@@ -1,15 +1,26 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {AuthContext} from "../../context/AuthContext";
 import {GlobalContext} from "../../context/GlobalState";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import OneCocktailCard from "../../components/OneCocktailCard";
 import './Favourites.css'
 import SmallLogo from '../../assets/logo/HapyHourLogo_Trudy_beige (100 × 100 px).svg'
+
 
 function Favourites() {
 
     const {user, isAuth} = useContext(AuthContext);
     const {favourites} = useContext(GlobalContext);
+    const [checked, setChecked] = useState(false);
+    const navigate = useNavigate();
+
+    function getRecipes(checkbox)
+    {
+        if(checked === true && checkbox.length <= 3)
+            return setChecked(checked)
+        else if(!checked || checkbox.length >= 3)
+            window.location.href = 'http://www.yahoo.com';
+    }
 
     const getDrinks = (drinks) => {
         if (!drinks.length || drinks.length === 0) {
@@ -49,8 +60,11 @@ function Favourites() {
                 </div>
             }
             {isAuth ?
-                <article className="favs-container"> {getDrinks(favourites)}
-                </article>
+                <div className="container">
+                    <article className="favs-container"> {getDrinks(favourites)}
+                    </article>
+                    <button type="submit" className="submit-recipes">Get recipes</button>
+                </div>
                 :
                 <article className="message-user">
                     <h3>If you have an account: </h3>
