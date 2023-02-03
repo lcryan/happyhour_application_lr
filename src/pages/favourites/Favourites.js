@@ -4,6 +4,7 @@ import {GlobalContext} from "../../context/GlobalState";
 import {Link} from "react-router-dom";
 import OneCocktailCard from "../../components/OneCocktailCard";
 import './Favourites.css'
+import SmallLogo from '../../assets/logo/HapyHourLogo_Trudy_beige (100 × 100 px).svg'
 
 function Favourites() {
 
@@ -41,7 +42,11 @@ function Favourites() {
                     <h2 className="subtitle-favs">Your favs are:</h2>
                 </div>
                 :
-                <h2 className="not-logged-in-message">You are not logged in.</h2>
+                <div className="not-logged-in-box">
+                    <h2 className="not-logged-in-message">You are not logged in.</h2>
+                    <img src={SmallLogo} className="small-logo-favs"
+                         alt="smaller version of happy hour logo beige"/>
+                </div>
             }
             {isAuth ?
                 <article className="favs-container"> {getDrinks(favourites)}
@@ -49,7 +54,10 @@ function Favourites() {
                 :
                 <article className="message-user">
                     <h3>If you have an account: </h3>
-                    <h3>please sign in.</h3>
+                    <h3>please <Link to="/login">sign in</Link>.</h3>
+                    <br/>
+                    <h3>If you don't,</h3>
+                    <h3> please <Link to="/registration">sign up</Link>.</h3>
                 </article>
 
             }
@@ -64,7 +72,12 @@ function Favourites() {
                 </div> :
                 <div className="message-two-user">
                     <p>Why you should join us!</p>
-                    <p>Not only have we 2000 cocktails</p>
+                    <p>Not only have we 2000+ cocktails online,</p>
+                    <p>but you can save your favourites too!</p>
+                    <p>And even make them! We love sharing our community's</p>
+                    <p>knowledge! Do you wanna share your favourite cocktail</p>
+                    <p>ideas? Then send use a message to info@cocktail-heads-incorporated.com</p>
+                    <p>Cheers!</p>
                 </div>
             }
         </>

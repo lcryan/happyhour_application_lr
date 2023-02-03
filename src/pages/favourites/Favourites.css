@@ -7,6 +7,11 @@
     margin-bottom: 50px;
 }
 
+.not-logged-in-message {
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
 .subtitle-favs {
     margin-top: 10px;
 }
@@ -24,7 +29,7 @@
     margin: 50px 50px 100px;
 }
 
-.text-box-favs  {
+.text-box-favs {
     width: 350px;
     border-style: solid;
     border-color: var(--rizzo-green);
@@ -38,9 +43,22 @@
     color: var(--campbell-grey);
 }
 
-.message-user, .message-two-user, .not-logged-in-message {
+.message-user, .message-two-user, .not-logged-in-message, .not-logged-in-box {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+
+.message-user {
+    margin-bottom: 50px;
+}
+
+.message-two-user {
+    line-height: 1.6;
+    margin-bottom: 200px;
+}
+
+.small-logo-favs {
+    width: 200px;
 }
