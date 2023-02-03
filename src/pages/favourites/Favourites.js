@@ -4,21 +4,28 @@ import {GlobalContext} from "../../context/GlobalState";
 import {Link, useNavigate} from "react-router-dom";
 import OneCocktailCard from "../../components/OneCocktailCard";
 import './Favourites.css'
-import SmallLogo from '../../assets/logo/HapyHourLogo_Trudy_beige (100 × 100 px).svg'
+import SmallLogo from '../../assets/logo/HapyHourLogo_Trudy_beige (100 × 100 px).svg';
 
 
 function Favourites() {
-
+    const navigate = useNavigate();
     const {user, isAuth} = useContext(AuthContext);
     const {favourites} = useContext(GlobalContext);
 
     const countChecked = () => {
-        return (favourites.filter(x => x.isChecked)).length
+        return (getChecked()).length
+    }
+
+    function getChecked() {
+        return favourites.filter(x => x.isChecked)
+    }
+
+    function getIdFromDrinksArray(drinks) {
+        return drinks.map(x => x.idDrink);
     }
 
     function checkedHandler(event, cocktail) {
-        if(cocktail.isChecked)
-        {
+        if (cocktail.isChecked) {
             cocktail.isChecked = false
             return
         }
@@ -44,7 +51,7 @@ function Favourites() {
             return drinks.map((cocktail) => {
                 return (
                     <article className="cocktail-info" key={cocktail.idDrink}>
-                            <OneCocktailCard cocktail={cocktail} checkedHandler={checkedHandler}/>
+                        <OneCocktailCard cocktail={cocktail} checkedHandler={checkedHandler}/>
                     </article>
                 )
             })
@@ -69,9 +76,13 @@ function Favourites() {
             }
             {isAuth ?
                 <div className="container">
-                    <article className="favs-container"> {getDrinks(favourites)}
+                    <article className="favs-container">
+                        {getDrinks(favourites)}
                     </article>
-                    <button type="submit" className="submit-recipes">Get recipes</button>
+                    <button type="submit" className="submit-recipes"
+                            onClick={() => navigate(`/recipe/${getIdFromDrinksArray(getChecked()).join(',')}`)}>Get
+                        recipes
+                    </button>
                 </div>
                 :
                 <article className="message-user">

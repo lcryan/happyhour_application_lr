@@ -10,7 +10,7 @@ import Favourites from './pages/favourites/Favourites';
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import SearchPage from "./pages/searchPage/SearchPage";
-
+import Recipe from "./pages/recipe/Recipe";
 import './App.css';
 import About from "./pages/about/About";
 
@@ -43,6 +43,7 @@ function App() {
                 <Route path="*" element={<NotFound/>}/>
                 <Route path="/myAccount" element={<MyAccount/>}/>
                 <Route path="/searchPage/:id" element={<SearchPage/>}/>
+                <Route path="/recipe/:id" element={<Recipe/>}/>
             </Routes>
 
             <Footer/>
