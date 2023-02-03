@@ -11,15 +11,27 @@ function Favourites() {
 
     const {user, isAuth} = useContext(AuthContext);
     const {favourites} = useContext(GlobalContext);
-    const [checked, setChecked] = useState(false);
-    const navigate = useNavigate();
 
-    function getRecipes(checkbox)
-    {
-        if(checked === true && checkbox.length <= 3)
-            return setChecked(checked)
-        else if(!checked || checkbox.length >= 3)
-            window.location.href = 'http://www.yahoo.com';
+    const countChecked = () => {
+        return (favourites.filter(x => x.isChecked)).length
+    }
+
+    function checkedHandler(event, cocktail) {
+        if(cocktail.isChecked)
+        {
+            cocktail.isChecked = false
+            return
+        }
+
+        const count = countChecked();
+
+        if (count > 2) {
+            cocktail.isChecked = false;
+            event.preventDefault()
+            return
+        }
+
+        cocktail.isChecked = true;
     }
 
     const getDrinks = (drinks) => {
@@ -28,15 +40,11 @@ function Favourites() {
                 <p>nothing found</p>
             </>)
         } else {
+            console.log(drinks)
             return drinks.map((cocktail) => {
                 return (
                     <article className="cocktail-info" key={cocktail.idDrink}>
-                        <form className="one-fav"><input className="recipe-checkbox" type="checkbox"
-                                                         id="recipe-checkbox" value="recipe-checkbox"/>
-                            <label htmlFor="recipe-checkbox"> Recipe please </label>
-                        </form>
-                        <Link to={`/singleCocktail/${cocktail.idDrink}`}> <OneCocktailCard cocktail={cocktail}/>
-                        </Link>
+                            <OneCocktailCard cocktail={cocktail} checkedHandler={checkedHandler}/>
                     </article>
                 )
             })
