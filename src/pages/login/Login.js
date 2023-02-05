@@ -76,13 +76,12 @@ function Login(props) {
                         <Button
                             type="submit"
                             className="login-button"
-                            children= "Login!"
+                            children="Login!"
                         />
                         <div className="form-links">
-                        <p>Don't have an account yet? <p>Sign up <Link to={"/registration"}>here</Link>!</p></p>
+                            <p>Don't have an account yet? <p>Sign up <Link to={"/registration"}>here</Link>!</p></p>
                         </div>
                     </div>
-
                 </form>
             </div>
 
