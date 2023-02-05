@@ -6,7 +6,7 @@ function Questionnaire(props) {
 
     const filters = []
     return (
-        <DrinkCategoryQuestion filters={filters} />
+        <DrinkCategoryQuestion filters={filters}/>
     )
 }
 

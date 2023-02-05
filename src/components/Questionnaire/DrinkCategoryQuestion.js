@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import AlcoholCategoryQuestion from "./AlcoholCategoryQuestion";
 import Button from "../Button";
-import PartyButton from "../../assets/buttonPictures/PartyButton.png";
+
 
 function DrinkCategoryQuestion(props) {
 
@@ -20,13 +20,11 @@ function DrinkCategoryQuestion(props) {
             <div>
                 <div className="button-select-group">
                     <Button
-                        type={"button"} //TODO check which kind of button this has to be ? In all cases!
+                        type={"button"}
                         className="party-drink"
                         disabled={false}
                         children="Party-Drink"
-                        style={{backgroundImage: PartyButton}}
                         onClick={() => answer("Punch_/_Party_Drink")}
-                        //TODO onlick functionality still has to be added and has to iterate through
                     />
                     <Button
                         type={"button"}
@@ -54,7 +52,6 @@ function DrinkCategoryQuestion(props) {
         );
     }
 
-    // TODO render the next question in the chain
     return (<AlcoholCategoryQuestion filters={filters}/>)
 
 }

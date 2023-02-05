@@ -20,26 +20,26 @@ function AlcoholCategoryQuestion(props) {
             <div>
                 <div className="button-select-group">
                     <Button
-                        type={"button"} //TODO check which kind of button this has to be ? In all cases!
+                        type={"button"}
                         className="alcoholic"
                         disabled={false}
                         children="Alcoholic"
                         onClick={() => answer("Alcoholic")}
-                        //TODO onlick functionality still has to be added and has to iterate through
+
                     />
                     <Button
                         type={"button"}
                         className="non-alcoholic"
                         disabled={false}
                         children="non-alcoholic"
-                        onClick={() => answer("Non_alcoholic")}
+                        onClick={() => answer("Non_Alcoholic")}
                     />
                     <Button
                         type={"button"}
                         className="optional-alcohol"
                         disabled={false}
                         children="optional-alcohol"
-                        onClick={() => answer("Optional_alcohol")}
+                        onClick={() => answer("Optional_Alcohol")}
                     />
                     <Button
                         type={"button"}
@@ -53,7 +53,7 @@ function AlcoholCategoryQuestion(props) {
         );
     }
 
-    // TODO render the next question in the chain
+
     return (<GlassCategoryQuestion filters={filters}/>)
 
 }

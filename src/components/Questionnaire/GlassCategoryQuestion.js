@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import Button from "../Button";
-import PartyButton from "../../assets/buttonPictures/PartyButton.png";
-import AlcoholCategoryQuestion from "./AlcoholCategoryQuestion";
 import QuestionnaireResults from "./QuestionnaireResults";
 
 function GlassCategoryQuestion(props) {
@@ -55,7 +53,7 @@ function GlassCategoryQuestion(props) {
 
     // TODO render the next question in the chain
     return (
-        <QuestionnaireResults filters={filters} />
+        <QuestionnaireResults filters={filters}/>
     )
 
 }
