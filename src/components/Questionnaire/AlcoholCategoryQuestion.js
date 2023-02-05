@@ -24,7 +24,7 @@ function AlcoholCategoryQuestion(props) {
                         className="alcoholic"
                         disabled={false}
                         children="Alcoholic"
-                        onClick={() => answer("Alcoholic")}
+                        onClick={() => answer("alcoholic")}
 
                     />
                     <Button
@@ -32,14 +32,14 @@ function AlcoholCategoryQuestion(props) {
                         className="non-alcoholic"
                         disabled={false}
                         children="non-alcoholic"
-                        onClick={() => answer("Non_Alcoholic")}
+                        onClick={() => answer("non_alcoholic")}
                     />
                     <Button
                         type={"button"}
                         className="optional-alcohol"
                         disabled={false}
                         children="optional-alcohol"
-                        onClick={() => answer("Optional_Alcohol")}
+                        onClick={() => answer("optional_alcohol")}
                     />
                     <Button
                         type={"button"}
@@ -52,7 +52,6 @@ function AlcoholCategoryQuestion(props) {
             </div>
         );
     }
-
 
     return (<GlassCategoryQuestion filters={filters}/>)
 
