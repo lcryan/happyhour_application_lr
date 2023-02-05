@@ -78,3 +78,7 @@
     align-items: center;
     flex-direction: column;
 }
+
+.recipe-checkbox {
+    margin-top: 20px;
+}
