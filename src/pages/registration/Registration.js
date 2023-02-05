@@ -5,7 +5,8 @@ import axios from "axios";
 import './Registration.css';
 import validateForm from './validation'
 import {BASE_URL} from "../../constants";
-import refreshPage from "../../helpers/refreshPage";
+import BigLogo from "../../assets/logo/HapyHourLogo_Roger_brown.png";
+import Button from "../../components/Button";
 
 function Registration() {
 
@@ -85,13 +86,14 @@ function Registration() {
 
 
     return (
-        <main>
-            <article className="outer-container-registration-form">
-                <h1 className="title-sign-up">Sign up here!</h1>
-                <p className="text-sign-up"> Join our community of Cocktail Aficionados in just a few seconds!</p>
-
-                <div className="user-input-boxes">
-                    <form className="registration-form" onSubmit={handleSubmit}>
+        <>
+            <div className="registration-form">
+                <div className="registration-form-logo-container">
+                    <img src={BigLogo} className="big-logo-registration" alt="brown colored happy hour logo"/>
+                </div>
+                <form onSubmit={handleSubmit}>
+                    <div className="registration-form-content">
+                        <h3>Register to Happy Hour here</h3>
                         <label htmlFor="email-field">
                             e-mailadres
                             <input
@@ -123,25 +125,19 @@ function Registration() {
                                    onChange={(e) => setPassword(e.target.value)}
                             />
                         </label>
-
                         {error && <p className="error">{errorMessage}</p>}
-                        <button
+                        <Button
                             type="submit"
-                            className="submit-button"
-                            disabled={loading}
-                        > Sign up!
-                        </button>
-                        <button type="button"
-                                className="try-again-button"
-                                onClick={refreshPage}
-                        > Try again!
-                        </button>
-                    </form>
-                </div>
-
-            </article>
-            <p>Do you already have an account? Then you can log in <Link to={"/login"}>here</Link>!</p>
-        </main>
+                            className="register-button"
+                            children="Sign up!"
+                        />
+                        <div className="registration-links">
+                            <p>Do you already have an account? Then you can log in <Link to={"/login"}>here</Link>!</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </>
     );
 }
 

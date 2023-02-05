@@ -1,30 +1,73 @@
-.outer-container-registration-form {
-    border: 2px dashed var(--lighterblack);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
+.registration-form {
+    max-width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px var(--campbell-grey);
+    background-color: var(--cooper-yellow);
+    margin: 100px auto;
 }
 
-.user-input-boxes {
-    border: 2px dashed ghostwhite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    flex-direction: column;
-    width: 400px;
-    padding-right: 100px;
-    padding-left: 110px;
-    height: 400px;
+.registration-form-logo-container {
+    padding: 20px;
 }
 
-.title-sign-up {
-    margin-top: 50px;
+.big-logo-registration {
+    display: block;
+    max-width: 125px;
+    margin: 0 auto;
 }
 
-label {
+.registration-form-content {
+    padding: 20px;
+    background-color: var(--trudy-beige);
+}
+
+.registration-form-content h3 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--don-red);
+}
+
+.registration-form-content input {
+    width: 100%;
     margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--trudy-beige);
+    outline: none;
+    transition: border-color 0.5s;
+    height: 30px;
+    font-size: 15px;
 }
 
+.registration-form-content input:focus {
+    border-color: var(--peggy-orange);
+}
+
+.register-button {
+    padding: 10px;
+    color: var(--lane-white);
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--cooper-yellow);
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-button:active {
+    background-color: var(--dark-rizzo-green);
+}
+
+.registration-links {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.error {
+    font-size: 15px;
+    color: var(--don-red);
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
