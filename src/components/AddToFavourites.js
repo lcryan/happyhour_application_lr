@@ -5,7 +5,7 @@ import './AddToFavourites.css'
 import {GlobalContext} from "../context/GlobalState";
 
 
-const AddToFavourites = ({ cocktail}) => {
+const AddToFavourites = ({cocktail}) => {
     const {
         addToFavourites,
         removeFromFavourites,
@@ -18,8 +18,7 @@ const AddToFavourites = ({ cocktail}) => {
         console.log(result)
         setError(result);
     }
-
-    if(isFavourite(cocktail)) {
+    if (isFavourite(cocktail)) {
         return (
             <div className="overlay" onClick={() => removeFromFavourites(cocktail)}>
                 <div>

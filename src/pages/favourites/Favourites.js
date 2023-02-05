@@ -1,8 +1,8 @@
-import React, {useContext, useState} from 'react';
-import {AuthContext} from "../../context/AuthContext";
-import {GlobalContext} from "../../context/GlobalState";
-import {Link, useNavigate} from "react-router-dom";
-import OneCocktailCard from "../../components/OneCocktailCard";
+import React, {useContext} from 'react';
+import {AuthContext} from '../../context/AuthContext';
+import {GlobalContext} from '../../context/GlobalState';
+import {Link, useNavigate} from 'react-router-dom';
+import OneCocktailCard from '../../components/OneCocktailCard';
 import './Favourites.css'
 import SmallLogo from '../../assets/logo/HapyHourLogo_Trudy_beige (100 × 100 px).svg';
 
@@ -51,7 +51,12 @@ function Favourites() {
             return drinks.map((cocktail) => {
                 return (
                     <article className="cocktail-info" key={cocktail.idDrink}>
-                        <OneCocktailCard cocktail={cocktail} checkedHandler={checkedHandler}/>
+                        <OneCocktailCard
+                            cocktail={cocktail} checkedHandler={checkedHandler}/>
+                        <input className="recipe-checkbox" type="checkbox"
+                               id="recipe-checkbox" value="recipe-checkbox"
+                               onClick={(e) => checkedHandler(e, cocktail)}/>
+                        <label htmlFor="recipe-checkbox"> Recipe please </label>
                     </article>
                 )
             })
