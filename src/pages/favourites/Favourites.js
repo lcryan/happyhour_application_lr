@@ -52,14 +52,17 @@ function Favourites() {
                 return (
                     <article className="cocktail-info" key={cocktail.idDrink}>
                         <OneCocktailCard
-                            cocktail={cocktail} checkedHandler={checkedHandler}/>
+                            cocktail={cocktail} />
+                        <div className="checkbox">
                         <input className="recipe-checkbox" type="checkbox"
                                id="recipe-checkbox" value="recipe-checkbox"
                                onClick={(e) => checkedHandler(e, cocktail)}/>
                         <label htmlFor="recipe-checkbox"> Recipe please </label>
+                        </div>
                     </article>
                 )
             })
+
         }
     }
 
@@ -83,7 +86,7 @@ function Favourites() {
                     <article className="favs-container">
                         {getDrinks(favourites)}
                     </article>
-                    <button type="submit" className="submit-recipes-button"
+                    <button type="submit" className="submit-recipes"
                             onClick={() => navigate(`/recipe/${getIdFromDrinksArray(getChecked()).join(',')}`)}>Get
                         recipes
                     </button>
@@ -96,6 +99,7 @@ function Favourites() {
                     <h3>If you don't,</h3>
                     <h3> please <Link to="/registration">sign up</Link>.</h3>
                 </article>
+
             }
 
             {isAuth ?

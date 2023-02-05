@@ -13,6 +13,7 @@ function OneCocktailCard({children, cocktail}) {
                     <p>{cocktail.strDrink}</p>
                     {children}
                 </article>
+
             </Link>
 
         </>

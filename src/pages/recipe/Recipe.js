@@ -22,7 +22,6 @@ function Recipe() {
                 for (let i = 0; i < ids.length; i++) {
                     console.log(ids[i])
                     const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${ids[i]}`, {})
-                    // TODO check response is correct
                     newRecipes.push(response.data.drinks[0])
                     console.log(newRecipes)
                 }
@@ -39,7 +38,7 @@ function Recipe() {
         return function cleanup() {
             controller.abort();
         }
-    }, [ids])
+    }, [id])
 
 
     return (
