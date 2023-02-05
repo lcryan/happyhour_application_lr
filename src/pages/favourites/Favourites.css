@@ -62,15 +62,6 @@
 .small-logo-favs {
     width: 200px;
 }
-.submit-recipes {
-    width: 100px;
-    height: 50px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 
 .container {
     display: flex;
@@ -81,4 +72,25 @@
 
 .recipe-checkbox {
     margin-top: 20px;
+}
+
+.submit-recipes-button {
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bolder;
+    color: var(--trudy-beige);
+    background-color: var(--rizzo-green);
+    border-style: 2px solid var(--trudy-beige);
+}
+
+.submit-recipes-button:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 16px 6px rgba(58, 44, 32, 1);
+
 }

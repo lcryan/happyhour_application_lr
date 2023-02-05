@@ -83,7 +83,7 @@ function Favourites() {
                     <article className="favs-container">
                         {getDrinks(favourites)}
                     </article>
-                    <button type="submit" className="submit-recipes"
+                    <button type="submit" className="submit-recipes-button"
                             onClick={() => navigate(`/recipe/${getIdFromDrinksArray(getChecked()).join(',')}`)}>Get
                         recipes
                     </button>
@@ -96,7 +96,6 @@ function Favourites() {
                     <h3>If you don't,</h3>
                     <h3> please <Link to="/registration">sign up</Link>.</h3>
                 </article>
-
             }
 
             {isAuth ?
