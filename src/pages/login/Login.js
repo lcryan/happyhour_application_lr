@@ -2,9 +2,11 @@ import React, {useContext, useState} from 'react';
 import axios from "axios";
 import {AuthContext} from "../../context/AuthContext";
 import {BASE_URL} from "../../constants";
-import refreshPage from "../../helpers/refreshPage";
 import {Link} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
+import "./Login.css";
+import BigLogo from "../../assets/logo/HapyHourLogo_Roger_brown.png";
+import Button from "../../components/Button";
 
 
 function Login(props) {
@@ -41,18 +43,19 @@ function Login(props) {
     }
 
     return (
-        <main>
-            <article className="outer-container-login-form">
-                <h1 className="title-login">Login here!</h1>
-                <p className="text-sign-up"> Happy to have you back!</p>
+        <>
 
-                <div className="user-input-boxes">
-                    <form onSubmit={handleLogin}>
-
+            <div className="login-form">
+                <div className="login-form-logo-container">
+                    <img src={BigLogo} className="big-logo-login" alt="brown colored happy hour logo"/>
+                </div>
+                <form onSubmit={handleLogin}>
+                    <div className="login-form-content">
+                        <h3>Login to your account</h3>
                         <label htmlFor="input-username-field">
                             username
                             <input
-                                type="input-name"
+                                type="name"
                                 id="input-name-field"
                                 name="input-name"
                                 value={username}
@@ -61,8 +64,8 @@ function Login(props) {
                         </label>
 
                         <label htmlFor="input-password-field">
-                            password:
-                            <input type="input-password"
+                            password
+                            <input type="password"
                                    id="password-field"
                                    name="password"
                                    value={password}
@@ -70,22 +73,21 @@ function Login(props) {
                             />
                         </label>
                         {error && <p className="error">{errorMessage}</p>}
-                        <button
+                        <Button
                             type="submit"
                             className="login-button"
-                        > Login!
-                        </button>
-                        <button type="button"
-                                className="try-again-button"
-                                onClick={refreshPage}
-                        > Try again!
-                        </button>
-                    </form>
-                </div>
+                            children= "Login!"
+                        />
+                        <div className="form-links">
+                        <p>Don't have an account yet? <p>Sign up <Link to={"/registration"}>here</Link>!</p></p>
+                        </div>
+                    </div>
 
-            </article>
-            <p>Don't have an account yet? Sign up <Link to={"/registration"}>here</Link>!</p>
-        </main>
+                </form>
+            </div>
+
+
+        </>
     );
 }
 
