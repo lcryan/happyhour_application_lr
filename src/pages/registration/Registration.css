@@ -3,7 +3,7 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 15px var(--campbell-grey);
-    background-color: var(--cooper-yellow);
+    background-color: var(--trudy-beige);
     margin: 100px auto;
 }
 
@@ -19,13 +19,13 @@
 
 .registration-form-content {
     padding: 20px;
-    background-color: var(--trudy-beige);
+    background-color: var(--joan-blue);
 }
 
 .registration-form-content h3 {
     margin-bottom: 30px;
     text-align: center;
-    color: var(--don-red);
+    color: var(--trudy-beige);
 }
 
 .registration-form-content input {
@@ -57,7 +57,7 @@
 }
 
 .register-button:active {
-    background-color: var(--dark-rizzo-green);
+    background-color: var(--dark-cooper-yellow);
 }
 
 .registration-links {
