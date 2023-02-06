@@ -52,12 +52,10 @@ function Latest() {
                             />
                         </Link>
                     </article>
-
                 )
             })
         }
     }
-
     return (
         <>
             <div className="header-latest">
