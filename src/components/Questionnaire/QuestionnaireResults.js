@@ -13,9 +13,9 @@ function QuestionnaireResults(props) {
     const [result, setResult] = useState([]);
 
     useEffect(() => {
-
         async function fetchCocktails() {
             try {
+                console.log(filters)
                 const filterQuery = `${filters.join('&')}`
                 console.log(filterQuery)
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?${filterQuery}`)
@@ -25,9 +25,8 @@ function QuestionnaireResults(props) {
                 console.log(error)
             }
         }
-
         void fetchCocktails();
-    },);
+    }, []);
 
     const getResults = (drinks) => {
         if (!drinks.length || drinks.length === 0) {
