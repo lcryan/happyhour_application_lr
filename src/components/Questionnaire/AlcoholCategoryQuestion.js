@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import Button from "../Button";
 import GlassCategoryQuestion from "./GlassCategoryQuestion";
+import "./CategoriesStyling.css";
 
 function AlcoholCategoryQuestion(props) {
-
 
     const [clicked, setClicked] = useState(false);
     const {filters} = props;
@@ -18,6 +18,9 @@ function AlcoholCategoryQuestion(props) {
     if (!clicked) {
         return (
             <div>
+                <div className="title-cat">
+                    <h3>Alcoholic or non-alcoholic or...?</h3>
+                </div>
                 <div className="button-select-group">
                     <Button
                         type={"button"}
@@ -31,14 +34,14 @@ function AlcoholCategoryQuestion(props) {
                         type={"button"}
                         className="non-alcoholic"
                         disabled={false}
-                        children="non-alcoholic"
+                        children="Non-alcoholic"
                         onClick={() => answer("non_alcoholic")}
                     />
                     <Button
                         type={"button"}
                         className="optional-alcohol"
                         disabled={false}
-                        children="optional-alcohol"
+                        children="Optional-alcohol"
                         onClick={() => answer("optional_alcohol")}
                     />
                     <Button

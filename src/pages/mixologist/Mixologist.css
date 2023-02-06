@@ -8,5 +8,17 @@
     margin-top: 100px;
 }
 
+.header-mixologist h2 {
+    margin-top: 10px;
+    margin-bottom: -50px;
+}
+
+.bartender-icon {
+    width: 200px;
+}
+
+.mixologist-divider-line {
+    width: 200px
+}
 
 

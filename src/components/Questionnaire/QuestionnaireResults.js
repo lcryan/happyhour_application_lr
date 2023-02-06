@@ -52,7 +52,6 @@ function QuestionnaireResults(props) {
             }))
         }
     }
-
     return (
         <>
             <div className="header-questionnaire">

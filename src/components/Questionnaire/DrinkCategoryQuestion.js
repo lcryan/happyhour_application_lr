@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import AlcoholCategoryQuestion from "./AlcoholCategoryQuestion";
 import Button from "../Button";
-
+import "./CategoriesStyling.css";
 
 function DrinkCategoryQuestion(props) {
 
@@ -17,7 +17,11 @@ function DrinkCategoryQuestion(props) {
 
     if (!clicked) {
         return (
-            <div>
+            <>
+                <div className="title-cat">
+                    <h3>Which drink would you like to drink?</h3>
+                </div>
+                <article className="outer-container">
                 <div className="button-select-group">
                     <Button
                         type={"button"}
@@ -48,7 +52,8 @@ function DrinkCategoryQuestion(props) {
                         onClick={() => answer()}
                     />
                 </div>
-            </div>
+                </article>
+            </>
         );
     }
 
