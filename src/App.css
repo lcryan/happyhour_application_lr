@@ -9,14 +9,17 @@
 :root {
     --campbell-grey: #3a2c20;
     --don-red: #901b1b;
+    --dark-don-red: #751616;
     --roger-brown: #3a2c20;
     --joan-blue: #76ADA8;
+    --dark-joan-blue: #5c9993;
     --peggy-orange: #b65c11;
     --rizzo-green: #719842;
     --dark-rizzo-green: #66893b;
     --lane-white: #f8f8ff;
     --cooper-yellow: #e7a504;
     --dark-cooper-yellow: #d09404;
+    --darkest-cooper-yellow: #b58103;
     --trudy-beige: #f1e2b3;
 }
 
@@ -40,7 +43,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--trudy-beige);
     letter-spacing: normal;
 }
-
 
 nav a {
     color: var(--peggy-orange);
