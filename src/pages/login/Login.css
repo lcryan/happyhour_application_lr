@@ -4,7 +4,7 @@
     overflow: hidden;
     box-shadow: 0 0 15px var(--campbell-grey);
     background-color: var(--rizzo-green);
-    margin: 100px auto 0;
+    margin: 100px auto;
 }
 
 .login-form-logo-container {

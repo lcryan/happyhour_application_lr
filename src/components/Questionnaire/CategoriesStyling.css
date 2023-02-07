@@ -3,13 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-margin-top: -50px;
+    margin-top: -50px;
     margin-bottom: 100px;
 }
 
 .button-select-group {
     width: auto;
-    height: 200px;
+    height: 250px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
