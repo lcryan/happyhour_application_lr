@@ -24,7 +24,7 @@ function Latest() {
                 if (response) {
                     setData(response.data.drinks || [])
                 } else {
-                    console.log("no data found")
+                    console.log("We couldn't find any data.")
                 }
                 setData(response.data.drinks)
             } catch (e) {
@@ -41,7 +41,7 @@ function Latest() {
     const getDrinks = (drinks) => {
         if (!drinks.length || drinks.length === 0) {
             return (<>
-                <p>nothing found</p>
+                <p>Sorry, no drinks found.</p>
             </>)
         } else {
             return data.map((cocktail) => {
