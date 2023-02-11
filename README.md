@@ -45,15 +45,15 @@ The educational backend of Novi Hogeschool has been used for this project.
   
 After registering to the application on the registration page, then user will be able to log   in with his **USERNAME** and **PASSWORD.** A personal token is being saved automatically in the backend. The user will **NOT** need the access token to log in.  
 
-   **3. Password reset:** 
+   **2. Password reset:** 
 
    There is no possibility to reset your password or to access it in another way (f.e. through a  reset-email) once forgotten.
 
-   **4. **Please note**:** 
+**Please note**:** 
 
 the personal token and therefore the access rights expire after a couple of hours. 
 
-**5. Making a new account after access rights expire:** 
+**3. Making a new account after access rights expire:** 
 
 The user can make a new account after his access rights expire. 
 The system generates a new personal token that is connected to the user.
