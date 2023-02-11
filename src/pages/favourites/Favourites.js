@@ -44,7 +44,7 @@ function Favourites() {
     const getDrinks = (drinks) => {
         if (!drinks.length || drinks.length === 0) {
             return (<>
-                <p>nothing found</p>
+                <h3>You haven't added any cocktails to your favourites yet.</h3>
             </>)
         } else {
             console.log(drinks)
