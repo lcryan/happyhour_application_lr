@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios"
 import './Latest.css'
-
 import OneCocktailCard from "../../components/OneCocktailCard";
 import {Link} from "react-router-dom";
+import DividerLine from '../../assets/icons/dividerline.svg'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCircleArrowLeft} from "@fortawesome/free-solid-svg-icons";
 
 
 function Latest() {
@@ -11,15 +13,18 @@ function Latest() {
     const [data, setData] = useState([])
 
     useEffect(() => {
+        const controller = new AbortController();
 
         async function getAllCocktails() {
             try {
-                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/latest.php`);
+                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/latest.php`, {
+                    signal: controller.signal
+                });
                 console.log(response)
                 if (response) {
                     setData(response.data.drinks || [])
                 } else {
-                    console.log("no data found")
+                    console.log("We couldn't find any data.")
                 }
                 setData(response.data.drinks)
             } catch (e) {
@@ -28,41 +33,46 @@ function Latest() {
         }
 
         void getAllCocktails();
+        return function cleanup() {
+            controller.abort();
+        }
     }, [])
 
     const getDrinks = (drinks) => {
         if (!drinks.length || drinks.length === 0) {
             return (<>
-                <p>nothing found</p>
+                <p>Sorry, no drinks found.</p>
             </>)
         } else {
             return data.map((cocktail) => {
                 return (
                     <article className="cocktail-info" key={cocktail.idDrink}>
                         <Link to={`/singleCocktail/${cocktail.idDrink}`}>
-                            <OneCocktailCard
-                                keyStr={cocktail.idDrink}
-                                imgStr={cocktail.strDrinkThumb}
-                                strDrink={cocktail.strDrink}
+                            <OneCocktailCard cocktail={cocktail}
                             />
                         </Link>
                     </article>
-
                 )
             })
         }
     }
-
     return (
         <>
+            <div className="header-latest">
+                <h1 className="title-latest">The New Kids on the Block are...</h1>
+                <img src={DividerLine} className="divider-line-latest" alt="beige colored divider line"/>
+            </div>
             <section className="outer-content-container-latest-cocktails">
                 <div className="inner-content-container-latest-cocktails">
-                    <h1 className="title-latest"> Our latest Cocktails are: </h1>
                     <div className="latest-cocktails-container">
                         {getDrinks(data)}
                     </div>
                 </div>
+
             </section>
+            <div className="back-arrow-box">
+                <Link to="/"><FontAwesomeIcon className="back-arrow" icon={faCircleArrowLeft}/></Link>
+            </div>
         </>
     );
 }

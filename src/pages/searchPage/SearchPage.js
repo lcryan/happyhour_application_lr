@@ -4,28 +4,20 @@ import SingleCocktail from "../singleCocktail/SingleCocktail";
 
 function SearchPage() {
 
-
     return (
 
         <>
             <article className="header-search-page">
-                <h1 className="h1-search-page"> Search your heart out! </h1>
-                <h3 className="subtitle-search-page">Find cocktails that you really want to find. </h3>
-                <h3 className="sub-subtitle">We drink to that!</h3>
+                <h1 className="title-search-page"> Search your heart out! </h1>
+                <h3 className="second-title-search-page">We drink to that!</h3>
             </article>
-
-            <article className="search-bar-group">
-                <article className="search-ingredient-box">
-                    <div className="ingredient-box">
-                        <h4 className="title-search-ingredient-bar">Search by ingredient</h4>
-                        <div className="search-engine"><SearchIngredientBar/></div>
-                    </div>
-                </article>
+            <article className="search-bar-container">
+                <h4 className="title-search-bar">Search by ingredient</h4>
+                <div className="search-page-bar"><SearchIngredientBar/></div>
             </article>
-
-            <section className="ingredient-results">
+            <div className="single-cocktail-page"> <SingleCocktail/></div>
+            <section className="ingredient-result-container">
                 <div className="output-searchbar-home">
-                    <SingleCocktail/>
                 </div>
             </section>
         </>

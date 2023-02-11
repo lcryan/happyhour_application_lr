@@ -1,0 +1,79 @@
+.title-cat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+    margin-bottom: 100px;
+}
+
+.button-select-group {
+    width: auto;
+    height: 250px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    ". ."
+    ". .";
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-bottom: 150px;
+}
+
+.party-drink, .shot, .cocktail, .no-preference,
+.alcoholic, .non-alcoholic, .optional-alcohol,
+.highball-glass, .cocktail-glass, .old-fashioned-glass,
+.cordial-glass {
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-style: none;
+    box-shadow: 8px 14px 17px 1px rgba(0, 0, 0, 0.75);
+}
+
+.party-drink, .shot, .cocktail, .no-preference,
+.alcoholic, .non-alcoholic, .optional-alcohol,
+.highball-glass, .cocktail-glass, .old-fashioned-glass,
+.cordial-glass:hover {
+    cursor: pointer;
+}
+
+
+.party-drink, .alcoholic, .highball-glass {
+    background-color: var(--don-red);
+    color: var(--trudy-beige);
+}
+
+.party-drink:active, .alcoholic:active, .highball-glass:active {
+    background-color: var(--dark-don-red);
+}
+
+.shot, .non-alcoholic, .cocktail-glass {
+    background-color: var(--joan-blue);
+    color: var(--trudy-beige);
+}
+
+.shot:active, .non-alcoholic:active, .cocktail-glass:active {
+    background-color: var(--dark-joan-blue);
+}
+
+.cocktail, .optional-alcohol, .old-fashioned-glass {
+    background-color: var(--rizzo-green);
+    color: var(--trudy-beige);
+}
+
+.cocktail:active, .optional-alcohol:active, .old-fashioned-glass:active {
+    background-color: var(--dark-rizzo-green);
+}
+
+.no-preference, .cordial-glass {
+    background-color: var(--dark-cooper-yellow);
+    color: var(--trudy-beige);
+}
+
+.no-preference:active, .cordial-glass:active {
+    background-color: var(--darkest-cooper-yellow);
+}

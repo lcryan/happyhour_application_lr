@@ -1,51 +1,25 @@
-.title-search-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 100px;
-}
-
-.subtitle-search-page {
-    margin-top: 20px;
-    color: var(--lightgrey);
-}
-
-.sub-subtitle {
-    margin-top: 20px;
-
-}
-
 .header-search-page {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
     margin-top: 50px;
+}
+
+.second-title-search-page {
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
-.title-search-letter-bar {
+.search-bar-container {
+    margin-left: 30px;
+}
+
+.single-cocktail-page {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 5px;
-}
-
-.title-search-ingredient-bar {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.search-bar-group {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 40px;
-    gap: 10px;
+    margin-bottom: 100px;
+    margin-top: -200px;
 }

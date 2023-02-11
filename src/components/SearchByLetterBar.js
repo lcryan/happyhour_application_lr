@@ -13,9 +13,12 @@ function SearchByLetterBar() {
 
     useEffect(() => {
 
+        const controller = new AbortController();
+
         async function getCocktail() {
             try {
-                const response = await axios.get(`${DB_SEARCH_BY_FIRST_LETTER_URL}${cocktailName}`)
+                const response = await axios.get(`${DB_SEARCH_BY_FIRST_LETTER_URL}${cocktailName}`,
+                    {signal: controller.signal})
                 console.log(response.data)
                 setName(response.data.drinks)
 
@@ -25,11 +28,15 @@ function SearchByLetterBar() {
             if (cocktailName) {
                 setCocktailName(cocktailName)
             } else {
-                console.log("Sorry! We couldn't find your cocktail.");
+                console.log("Sorry! We couldn't find your cocktail."); //TODO set error message for user here!
             }
         }
 
-        void getCocktail()
+        void getCocktail();
+
+        return function cleanup() {
+            controller.abort();
+        }
     }, [cocktailName]);
 
     const handleChange = (e) => {
@@ -52,10 +59,7 @@ function SearchByLetterBar() {
                 <div className="letter-container">
                     {cocktailName && name && name.map((result) => (
                         <Link to={`/singleCocktail/${result.idDrink}`}>
-                            <OneCocktailCard
-                                strDrink={result.strDrink}
-                                keyStr={result.idDrink}
-                                imgStr={result.strDrinkThumb}
+                            <OneCocktailCard cocktail={result}
                             />
                         </Link>
                     ))}

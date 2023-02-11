@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,200;1,300;1,400;1,500;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
     margin: 0;
@@ -8,21 +7,29 @@
 }
 
 :root {
-    --darkestgrey: #222831;
-    --black: #292929;
-    --darkturquoise: #0abab5;
-    --lightgrey: #37414f;
-    --lighterblack: #0d0f13;
-    --lighterturquoise: #28e3da;
-    --ghostwhite: #f8f8ff;
+    --campbell-grey: #3a2c20;
+    --don-red: #901b1b;
+    --dark-don-red: #751616;
+    --roger-brown: #3a2c20;
+    --joan-blue: #76ADA8;
+    --dark-joan-blue: #5c9993;
+    --peggy-orange: #b65c11;
+    --rizzo-green: #719842;
+    --dark-rizzo-green: #66893b;
+    --lane-white: #f8f8ff;
+    --cooper-yellow: #e7a504;
+    --dark-cooper-yellow: #d09404;
+    --darkest-cooper-yellow: #b58103;
+    --trudy-beige: #f1e2b3;
 }
 
 body {
-    background-color: var(--darkturquoise);
-    font-family: "Cabin", sans-serif;
-    font-weight: 300;
-    color: var(--black);
-    flex-basis: 1200px;
+    background: rgb(231, 165, 4);
+    background: linear-gradient(90deg, rgba(231, 165, 4, 1) 16%, rgba(144, 27, 27, 1) 96%);
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 4px;
+    font-size: 20px;
+    color: var(--roger-brown);
 }
 
 .App {
@@ -32,30 +39,30 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Georgia", sans-serif;
+    color: var(--trudy-beige);
+    letter-spacing: normal;
 }
 
-nav a,
-a:link {
-    color: whitesmoke;
+nav a {
+    color: var(--peggy-orange);
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/*NOTE: the visited link is still not functional! */
+nav a:hover {
+    color: var(--rizzo-green);
+}
 
-nav a,
-a:visited {
-    color: var(--lighterturquoise);
-    font-weight: bolder;
+a {
+    color: var(--roger-brown);
     text-decoration: none;
 }
 
-nav a,
 a:hover {
-    color: var(--ghostwhite);
+    color: var(--trudy-beige);
 }
 
-nav a,
-a:active {
-    color: whitesmoke;
+button {
+    font-family: "Georgia", sans-serif;
 }
-

@@ -7,7 +7,7 @@ function Footer() {
         <>
             <footer className="footer">
                 <p className="footer-style">
-                Brought to you by The Cocktail Heads Co.
+                    Brought to you by The Cocktail Heads Co.
                 </p>
             </footer>
 

@@ -1,0 +1,48 @@
+.recipe-image {
+    width: 200px;
+    border-radius: 20px;
+    margin-right: -100px;
+}
+
+.outer-container-recipe {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner-container-cocktail-info-recipe {
+    width: 700px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 20px;
+    align-items: center;
+    border: transparent;
+    border-radius: 20px;
+    box-shadow: 0 12px 20px 2px rgba(58, 44, 32, 1);
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.list-of-ingredients-recipe {
+    list-style-type: none;
+    line-height: 1.6;
+}
+
+.recipe-instructions {
+    border-top: 2px solid var(--trudy-beige);
+    margin-left: 5px;
+    width: 650px;
+    padding-top: 10px;
+}
+
+.container-name-and-ingredients {
+    margin-left: -400px;
+}
+
+.recipe-cocktail-name {
+    margin-bottom: 10px;
+}

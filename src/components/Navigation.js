@@ -1,20 +1,22 @@
 import React from 'react';
 import {useContext} from "react";
+import {useNavigate} from "react-router-dom";
 import './Navigation.css'
 import {NavLink} from "react-router-dom";
 import SearchBar from "./SearchBar";
 import './SearchBar.css'
 
-/*import {AuthContext} from "../context/AuthContext";*/
+import {AuthContext} from "../context/AuthContext";
 
 
 function Navigation() {
 
-    /*    const {isAuth, logout} = useContext(AuthContext);
+    const {isAuth, logout} = useContext(AuthContext);
+    const navigate = useNavigate();
 
-        function handleLogout() {
-            logout()
-        }*/
+    function handleAuthClick() {
+        isAuth ? logout() : navigate("/login")
+    }
 
     return (
         <>
@@ -25,14 +27,15 @@ function Navigation() {
                     <li><NavLink to="/favourites">Favourites</NavLink></li>
                     <li><NavLink to="/myAccount" className={({isActive}) => isActive ? "link--active" : "link"}>My
                         Account</NavLink></li>
-                    <li><NavLink to="/help">Help</NavLink></li>
+                    <li><NavLink to="/about">About</NavLink></li>
                 </ul>
                 <ul className="navbar-elements-right">
                     <li>
                         <SearchBar/>
                     </li>
                     <li>
-                        <button className="logout-button" type="button">Logout</button>
+                        <button className="logout-button" type="button"
+                                onClick={handleAuthClick}>{isAuth ? "Logout" : "Login"}</button>
                     </li>
                 </ul>
             </nav>

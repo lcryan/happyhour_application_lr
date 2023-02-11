@@ -1,0 +1,36 @@
+.account-info-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.account-info-text h1 {
+    margin-bottom: 20px;
+}
+
+.account-gratitude-text {
+    margin-bottom: 40px;
+}
+
+.account-information {
+    margin-bottom: 20px;
+}
+
+.account-security-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.account-goodbye-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 100px;
+}

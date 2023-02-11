@@ -2,8 +2,10 @@ import React, {useCallback, useEffect, useState} from 'react';
 import OneCocktailCard from "./OneCocktailCard";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import './RandomisedCocktail.css'
 
 function RandomisedCocktail() {
+
     const [randomCocktail, setRandomCocktail] = useState([]);
 
     const apiUrl = `https://www.thecocktaildb.com/api/json/v2/9973533/random.php`;
@@ -32,10 +34,7 @@ function RandomisedCocktail() {
 
         <article className="cocktail-details" key={randomCocktail.idDrink}>
             <Link to={`/singleCocktail/${randomCocktail.idDrink}`}>
-                <OneCocktailCard
-                    strDrink={randomCocktail.strDrink}
-                    keyStr={randomCocktail.idDrink}
-                    imgStr={randomCocktail.strDrinkThumb}
+                <OneCocktailCard cocktail={randomCocktail}
                 />
             </Link>
         </article>
