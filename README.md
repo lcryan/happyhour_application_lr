@@ -1,10 +1,32 @@
 **Welcome to the HappyHour Application!** 
 
 **About the application** 
-HappyHour is a cocktail-app about, well yes, the wonderful and abundant world of cocktails.
-It is supposed to help the user to get a better overview about which cocktails are out there, how to prepare them and what they are actually supposed to look like in real life. 
+HappyHour is a cocktail-app about the wonderful and abundant world of cocktails and for people that already are or want to become cocktail lovers.
+It is supposed to help the user to get a better overview about which cocktails are hot and new, how to prepare them and what goes into each one of them.
+Cheers and enjoy your own personal HappyHour. 
 
-Beneath you can see the homepage of the application: 
+Please see below the homepage of the application.
+As a registered user you can access all important functionalities from here: 
+![screenshot_homepage](src/assets/images/screenshot_homepage.png)
+
+## Getting started with HappyHour App
+
+After you have cloned this repository to your local machine, please install `node_modules` by running the following command:
+```
+npm install
+```
+
+Once finalized you will be able to start the application with the following command: 
+```
+npm start
+```
+OR: use (if you use Webstorm) use the Webstorm button (npm start). 
+
+Open [http://localhost:3000](http://localhost:3000/) to view the page in the browser.
+If you want to stop running the page in the browser use CTRL + C in the terminal. 
+You can rerun the browser with the command mentioned above. 
+
+##Access for developers 
 
 
 
@@ -13,15 +35,19 @@ Beneath you can see the homepage of the application:
 
 
 
+● Lijst van benodigdheden om de applicatie te kunnen runnen (zoals runtime environments, een
+API key of gegevens van een externe backend). Let op: je vraagt de nakijkende docent nooit zelf
+een API key aan te maken. Jij levert zelf jouw API key aan.
 
-
-
+● Met welke gegevens er ingelogd kan worden indien er al accounts beschikbaar zijn.
+● Welke andere npm commando’s er nog beschikbaar zijn in deze applicatie en waar deze voor
+dienen.
 
 
 _Please see below for some more information about the usage and deployment of React:_
 
 **Getting Started with Create React App**
-This project was bootstrapped with [Create React App]().
+This project was bootstrapped with [[Create React App](https://github.com/facebook/create-react-app).]
 
 **Available Scripts**
 In the project directory, you can run:
