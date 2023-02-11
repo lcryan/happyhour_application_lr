@@ -26,7 +26,7 @@ function Favourites() {
 
     function checkedHandler(event, cocktail) {
         if (cocktail.isChecked) {
-            cocktail.isChecked = false
+            cocktail.isChecked = false;
             return
         }
 
@@ -37,9 +37,9 @@ function Favourites() {
             event.preventDefault()
             return
         }
-
         cocktail.isChecked = true;
     }
+
 
     const getDrinks = (drinks) => {
         if (!drinks.length || drinks.length === 0) {
@@ -52,7 +52,8 @@ function Favourites() {
                 return (
                     <article className="cocktail-info" key={cocktail.idDrink}>
                         <OneCocktailCard
-                            cocktail={cocktail} />
+                            cocktail={cocktail}
+                        />
                         <div className="checkbox">
                         <input className="recipe-checkbox" type="checkbox"
                                id="recipe-checkbox" value="recipe-checkbox"
