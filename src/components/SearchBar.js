@@ -18,7 +18,11 @@ function SearchBar() {
             console.log(response.data)
             setName(response.data.drinks)
 
-            // TODO error handling
+            if (name !== searchResult) {
+               return "Please fill in a valid search term "
+            } else {
+                return searchResult
+            }
 
         } catch (error) {
             console.log(error)

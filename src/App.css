@@ -45,13 +45,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 nav a {
-    color: var(--peggy-orange);
+    color: var(--rizzo-green);
     text-decoration: none;
     font-weight: bold;
 }
 
 nav a:hover {
-    color: var(--rizzo-green);
+    color: var(--peggy-orange);
 }
 
 a {

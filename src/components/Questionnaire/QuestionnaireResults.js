@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import OneCocktailCard from "../OneCocktailCard";
@@ -9,24 +9,26 @@ import {faCircleArrowLeft} from "@fortawesome/free-solid-svg-icons/faCircleArrow
 
 function QuestionnaireResults(props) {
 
-    const {filters} = props
+    const {filters} = props;
     const [result, setResult] = useState([]);
 
     useEffect(() => {
         async function fetchCocktails() {
+
             try {
                 console.log(filters)
-                const filterQuery = `${filters.join('&')}`
+                const filterQuery = `${filters.join("&")}`
                 console.log(filterQuery)
-                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?${filterQuery}`)
+                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?${filterQuery}`)
                 console.log(response)
                 setResult(response.data.drinks.slice(0, 10))
             } catch (error) {
                 console.log(error)
             }
         }
+
         void fetchCocktails();
-    }, []);
+    }, [filters]);
 
     const getResults = (drinks) => {
         if (!drinks.length || drinks.length === 0) {

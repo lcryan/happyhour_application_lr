@@ -24,28 +24,24 @@ function GlassCategoryQuestion(props) {
                     <Button
                         type={"button"}
                         className="highball-glass"
-                        disabled={false}
                         children="Highball Glass"
                         onClick={() => answer("Highball_glass")}
                     />
                     <Button
                         type={"button"}
                         className="cocktail-glass"
-                        disabled={false}
                         children="Cocktail Glass"
                         onClick={() => answer("Cocktail_glass")}
                     />
                     <Button
                         type={"button"}
                         className="old-fashioned-glass"
-                        disabled={false}
                         children="Old-fashioned Glass"
                         onClick={() => answer("Old-fashioned_glass")}
                     />
                     <Button
                         type={"button"}
                         className="cordial-glass"
-                        disabled={false}
                         children="Cordial Glass"
                         onClick={() => answer("Cordial_glass")}
                     />

@@ -17,7 +17,7 @@ function validateForm(email, username, password) {
     }
     if (!userNameRegex.test(username)) {
         status = false
-        messages.push("Invalid username. The username must include at least 4 characters and one special sign. ")
+        messages.push("Invalid username. The username must include at least 4 characters. ")
     }
 
     return {

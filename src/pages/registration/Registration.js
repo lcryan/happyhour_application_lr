@@ -127,10 +127,9 @@ function Registration() {
                         </label>
                         {error && <p className="error">{errorMessage}</p>}
                         <Button
-                            type="submit"
                             className="register-button"
                             children="Sign up!"
-                        />
+                            type="submit"/>
                         <div className="registration-links">
                             <p>Do you already have an account? Then you can log in <Link to={"/login"}>here</Link>!</p>
                         </div>
