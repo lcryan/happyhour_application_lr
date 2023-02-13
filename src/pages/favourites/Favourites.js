@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {AuthContext} from '../../context/AuthContext';
 import {GlobalContext} from '../../context/GlobalState';
 import {Link, useNavigate} from 'react-router-dom';
@@ -11,6 +11,8 @@ function Favourites() {
     const navigate = useNavigate();
     const {user, isAuth} = useContext(AuthContext);
     const {favourites} = useContext(GlobalContext);
+
+
 
     const countChecked = () => {
         return (getChecked()).length
@@ -56,7 +58,7 @@ function Favourites() {
                         />
                         <div className="checkbox">
                         <input className="recipe-checkbox" type="checkbox"
-                               id="recipe-checkbox" value="recipe-checkbox"
+                               id="recipe-checkbox"
                                onClick={(e) => checkedHandler(e, cocktail)}/>
                         <label htmlFor="recipe-checkbox"> Recipe please </label>
                         </div>
@@ -105,11 +107,9 @@ function Favourites() {
 
             {isAuth ?
                 <div className="text-box-favs">
-                    <p className="important-note-text">Please remember: <p>you can save up
+                    <p className="important-note-text">Please remember: you can save up
                         to <strong>10</strong> cocktails
-                        on your favourites
-                        page.</p> <p>Choose <strong>3</strong> cocktails at a time to view the full recipe.Cheers!</p>
-                    </p>
+                        on your favourites. </p>
                 </div> :
                 <div className="message-two-user">
                     <p>Why you should join us!</p>

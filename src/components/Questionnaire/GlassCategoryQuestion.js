@@ -9,7 +9,7 @@ function GlassCategoryQuestion(props) {
 
     const answer = (clickedFilter) => {
         if (clickedFilter) {
-            filters.push(`g=${clickedFilter}`)
+            filters.g = clickedFilter
         }
         setClicked(true)
     }

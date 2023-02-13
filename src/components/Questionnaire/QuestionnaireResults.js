@@ -17,11 +17,23 @@ function QuestionnaireResults(props) {
 
             try {
                 console.log(filters)
-                const filterQuery = `${filters.join("&")}`
-                console.log(filterQuery)
+
+                let filterQuery = "g=" + filters.g
+
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?${filterQuery}`)
+
                 console.log(response)
-                setResult(response.data.drinks.slice(0, 10))
+                const cocktails = [];
+                console.log(JSON.stringify(filters))
+                for (const d of response.data.drinks) {
+                    const result = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${d.idDrink}`)
+                    console.log(result.data.drinks[0].strAlcoholic)
+                    console.log(result.data.drinks[0].strCategory)
+                    if (result.data.drinks[0].strAlcoholic === filters.a && result.data.drinks[0].strCategory === filters.c) {
+                        cocktails.push(d)
+                    }
+                }
+                setResult(cocktails.slice(0, 10))
             } catch (error) {
                 console.log(error)
             }

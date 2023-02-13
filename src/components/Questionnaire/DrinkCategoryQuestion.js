@@ -10,7 +10,7 @@ function DrinkCategoryQuestion(props) {
 
     const answer = (clickedFilter) => {
         if (clickedFilter) {
-            filters.push(`c=${clickedFilter}`)
+            filters.c = clickedFilter
         }
         setClicked(true)
     }
@@ -27,7 +27,7 @@ function DrinkCategoryQuestion(props) {
                             type={"button"}
                             className="party-drink"
                             children="Party-Drink"
-                            onClick={() => answer("Punch_/_Party_Drink")}
+                            onClick={() => answer("Punch / Party Drink")}
                         />
                         <Button
                             type={"button"}
@@ -41,12 +41,12 @@ function DrinkCategoryQuestion(props) {
                             children="Cocktail"
                             onClick={() => answer("Cocktail")}
                         />
-                        <Button
+                       {/* <Button
                             type={"button"}
                             className="no-preference"
                             children="No Preference"
                             onClick={() => answer()}
-                        />
+                        />*/}
                     </div>
                 </article>
             </>

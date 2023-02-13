@@ -5,7 +5,7 @@ import DrinkCategoryQuestion from './DrinkCategoryQuestion'
 
 function Questionnaire(props) {
 
-    const filters = [];
+    const filters = {a:"", c:"", g:""};
     return (
         <>
             <DrinkCategoryQuestion filters={filters}/>
