@@ -49,3 +49,11 @@
 .chevron-arrow-left {
     height: 30px;
 }
+
+.hover-text {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: var(--trudy-beige);
+    text-align: center;
+
+}

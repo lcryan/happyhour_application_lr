@@ -61,9 +61,12 @@ function SingleCocktail() {
                 <article className="container-content-single-cocktail">
                     <>
                         <div className="image-container">
+                            <p className="hover-text">Hover to add to Favs</p>
                             <img className="foto-singleCocktail" alt="foto of single-cocktail"
                                  src={oneCocktail.strDrinkThumb}/>
+
                             <AddToFavourites cocktail={oneCocktail}/>
+
                         </div>
                         <div className="content-single-cocktail">
                             <h3 className="single-cocktail-title">{oneCocktail.strDrink} </h3>
