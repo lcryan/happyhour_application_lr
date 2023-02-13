@@ -21,7 +21,7 @@ function Recipe() {
                 const newRecipes = []
                 for (let i = 0; i < ids.length; i++) {
                     console.log(ids[i])
-                    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${ids[i]}`, {})
+                    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${ids[i]}`, {})
                     newRecipes.push(response.data.drinks[0])
                     console.log(newRecipes)
                 }
@@ -32,7 +32,6 @@ function Recipe() {
             }
 
         }
-
         void getRecipes()
 
         return function cleanup() {
@@ -45,8 +44,8 @@ function Recipe() {
         <>{
             recipes.map((cocktail) => {
                 return (
-                    <article className="outer-container-recipe">
-                        <article className="inner-container-cocktail-info-recipe" key={cocktail.idDrink}>
+                    <article className="outer-container-recipe" key={cocktail.idDrink}>
+                        <article className="inner-container-cocktail-info-recipe" >
                             <div className="image-cocktail-recipe">
                                 <img src={cocktail.strDrinkThumb} className="recipe-image"
                                      alt="foto of chosen cocktail"/>
