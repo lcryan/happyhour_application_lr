@@ -31,10 +31,6 @@ export const GlobalProvider = (props) => {
         return false
     }
 
-    // TODO implement toggleFavoutire() function that combines the other functions into an
-    // easy to use function for use in event handlers on clicks
-
-
     const addToFavourites = (cocktail) => {
         if (favourites.length < 10) {
             if (!isFavourite(cocktail)) {
