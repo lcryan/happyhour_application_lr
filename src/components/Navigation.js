@@ -2,7 +2,7 @@ import React from 'react';
 import {useContext} from "react";
 import {useNavigate} from "react-router-dom";
 import './Navigation.css'
-import {NavLink} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 import SearchBar from "./SearchBar";
 import './SearchBar.css'
 
@@ -36,6 +36,10 @@ function Navigation() {
                     <li>
                         <button className="logout-button" type="button"
                                 onClick={handleAuthClick}>{isAuth ? "Logout" : "Login"}</button>
+                        <button className="sign-up-button"
+                                type="button">
+                            <Link to="/registration">Sign Up</Link>
+                        </button>
                     </li>
                 </ul>
             </nav>
