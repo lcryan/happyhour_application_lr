@@ -13,6 +13,9 @@ function QuestionnaireResults(props) {
     const [result, setResult] = useState([]);
 
     useEffect(() => {
+
+        const controller = new AbortController();
+
         async function fetchCocktails() {
 
             try {
@@ -20,7 +23,8 @@ function QuestionnaireResults(props) {
 
                 let filterQuery = "g=" + filters.g
 
-                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?${filterQuery}`)
+                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?${filterQuery}`
+                    , {signal: controller.signal})
 
                 console.log(response)
                 const cocktails = [];
@@ -40,13 +44,18 @@ function QuestionnaireResults(props) {
         }
 
         void fetchCocktails();
+
+        return function cleanup() {
+            controller.abort()
+        }
+
     }, [filters]);
 
     const getResults = (drinks) => {
         if (!drinks.length || drinks.length === 0) {
             return (
                 <>
-                    <p>No cocktails found.</p>
+                    <p className="not-found">Sorry,no cocktails match your search criteria. Please try again.</p>
                 </>
             )
         } else {

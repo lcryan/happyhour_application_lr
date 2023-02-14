@@ -41,12 +41,39 @@ function DrinkCategoryQuestion(props) {
                             children="Cocktail"
                             onClick={() => answer("Cocktail")}
                         />
-                       {/* <Button
+                        <Button
                             type={"button"}
-                            className="no-preference"
-                            children="No Preference"
-                            onClick={() => answer()}
-                        />*/}
+                            className="ordinary-drink"
+                            children="Ordinary Drink"
+                            onClick={() => answer("Ordinary Drink")}
+                        />
+                        <Button
+                            type={"button"}
+                            className="soft-drink"
+                            children="Soft Drink"
+                            onClick={() => answer("Soft Drink")}
+                        />
+                        <Button
+                            type={"button"}
+                            className="shake"
+                            children="Shake"
+                            onClick={() => answer("Shake")}
+                        />
+
+                        <Button
+                            type={"button"}
+                            className="other"
+                            children="Other"
+                            onClick={() => answer("Other / Unknown")}
+                        />
+
+                        <Button
+                            type={"button"}
+                            className="homemade"
+                            children="Homemade Liqueur"
+                            onClick={() => answer("Homemade Liqueur")}
+                        />
+
                     </div>
                 </article>
             </>

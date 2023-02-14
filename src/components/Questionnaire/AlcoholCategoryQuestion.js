@@ -41,17 +41,10 @@ function AlcoholCategoryQuestion(props) {
                         children="Optional-alcohol"
                         onClick={() => answer("Optional alcohol")}
                     />
-                {/*    <Button
-                        type={"button"}
-                        className="no-preference"
-                        children="No Preference"
-                        onClick={() => answer()}
-                    />*/}
                 </div>
             </div>
         );
     }
-
     return (<GlassCategoryQuestion filters={filters}/>)
 
 }

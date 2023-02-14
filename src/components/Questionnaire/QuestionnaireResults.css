@@ -41,3 +41,8 @@
     flex-direction: row;
     margin-bottom: 100px;
 }
+
+.not-found {
+  display: inline-block;
+    align-items: center;
+}

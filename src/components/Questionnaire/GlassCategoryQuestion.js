@@ -43,8 +43,37 @@ function GlassCategoryQuestion(props) {
                         type={"button"}
                         className="cordial-glass"
                         children="Cordial Glass"
-                        onClick={() => answer("Cordial_glass")}
+                        onClick={() => answer("Cordial glass")}
                     />
+
+                    <Button
+                        type={"button"}
+                        className="hurricane-glass"
+                        children="Hurricane Glas"
+                        onClick={() => answer("Hurricane glass")}
+                    />
+
+                    <Button
+                        type={"button"}
+                        className="shot-glass"
+                        children="Shot Glass"
+                        onClick={() => answer("Shot glass")}
+                    />
+
+                    <Button
+                        type={"button"}
+                        className="coupe-glass"
+                        children="Coupe Glass"
+                        onClick={() => answer("Coupe Glass")}
+                    />
+
+                    <Button
+                        type={"button"}
+                        className="margarita-glass"
+                        children="Margarita Glass"
+                        onClick={() => answer("Margarita/Coupette glass")}
+                    />
+
                 </div>
             </div>
         );
