@@ -11,6 +11,7 @@ function QuestionnaireResults(props) {
 
     const {filters} = props;
     const [result, setResult] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
 
@@ -26,15 +27,13 @@ function QuestionnaireResults(props) {
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?${filterQuery}`
                     , {signal: controller.signal})
 
-                console.log(response)
                 const cocktails = [];
                 console.log(JSON.stringify(filters))
                 for (const d of response.data.drinks) {
                     const result = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${d.idDrink}`)
-                    console.log(result.data.drinks[0].strAlcoholic)
-                    console.log(result.data.drinks[0].strCategory)
                     if (result.data.drinks[0].strAlcoholic === filters.a && result.data.drinks[0].strCategory === filters.c) {
                         cocktails.push(d)
+                        setLoading(false)
                     }
                 }
                 setResult(cocktails.slice(0, 10))
@@ -52,13 +51,19 @@ function QuestionnaireResults(props) {
     }, [filters]);
 
     const getResults = (drinks) => {
+
+        if (loading) {
+            setLoading(loading)
+          return "Getting cocktails..."
+        }
         if (!drinks.length || drinks.length === 0) {
             return (
                 <>
                     <p className="not-found">Sorry,no cocktails match your search criteria. Please try again.</p>
                 </>
             )
-        } else {
+        }
+        else {
             return (result.map((cocktail) => {
                 return (
                     <>
