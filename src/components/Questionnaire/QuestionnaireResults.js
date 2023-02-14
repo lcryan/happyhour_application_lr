@@ -15,7 +15,6 @@ function QuestionnaireResults(props) {
 
     useEffect(() => {
 
-        const controller = new AbortController();
 
         async function fetchCocktails() {
 
@@ -24,8 +23,7 @@ function QuestionnaireResults(props) {
 
                 let filterQuery = "g=" + filters.g
 
-                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?${filterQuery}`
-                    , {signal: controller.signal})
+                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?${filterQuery}`)
 
                 const cocktails = [];
                 console.log(JSON.stringify(filters))
@@ -44,9 +42,6 @@ function QuestionnaireResults(props) {
 
         void fetchCocktails();
 
-        return function cleanup() {
-            controller.abort()
-        }
 
     }, [filters]);
 
@@ -54,7 +49,7 @@ function QuestionnaireResults(props) {
 
         if (loading) {
             setLoading(loading)
-          return "Getting cocktails..."
+            return "Getting cocktails..."
         }
         if (!drinks.length || drinks.length === 0) {
             return (
@@ -62,8 +57,7 @@ function QuestionnaireResults(props) {
                     <p className="not-found">Sorry,no cocktails match your search criteria. Please try again.</p>
                 </>
             )
-        }
-        else {
+        } else {
             return (result.map((cocktail) => {
                 return (
                     <>
