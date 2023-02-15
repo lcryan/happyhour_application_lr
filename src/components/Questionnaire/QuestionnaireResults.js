@@ -22,19 +22,18 @@ function QuestionnaireResults(props) {
                 console.log(filters)
 
                 let filterQuery = "g=" + filters.g
-
+                setLoading(true)
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?${filterQuery}`)
-
                 const cocktails = [];
                 console.log(JSON.stringify(filters))
                 for (const d of response.data.drinks) {
                     const result = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${d.idDrink}`)
                     if (result.data.drinks[0].strAlcoholic === filters.a && result.data.drinks[0].strCategory === filters.c) {
                         cocktails.push(d)
-                        setLoading(false)
                     }
                 }
                 setResult(cocktails.slice(0, 10))
+                setLoading(false)
             } catch (error) {
                 console.log(error)
             }
@@ -46,11 +45,6 @@ function QuestionnaireResults(props) {
     }, [filters]);
 
     const getResults = (drinks) => {
-
-        if (loading) {
-            setLoading(loading)
-            return "Getting cocktails..."
-        }
         if (!drinks.length || drinks.length === 0) {
             return (
                 <>
@@ -79,10 +73,13 @@ function QuestionnaireResults(props) {
                 <h1>This is what we found for you</h1>
                 <img src={DividerLine} className="divider-line-questionnaire" alt="beige thin element divider"/>
             </div>
-            <article className="questionnaire-cocktails-container">
-                {getResults(result)}
-            </article>
+            {loading ? (
+                <p className="loading-message-questionnaire">Loading...</p>
 
+            ) : (<article className="questionnaire-cocktails-container">
+                {getResults(result)}
+            </article>)
+            }
             <div className="back-arrow-box-questionnaire">
                 <Link to="/"><FontAwesomeIcon icon={faCircleArrowLeft} className="back-arrow-questionnaire"/></Link>
             </div>
