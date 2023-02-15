@@ -10,13 +10,15 @@ import {faCircleArrowLeft} from "@fortawesome/free-solid-svg-icons";
 
 function Latest() {
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const controller = new AbortController();
 
         async function getAllCocktails() {
             try {
+                setLoading(true)
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/latest.php`, {
                     signal: controller.signal
                 });
@@ -24,9 +26,10 @@ function Latest() {
                 if (response) {
                     setData(response.data.drinks || [])
                 } else {
-                    console.log("We couldn't find any data.")
+                    console.log("We couldn't find any drinks.")
                 }
                 setData(response.data.drinks)
+                setLoading(false);
             } catch (e) {
                 console.error(e);
             }
@@ -62,14 +65,17 @@ function Latest() {
                 <h1 className="title-latest">The New Kids on the Block are...</h1>
                 <img src={DividerLine} className="divider-line-latest" alt="beige colored divider line"/>
             </div>
-            <section className="outer-content-container-latest-cocktails">
-                <div className="inner-content-container-latest-cocktails">
-                    <div className="latest-cocktails-container">
-                        {getDrinks(data)}
+            {loading ? (
+                <p className="loading-latest">Getting the newest cocktails for you...</p>
+            ) : (
+                <section className="outer-content-container-latest-cocktails">
+                    <div className="inner-content-container-latest-cocktails">
+                        <div className="latest-cocktails-container">
+                            {getDrinks(data)}
+                        </div>
                     </div>
-                </div>
-
-            </section>
+                </section>
+            )}
             <div className="back-arrow-box">
                 <Link to="/"><FontAwesomeIcon className="back-arrow" icon={faCircleArrowLeft}/></Link>
             </div>
