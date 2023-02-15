@@ -48,7 +48,8 @@ function QuestionnaireResults(props) {
         if (!drinks.length || drinks.length === 0) {
             return (
                 <>
-                    <p className="not-found">Sorry,no cocktails match your search criteria. Please try again.</p>
+                    <p className="not-found-questionnaire">Sorry,no cocktails match your search criteria. Please try
+                        again.</p>
                 </>
             )
         } else {
@@ -74,7 +75,7 @@ function QuestionnaireResults(props) {
                 <img src={DividerLine} className="divider-line-questionnaire" alt="beige thin element divider"/>
             </div>
             {loading ? (
-                <p className="loading-message-questionnaire">Loading...</p>
+                <p className="loading-message-questionnaire">We are getting those cocktails for you...</p>
 
             ) : (<article className="questionnaire-cocktails-container">
                 {getResults(result)}

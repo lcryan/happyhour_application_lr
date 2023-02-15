@@ -42,7 +42,12 @@
     margin-bottom: 100px;
 }
 
-.not-found {
-  display: inline-block;
+
+.loading-message-questionnaire {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
     align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
