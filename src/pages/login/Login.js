@@ -12,7 +12,6 @@ function Login() {
 
     const {login} = useContext(AuthContext)
 
-
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
 
@@ -20,7 +19,6 @@ function Login() {
     const [errorMessage, setErrorMessage] = useState("");
 
     const [loading, setLoading] = useState(false);
-
 
     async function handleLogin(e) {
         e.preventDefault();
@@ -36,7 +34,7 @@ function Login() {
             login(response.data.accessToken)
         } catch (e) {
             console.error(e)
-            setErrorMessage("Invalid username or password. Please try again.");
+            setErrorMessage("Invalid username or password. Please try again.")
         } finally {
             setLoading(false)
         }
