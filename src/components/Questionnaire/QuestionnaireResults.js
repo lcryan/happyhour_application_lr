@@ -14,16 +14,17 @@ function QuestionnaireResults(props) {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-
+        const controller = new AbortController();
 
         async function fetchCocktails() {
 
             try {
-                console.log(filters)
 
                 let filterQuery = "g=" + filters.g
                 setLoading(true)
-                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?${filterQuery}`)
+                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?${filterQuery}`, {
+                    signal: controller.signal
+                });
                 const cocktails = [];
                 console.log(JSON.stringify(filters))
                 for (const d of response.data.drinks) {
@@ -40,8 +41,9 @@ function QuestionnaireResults(props) {
         }
 
         void fetchCocktails();
-
-
+        return function cleanup() {
+            controller.abort();
+        }
     }, [filters]);
 
     const getResults = (drinks) => {
