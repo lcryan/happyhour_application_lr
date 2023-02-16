@@ -12,7 +12,7 @@ function Latest() {
 
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false); //TODO set error and errorMessage right. Non-functional at the moment.
+    const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
@@ -70,7 +70,7 @@ function Latest() {
                 <h1 className="title-latest">The New Kids on the Block are...</h1>
                 <img src={DividerLine} className="divider-line-latest" alt="beige colored divider line"/>
             </div>
-            {loading ? (
+            {loading ? error ? <div>{errorMessage}</div> : (
                 <p className="loading-latest">Getting the newest cocktails for you...</p>
             ) : (
                 <section className="outer-content-container-latest-cocktails">
