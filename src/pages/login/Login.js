@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState} from "react";
 import axios from "axios";
 import {AuthContext} from "../../context/AuthContext";
 import {BACKEND_BASE_URL} from "../../constants";

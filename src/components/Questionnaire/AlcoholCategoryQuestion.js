@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 import Button from "../Button";
 import GlassCategoryQuestion from "./GlassCategoryQuestion";
 import "./CategoriesStyling.css";
