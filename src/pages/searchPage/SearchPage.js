@@ -1,5 +1,5 @@
 import SearchIngredientBar from "../../components/SearchIngredientBar";
-import './SearchPage.css'
+import "./SearchPage.css";
 import SingleCocktail from "../singleCocktail/SingleCocktail";
 
 function SearchPage() {
