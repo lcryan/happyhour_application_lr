@@ -1,4 +1,4 @@
-import React, {createContext, useEffect, useState} from 'react';
+import React, {createContext, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import {BACKEND_BASE_URL} from "../constants";
@@ -23,7 +23,6 @@ function AuthContextProvider({children}) {
 
         if (storedToken) {
 
-            // TODO error handling here, what if storedToken is not a token?
             const decodedToken = jwtDecode(storedToken)
             if (Math.floor(Date.now() / 1000) < decodedToken.exp) {
                 console.log("The user is still logged in.")
@@ -61,9 +60,6 @@ function AuthContextProvider({children}) {
                 },
             })
 
-            // TODO error handling.
-            // TODO What if the response returns but is not the format we expect?
-
             toggleIsAuth({
                 ...isAuth,
                 isAuth: true,
@@ -83,7 +79,7 @@ function AuthContextProvider({children}) {
             toggleIsAuth({
                 ...isAuth,
                 status: 'done',
-            }); // TODO handle the error cases here
+            });
         }
     }
 

@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 function SearchIngredientBar() {
 
     const [ingredient, setIngredient] = useState("");
-    const [nameIngredient, setNameIngredient] = useState([])
+    const [nameIngredient, setNameIngredient] = useState([]);
 
 
     useEffect(() => {

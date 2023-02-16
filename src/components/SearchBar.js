@@ -15,11 +15,10 @@ function SearchBar() {
         try {
             const response = await axios.get(`${DB_SEARCH_URL}${searchResult}`,
                 {signal: controller.signal})
-            console.log(response.data)
             setName(response.data.drinks)
 
             if (name !== searchResult) {
-               return "Please fill in a valid search term "
+                return "Please fill in a valid search term "
             } else {
                 return searchResult
             }

@@ -10,11 +10,10 @@
     align-items: center;
     flex-shrink: 0;
     flex-grow: 0;
-
 }
 
 .search-bar-page {
-    background-color: var(--ghostwhite);
+    background-color: var(--lane-white);
     border-radius: 10px;
     border-style: none;
     width: 300px;
