@@ -1,7 +1,7 @@
 import React, {createContext, useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
-import {BASE_URL} from "../constants";
+import {BACKEND_BASE_URL} from "../constants";
 import jwtDecode from "jwt-decode";
 
 
@@ -54,7 +54,7 @@ function AuthContextProvider({children}) {
 
         try {
 
-            const response = await axios.get(`${BASE_URL}/api/user`, {
+            const response = await axios.get(`${BACKEND_BASE_URL}/api/user`, {
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,

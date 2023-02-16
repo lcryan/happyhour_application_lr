@@ -4,7 +4,7 @@ import {useState} from "react";
 import axios from "axios";
 import './Registration.css';
 import validateForm from './validation'
-import {BASE_URL} from "../../constants";
+import {BACKEND_BASE_URL} from "../../constants";
 import BigLogo from "../../assets/logo/HapyHourLogo_Roger_brown.png";
 import Button from "../../components/Button";
 
@@ -35,7 +35,7 @@ function Registration() {
         }
 
         try {
-            const response = await axios.post(`${BASE_URL}/api/auth/signup`, {
+            const response = await axios.post(`${BACKEND_BASE_URL}/api/auth/signup`, {
                 email,
                 password,
                 username,

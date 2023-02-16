@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import axios from "axios";
 import {AuthContext} from "../../context/AuthContext";
-import {BASE_URL} from "../../constants";
+import {BACKEND_BASE_URL} from "../../constants";
 import {Link} from "react-router-dom";
 import "./Login.css";
 import BigLogo from "../../assets/logo/HapyHourLogo_Roger_brown.png";
@@ -26,7 +26,7 @@ function Login() {
         try {
             setLoading(true)
             setErrorMessage("")
-            const response = await axios.post(`${BASE_URL}/api/auth/signin`, {
+            const response = await axios.post(`${BACKEND_BASE_URL}/api/auth/signin`, {
                 username: username,
                 password: password,
             })
