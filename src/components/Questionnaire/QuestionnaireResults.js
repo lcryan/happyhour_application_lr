@@ -6,6 +6,8 @@ import "./QuestionnaireResults.css";
 import DividerLine from "../../assets/icons/dividerline.svg";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleArrowLeft} from "@fortawesome/free-solid-svg-icons/faCircleArrowLeft";
+import {DB_FILTER_BY_CATEGORY_URL} from "../../constants";
+import {DB_LOOKUP_BY_ID_URL} from "../../constants";
 
 function QuestionnaireResults(props) {
 
@@ -22,13 +24,13 @@ function QuestionnaireResults(props) {
 
                 let filterQuery = "g=" + filters.g
                 setLoading(true)
-                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?${filterQuery}`, {
+                const response = await axios.get(`${DB_FILTER_BY_CATEGORY_URL}${filterQuery}`, {
                     signal: controller.signal
                 });
                 const cocktails = [];
                 console.log(JSON.stringify(filters))
                 for (const d of response.data.drinks) {
-                    const result = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${d.idDrink}`)
+                    const result = await axios.get(`${DB_LOOKUP_BY_ID_URL}${d.idDrink}`)
                     if (result.data.drinks[0].strAlcoholic === filters.a && result.data.drinks[0].strCategory === filters.c) {
                         cocktails.push(d)
                     }
