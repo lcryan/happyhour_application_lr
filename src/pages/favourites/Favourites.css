@@ -70,8 +70,24 @@
     flex-direction: column;
 }
 
-.recipe-checkbox {
+.check-button-box {
     margin-top: 20px;
+}
+
+.check-button {
+    background-color: var(--trudy-beige);
+    border: 2px solid var(--campbell-grey);
+    height: 40px;
+    width: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.check-button:hover {
+    box-shadow: 10px 10px 15px 0 rgba(58,44,32,1);
+    cursor: pointer;
 }
 
 .submit-recipes {

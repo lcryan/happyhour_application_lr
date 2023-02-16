@@ -12,7 +12,7 @@ function Favourites() {
     const {user, isAuth} = useContext(AuthContext);
     const {favourites, setFavourites} = useContext(GlobalContext);
 
-    const [localfavourites, setlocalfavourites] = useState(favourites)
+    const [localFavourites, setLocalFavourites] = useState(favourites)
 
     const countChecked = (drinks) => {
         return (getChecked(drinks)).length
@@ -29,20 +29,15 @@ function Favourites() {
     function checkedHandler(idDrink) {
 
         const newFav = favourites.map(item => {
-            if(item.idDrink !== idDrink) return item
+            if (item.idDrink !== idDrink) return item
             const myItem = item;
-            if(!item.hasOwnProperty('isChecked') && countChecked(favourites) <= 2) {
+            if (!item.hasOwnProperty('isChecked') && countChecked(favourites) <= 2) {
                 myItem.isChecked = true
-            }
-            else if(!myItem.isChecked && countChecked(favourites) <= 2) {
-                myItem.isChecked = true
-            } else {
-                myItem.isChecked = false
-            }
+            } else myItem.isChecked = !myItem.isChecked && countChecked(favourites) <= 2;
 
             return myItem
         })
-        setlocalfavourites(newFav)
+        setLocalFavourites(newFav)
     }
 
 
@@ -58,9 +53,11 @@ function Favourites() {
                         <OneCocktailCard
                             cocktail={cocktail}
                         />
-                        <div className="checkbox">
-                            <button style={cocktail.isChecked ? {color: "red"} : {color: "green"}} onClick={() => checkedHandler(cocktail.idDrink)}>Recipe please </button>
-
+                        <div className="check-button-box">
+                            <button className="check-button"
+                                    style={cocktail.isChecked ? {color: "red"} : {color: "green"}}
+                                    onClick={() => checkedHandler(cocktail.idDrink)}>Recipe please
+                            </button>
                         </div>
                     </article>
                 )
@@ -87,10 +84,10 @@ function Favourites() {
             {isAuth ?
                 <div className="container">
                     <article className="favs-container">
-                        {getDrinks(localfavourites)}
+                        {getDrinks(localFavourites)}
                     </article>
                     <button type="submit" className="submit-recipes"
-                            onClick={() => navigate(`/recipe/${getIdFromDrinksArray(getChecked(localfavourites)).join(',')}`)}>Get
+                            onClick={() => navigate(`/recipe/${getIdFromDrinksArray(getChecked(localFavourites)).join(',')}`)}>Get
                         recipes
                     </button>
                 </div>
@@ -109,7 +106,7 @@ function Favourites() {
                 <div className="text-box-favs">
                     <p className="important-note-text">Please remember: you can save up
                         to <strong>10</strong> cocktails
-                        on your favourites. </p>
+                        in your favourites. </p>
                 </div> :
                 <div className="message-two-user">
                     <p>Why you should join us!</p>
