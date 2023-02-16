@@ -33,8 +33,8 @@ function Latest() {
                 }
                 setData(response.data.drinks)
                 setLoading(false);
-            } catch (e) {
-                console.error(e);
+            } catch (error) {
+                console.error(error);
                 setError(true);
                 setErrorMessage("We couldn't find any cocktails.")
             }
