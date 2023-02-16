@@ -12,6 +12,8 @@ function Latest() {
 
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
         const controller = new AbortController();
@@ -19,6 +21,7 @@ function Latest() {
         async function getAllCocktails() {
             try {
                 setLoading(true)
+                setError(false)
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/latest.php`, {
                     signal: controller.signal
                 });
@@ -32,6 +35,8 @@ function Latest() {
                 setLoading(false);
             } catch (e) {
                 console.error(e);
+                setError(true);
+                setErrorMessage("We couldn't find any cocktails.")
             }
         }
 
