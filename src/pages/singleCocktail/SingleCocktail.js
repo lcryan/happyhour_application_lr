@@ -6,7 +6,7 @@ import React from "react";
 import AddToFavourites from "../../components/AddToFavourites";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChevronCircleLeft} from "@fortawesome/free-solid-svg-icons";
-
+import {DB_LOOKUP_BY_ID_URL} from "../../constants";
 
 function SingleCocktail() {
 
@@ -27,7 +27,7 @@ function SingleCocktail() {
 
             try {
 
-                const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
+                const response = await axios.get(`${DB_LOOKUP_BY_ID_URL}${id}`
                     , {signal: controller.signal})
 
                 if (response.data.drinks.length === 1) {
