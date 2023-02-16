@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 import Button from "../Button";
 import GlassCategoryQuestion from "./GlassCategoryQuestion";
 import "./CategoriesStyling.css";
@@ -10,7 +10,7 @@ function AlcoholCategoryQuestion(props) {
 
     const answer = (clickedFilter) => {
         if (clickedFilter) {
-            filters.push(`a=${clickedFilter}`)
+            filters.a = clickedFilter
         }
         setClicked(true)
     }
@@ -25,37 +25,26 @@ function AlcoholCategoryQuestion(props) {
                     <Button
                         type={"button"}
                         className="alcoholic"
-                        disabled={false}
                         children="Alcoholic"
-                        onClick={() => answer("alcoholic")}
+                        onClick={() => answer("Alcoholic")}
 
                     />
                     <Button
                         type={"button"}
                         className="non-alcoholic"
-                        disabled={false}
                         children="Non-alcoholic"
-                        onClick={() => answer("non_alcoholic")}
+                        onClick={() => answer("Non alcoholic")}
                     />
                     <Button
                         type={"button"}
                         className="optional-alcohol"
-                        disabled={false}
                         children="Optional-alcohol"
-                        onClick={() => answer("optional_alcohol")}
-                    />
-                    <Button
-                        type={"button"}
-                        className="no-preference"
-                        disabled={false}
-                        children="No Preference"
-                        onClick={() => answer()}
+                        onClick={() => answer("Optional alcohol")}
                     />
                 </div>
             </div>
         );
     }
-
     return (<GlassCategoryQuestion filters={filters}/>)
 
 }

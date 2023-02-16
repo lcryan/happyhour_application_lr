@@ -32,7 +32,7 @@
     margin-right: 10px;
 }
 
-.logout-button {
+.logout-button, .sign-up-button {
     background-color: var(--trudy-beige);
     padding: 10px;
     border-radius: 20px;
@@ -41,6 +41,14 @@
     cursor: pointer;
 }
 
+.sign-up-button {
+    margin-left: 10px;
+}
+
 .logout-button:focus {
+    border: 2px solid var(--trudy-beige);
+}
+
+.sign-up-button :focus {
     border: 2px solid var(--trudy-beige);
 }

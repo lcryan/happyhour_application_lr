@@ -49,3 +49,19 @@
 .chevron-arrow-left {
     height: 30px;
 }
+
+.hover-text {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: var(--trudy-beige);
+    text-align: center;
+    letter-spacing: 0;
+}
+
+.loading-message-single {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 100px;
+}

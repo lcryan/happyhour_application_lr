@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {AuthContext} from '../../context/AuthContext';
 import {GlobalContext} from '../../context/GlobalState';
 import {Link, useNavigate} from 'react-router-dom';
@@ -10,54 +10,54 @@ import SmallLogo from '../../assets/logo/HapyHourLogo_Trudy_beige (100 × 100 px
 function Favourites() {
     const navigate = useNavigate();
     const {user, isAuth} = useContext(AuthContext);
-    const {favourites} = useContext(GlobalContext);
+    const {favourites, setFavourites} = useContext(GlobalContext);
 
-    const countChecked = () => {
-        return (getChecked()).length
+    const [localFavourites, setLocalFavourites] = useState(favourites)
+
+    const countChecked = (drinks) => {
+        return (getChecked(drinks)).length
     }
 
-    function getChecked() {
-        return favourites.filter(x => x.isChecked)
+    function getChecked(drinks) {
+        return drinks.filter(x => x.isChecked)
     }
 
     function getIdFromDrinksArray(drinks) {
         return drinks.map(x => x.idDrink);
     }
 
-    function checkedHandler(event, cocktail) {
-        if (cocktail.isChecked) {
-            cocktail.isChecked = false
-            return
-        }
+    function checkedHandler(idDrink) {
 
-        const count = countChecked();
+        const newFav = favourites.map(item => {
+            if (item.idDrink !== idDrink) return item
+            const myItem = item;
+            if (!item.hasOwnProperty('isChecked') && countChecked(favourites) <= 2) {
+                myItem.isChecked = true
+            } else myItem.isChecked = !myItem.isChecked && countChecked(favourites) <= 2;
 
-        if (count > 2) {
-            cocktail.isChecked = false;
-            event.preventDefault()
-            return
-        }
-
-        cocktail.isChecked = true;
+            return myItem
+        })
+        setLocalFavourites(newFav)
     }
+
 
     const getDrinks = (drinks) => {
         if (!drinks.length || drinks.length === 0) {
             return (<>
-                <p>nothing found</p>
+                <h3>You haven't added any cocktails to your favourites yet.</h3>
             </>)
         } else {
-            console.log(drinks)
             return drinks.map((cocktail) => {
                 return (
                     <article className="cocktail-info" key={cocktail.idDrink}>
                         <OneCocktailCard
-                            cocktail={cocktail} />
-                        <div className="checkbox">
-                        <input className="recipe-checkbox" type="checkbox"
-                               id="recipe-checkbox" value="recipe-checkbox"
-                               onClick={(e) => checkedHandler(e, cocktail)}/>
-                        <label htmlFor="recipe-checkbox"> Recipe please </label>
+                            cocktail={cocktail}
+                        />
+                        <div className="check-button-box">
+                            <button className="check-button"
+                                    style={cocktail.isChecked ? {color: "red"} : {color: "green"}}
+                                    onClick={() => checkedHandler(cocktail.idDrink)}>Recipe please
+                            </button>
                         </div>
                     </article>
                 )
@@ -84,10 +84,10 @@ function Favourites() {
             {isAuth ?
                 <div className="container">
                     <article className="favs-container">
-                        {getDrinks(favourites)}
+                        {getDrinks(localFavourites)}
                     </article>
                     <button type="submit" className="submit-recipes"
-                            onClick={() => navigate(`/recipe/${getIdFromDrinksArray(getChecked()).join(',')}`)}>Get
+                            onClick={() => navigate(`/recipe/${getIdFromDrinksArray(getChecked(localFavourites)).join(',')}`)}>Get
                         recipes
                     </button>
                 </div>
@@ -104,11 +104,9 @@ function Favourites() {
 
             {isAuth ?
                 <div className="text-box-favs">
-                    <p className="important-note-text">Please remember: <p>you can save up
+                    <p className="important-note-text">Please remember: you can save up
                         to <strong>10</strong> cocktails
-                        on your favourites
-                        page.</p> <p>Choose <strong>3</strong> cocktails at a time to view the full recipe.Cheers!</p>
-                    </p>
+                        in your favourites. </p>
                 </div> :
                 <div className="message-two-user">
                     <p>Why you should join us!</p>

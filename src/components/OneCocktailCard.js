@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import {Link} from "react-router-dom";
-import './OneCocktailCard.css'
+import "./OneCocktailCard.css";
 
 function OneCocktailCard({children, cocktail}) {
     return (
@@ -13,7 +13,6 @@ function OneCocktailCard({children, cocktail}) {
                     <p>{cocktail.strDrink}</p>
                     {children}
                 </article>
-
             </Link>
 
         </>

@@ -1,13 +1,15 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useState} from "react";
 
-const initialState = {
-    favouritesList: [],
-    addedToFavourites: [],
-}
+const getInitialState = () => {
+    return {
+        favouritesList: [],
+        addedToFavourites: [],
+    };
+};
 
-export const GlobalContext = createContext(initialState);
+export const GlobalContext = createContext(getInitialState());
 
-const localStorageKey = 'favourites'
+const localStorageKey = 'favourites';
 
 export const GlobalProvider = (props) => {
 
@@ -31,10 +33,6 @@ export const GlobalProvider = (props) => {
         return false
     }
 
-    // TODO implement toggleFavoutire() function that combines the other functions into an
-    // easy to use function for use in event handlers on clicks
-
-
     const addToFavourites = (cocktail) => {
         if (favourites.length < 10) {
             if (!isFavourite(cocktail)) {
@@ -44,7 +42,7 @@ export const GlobalProvider = (props) => {
             }
             console.log("add")
             console.log(cocktail)
-            return ""  // magic string to be avoided in the future
+            return ""
         }
         return "Sorry, you cannot add more favourite cocktails."
     }
@@ -53,8 +51,6 @@ export const GlobalProvider = (props) => {
         favourites = favourites.filter(x => x.idDrink !== cocktail.idDrink)
         setFavourites(favourites)
         localStorage.setItem(localStorageKey, JSON.stringify(favourites))
-        // loop through array and delete (loop, map, filter)
-        // save to localstorage
         console.log("remove")
         console.log(cocktail)
         return favourites
@@ -64,7 +60,8 @@ export const GlobalProvider = (props) => {
         addToFavourites,
         removeFromFavourites,
         isFavourite,
-        favourites
+        favourites,
+        setFavourites
     };
 
     return (

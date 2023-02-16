@@ -1,11 +1,11 @@
-import React from 'react';
-import './Mixologist.css'
+import React from "react";
+import "./Mixologist.css"
 
 import Questionnaire from "../../components/Questionnaire/Questionnaire";
 import Bartender from "../../assets/icons/bartender.svg";
 import DividerLine from "../../assets/icons/dividerline.svg";
 
-function Mixologist(props) {
+function Mixologist() {
     return (
         <>
             <article className="header-mixologist">

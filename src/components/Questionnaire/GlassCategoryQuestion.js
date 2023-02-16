@@ -9,7 +9,7 @@ function GlassCategoryQuestion(props) {
 
     const answer = (clickedFilter) => {
         if (clickedFilter) {
-            filters.push(`g=${clickedFilter}`)
+            filters.g = clickedFilter
         }
         setClicked(true)
     }
@@ -24,31 +24,56 @@ function GlassCategoryQuestion(props) {
                     <Button
                         type={"button"}
                         className="highball-glass"
-                        disabled={false}
                         children="Highball Glass"
                         onClick={() => answer("Highball_glass")}
                     />
                     <Button
                         type={"button"}
                         className="cocktail-glass"
-                        disabled={false}
                         children="Cocktail Glass"
                         onClick={() => answer("Cocktail_glass")}
                     />
                     <Button
                         type={"button"}
                         className="old-fashioned-glass"
-                        disabled={false}
                         children="Old-fashioned Glass"
                         onClick={() => answer("Old-fashioned_glass")}
                     />
                     <Button
                         type={"button"}
                         className="cordial-glass"
-                        disabled={false}
                         children="Cordial Glass"
-                        onClick={() => answer("Cordial_glass")}
+                        onClick={() => answer("Cordial glass")}
                     />
+
+                    <Button
+                        type={"button"}
+                        className="hurricane-glass"
+                        children="Hurricane Glas"
+                        onClick={() => answer("Hurricane glass")}
+                    />
+
+                    <Button
+                        type={"button"}
+                        className="shot-glass"
+                        children="Shot Glass"
+                        onClick={() => answer("Shot glass")}
+                    />
+
+                    <Button
+                        type={"button"}
+                        className="coupe-glass"
+                        children="Coupe Glass"
+                        onClick={() => answer("Coupe Glass")}
+                    />
+
+                    <Button
+                        type={"button"}
+                        className="margarita-glass"
+                        children="Margarita Glass"
+                        onClick={() => answer("Margarita/Coupette glass")}
+                    />
+
                 </div>
             </div>
         );

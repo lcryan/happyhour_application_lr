@@ -1,11 +1,9 @@
 import React from 'react';
 import DrinkCategoryQuestion from './DrinkCategoryQuestion'
 
+function Questionnaire() {
 
-
-function Questionnaire(props) {
-
-    const filters = [];
+    const filters = {a: "", c: "", g: ""};
     return (
         <>
             <DrinkCategoryQuestion filters={filters}/>

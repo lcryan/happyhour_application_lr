@@ -12,10 +12,12 @@
     height: 250px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 20px 20px;
     grid-auto-flow: row;
     grid-template-areas:
+    ". ."
+    ". ."
     ". ."
     ". .";
     margin-left: 500px;
@@ -23,10 +25,10 @@
     margin-bottom: 150px;
 }
 
-.party-drink, .shot, .cocktail, .no-preference,
+.party-drink, .shot, .cocktail, .other, .homemade, .ordinary-drink, .shake, .soft-drink,
 .alcoholic, .non-alcoholic, .optional-alcohol,
 .highball-glass, .cocktail-glass, .old-fashioned-glass,
-.cordial-glass {
+.cordial-glass, .hurricane-glass, .shot-glass, .coupe-glass, .margarita-glass {
     border-radius: 20px;
     font-size: 20px;
     font-weight: bold;
@@ -34,9 +36,9 @@
     box-shadow: 8px 14px 17px 1px rgba(0, 0, 0, 0.75);
 }
 
-.party-drink, .shot, .cocktail, .no-preference,
+.party-drink, .shot, .cocktail, .ordinary-drink, .shake, .soft-drink, .other, .homemade,
 .alcoholic, .non-alcoholic, .optional-alcohol,
-.highball-glass, .cocktail-glass, .old-fashioned-glass,
+.highball-glass, .cocktail-glass, .old-fashioned-glass, .hurricane-glass, .shot-glass, .coupe-glass, .margarita-glass,
 .cordial-glass:hover {
     cursor: pointer;
 }
@@ -44,6 +46,32 @@
 
 .party-drink, .alcoholic, .highball-glass {
     background-color: var(--don-red);
+    color: var(--trudy-beige);
+}
+
+.margarita-glass, .homemade {
+    background-color: var(--romano-yellow);
+    color: var(--trudy-beige);
+}
+
+.ordinary-drink, .coupe-glass {
+    background-color: var(--crane-grey);
+    color: var(--trudy-beige);
+}
+
+.other {
+    background-color: var(--campbell-grey);
+    color: var(--trudy-beige);
+}
+
+
+.soft-drink, .hurricane-glass {
+    background-color: var(--betty-blue);
+    color: var(--trudy-beige);
+}
+
+.shake, .shot-glass {
+    background-color: var(--ginsberg-turquoise);
     color: var(--trudy-beige);
 }
 

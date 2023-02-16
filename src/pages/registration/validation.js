@@ -2,7 +2,6 @@ const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,10})$/
 const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?).{6,20}$/
 const userNameRegex = /^(?=.{4,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+$/
 
-
 function validateForm(email, username, password) {
     let status = true;
     const messages = [];
@@ -17,7 +16,7 @@ function validateForm(email, username, password) {
     }
     if (!userNameRegex.test(username)) {
         status = false
-        messages.push("Invalid username. The username must include at least 4 characters and one special sign. ")
+        messages.push("Invalid username. The username must include at least 4 characters. ")
     }
 
     return {

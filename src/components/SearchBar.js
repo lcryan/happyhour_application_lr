@@ -18,8 +18,6 @@ function SearchBar() {
             console.log(response.data)
             setName(response.data.drinks)
 
-            // TODO error handling
-
         } catch (error) {
             console.log(error)
         }

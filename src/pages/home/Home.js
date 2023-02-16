@@ -23,7 +23,6 @@ function Home() {
                     <img src={DividerLine} className="divider-line" alt="beige colored divider line"/>
                 </article>
 
-
                 <article className="overview-container">
                     <article className="random-cocktail-article">
                         <div className="one-random-cocktail">

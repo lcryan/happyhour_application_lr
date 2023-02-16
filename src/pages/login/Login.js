@@ -1,50 +1,48 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState} from "react";
 import axios from "axios";
 import {AuthContext} from "../../context/AuthContext";
-import {BASE_URL} from "../../constants";
+import {BACKEND_BASE_URL} from "../../constants";
 import {Link} from "react-router-dom";
-import {useNavigate} from "react-router-dom";
 import "./Login.css";
 import BigLogo from "../../assets/logo/HapyHourLogo_Roger_brown.png";
 import Button from "../../components/Button";
 
 
-function Login(props) {
+function Login() {
 
     const {login} = useContext(AuthContext)
-
 
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
 
     const [error, setError] = useState(false);
-    const [errorMessage, setErrorMessage] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
-
 
     async function handleLogin(e) {
         e.preventDefault();
         setError(false)
         try {
-            // TODO take the email and password from a form in this page
-            const response = await axios.post(`${BASE_URL}/api/auth/signin`, {
+            setLoading(true)
+            setErrorMessage("")
+            const response = await axios.post(`${BACKEND_BASE_URL}/api/auth/signin`, {
                 username: username,
                 password: password,
             })
             console.log(response.data)
-            login(response.data.accessToken)
-
-
-        } catch (e) {
-            console.error(e)
+            login(response.data.accessToken);
+        } catch (error) {
+            console.error(error)
+            setError(true);
+            setErrorMessage("Invalid username or password. Please try again.");
+        } finally {
+            setLoading(false);
         }
     }
 
     return (
-        <>
-
+        <>{loading ? <div className="loading-login">Loading...</div> : (
             <div className="login-form">
                 <div className="login-form-logo-container">
                     <img src={BigLogo} className="big-logo-login" alt="brown colored happy hour logo"/>
@@ -72,7 +70,7 @@ function Login(props) {
                                    onChange={(e) => setPassword(e.target.value)}
                             />
                         </label>
-                        {error && <p className="error">{errorMessage}</p>}
+                        {error && <p className="error-message-login">{errorMessage}</p>}
                         <Button
                             type="submit"
                             className="login-button"
@@ -83,11 +81,9 @@ function Login(props) {
                         </div>
                     </div>
                 </form>
-            </div>
-
-
+            </div>)}
         </>
     );
 }
 
-export default Login
+export default Login;

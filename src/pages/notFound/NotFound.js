@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
 import {Link} from "react-router-dom";
+import "./NotFound.css"
 
 function NotFound() {
     return (
         <>
-            <h1>Ups...sorry, page not found. Go back home here.</h1>
-
-            <article>
-                <Link to="/">Go back Home</Link>
-            </article>
-
+            <div className="back-message">
+                <h1>Ups...sorry, page not found. Go back home <Link to="/">here.</Link></h1>
+            </div>
         </>
     );
 }

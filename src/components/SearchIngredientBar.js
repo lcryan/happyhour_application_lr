@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {DB_SEARCH_INGREDIENT_URL} from "../constants";
-import './SearchIngredientBar.css'
+import "./SearchIngredientBar.css";
 import OneCocktailCard from "./OneCocktailCard";
 import {Link} from "react-router-dom";
 
@@ -21,7 +21,9 @@ function SearchIngredientBar() {
                 const response = await axios.get(`${DB_SEARCH_INGREDIENT_URL}${ingredient}`,
                     {signal: controller.signal})
                 console.log(response.data)
-                setNameIngredient(response.data.drinks)
+                if (Array.isArray(response.data.drinks)) {
+                    setNameIngredient(response.data.drinks)
+                }
             } catch (error) {
                 console.log(error)
             }
@@ -43,7 +45,6 @@ function SearchIngredientBar() {
         e.preventDefault();
         setIngredient(e.target.value);
     };
-
 
     return (
         <>
@@ -72,3 +73,4 @@ function SearchIngredientBar() {
 }
 
 export default SearchIngredientBar;
+

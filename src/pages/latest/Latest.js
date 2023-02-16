@@ -1,22 +1,27 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios"
-import './Latest.css'
+import "./Latest.css";
 import OneCocktailCard from "../../components/OneCocktailCard";
 import {Link} from "react-router-dom";
-import DividerLine from '../../assets/icons/dividerline.svg'
+import DividerLine from "../../assets/icons/dividerline.svg";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleArrowLeft} from "@fortawesome/free-solid-svg-icons";
 
 
 function Latest() {
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
         const controller = new AbortController();
 
         async function getAllCocktails() {
             try {
+                setLoading(true)
+                setError(false)
                 const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/latest.php`, {
                     signal: controller.signal
                 });
@@ -24,11 +29,14 @@ function Latest() {
                 if (response) {
                     setData(response.data.drinks || [])
                 } else {
-                    console.log("We couldn't find any data.")
+                    console.log("We couldn't find any drinks.")
                 }
                 setData(response.data.drinks)
-            } catch (e) {
-                console.error(e);
+                setLoading(false);
+            } catch (error) {
+                console.error(error);
+                setError(true);
+                setErrorMessage("We couldn't find any cocktails.")
             }
         }
 
@@ -62,14 +70,17 @@ function Latest() {
                 <h1 className="title-latest">The New Kids on the Block are...</h1>
                 <img src={DividerLine} className="divider-line-latest" alt="beige colored divider line"/>
             </div>
-            <section className="outer-content-container-latest-cocktails">
-                <div className="inner-content-container-latest-cocktails">
-                    <div className="latest-cocktails-container">
-                        {getDrinks(data)}
+            {loading ? error ? <div>{errorMessage}</div> : (
+                <p className="loading-latest">Getting the newest cocktails for you...</p>
+            ) : (
+                <section className="outer-content-container-latest-cocktails">
+                    <div className="inner-content-container-latest-cocktails">
+                        <div className="latest-cocktails-container">
+                            {getDrinks(data)}
+                        </div>
                     </div>
-                </div>
-
-            </section>
+                </section>
+            )}
             <div className="back-arrow-box">
                 <Link to="/"><FontAwesomeIcon className="back-arrow" icon={faCircleArrowLeft}/></Link>
             </div>
