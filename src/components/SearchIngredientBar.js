@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {DB_SEARCH_INGREDIENT_URL} from "../constants";
 import './SearchIngredientBar.css'
@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 function SearchIngredientBar() {
 
     const [ingredient, setIngredient] = useState("");
-    const [nameIngredient, setNameIngredient] = useState([]);
+    const [nameIngredient, setNameIngredient] = useState([])
 
 
     useEffect(() => {
@@ -72,3 +72,4 @@ function SearchIngredientBar() {
 }
 
 export default SearchIngredientBar;
+
