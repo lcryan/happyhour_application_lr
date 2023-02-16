@@ -56,5 +56,12 @@
     color: var(--trudy-beige);
     text-align: center;
     letter-spacing: 0;
+}
 
+.loading-message-single {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 100px;
 }
