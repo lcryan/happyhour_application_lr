@@ -5,7 +5,6 @@ import SingleCocktail from "../singleCocktail/SingleCocktail";
 function SearchPage() {
 
     return (
-
         <>
             <article className="header-search-page">
                 <h1 className="title-search-page"> Search your heart out! </h1>

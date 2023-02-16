@@ -60,7 +60,8 @@ export const GlobalProvider = (props) => {
         addToFavourites,
         removeFromFavourites,
         isFavourite,
-        favourites
+        favourites,
+        setFavourites
     };
 
     return (

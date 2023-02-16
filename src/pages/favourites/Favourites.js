@@ -10,36 +10,39 @@ import SmallLogo from '../../assets/logo/HapyHourLogo_Trudy_beige (100 × 100 px
 function Favourites() {
     const navigate = useNavigate();
     const {user, isAuth} = useContext(AuthContext);
-    const {favourites} = useContext(GlobalContext);
+    const {favourites, setFavourites} = useContext(GlobalContext);
 
+    const [localfavourites, setlocalfavourites] = useState(favourites)
 
-
-    const countChecked = () => {
-        return (getChecked()).length
+    const countChecked = (drinks) => {
+        return (getChecked(drinks)).length
     }
 
-    function getChecked() {
-        return favourites.filter(x => x.isChecked)
+    function getChecked(drinks) {
+        return drinks.filter(x => x.isChecked)
     }
 
     function getIdFromDrinksArray(drinks) {
         return drinks.map(x => x.idDrink);
     }
 
-    function checkedHandler(event, cocktail) {
-        if (cocktail.isChecked) {
-            cocktail.isChecked = false;
-            return
-        }
+    function checkedHandler(idDrink) {
 
-        const count = countChecked();
+        const newFav = favourites.map(item => {
+            if(item.idDrink !== idDrink) return item
+            const myItem = item;
+            if(!item.hasOwnProperty('isChecked') && countChecked(favourites) <= 2) {
+                myItem.isChecked = true
+            }
+            else if(!myItem.isChecked && countChecked(favourites) <= 2) {
+                myItem.isChecked = true
+            } else {
+                myItem.isChecked = false
+            }
 
-        if (count > 2) {
-            cocktail.isChecked = false;
-            event.preventDefault()
-            return
-        }
-        cocktail.isChecked = true;
+            return myItem
+        })
+        setlocalfavourites(newFav)
     }
 
 
@@ -49,7 +52,6 @@ function Favourites() {
                 <h3>You haven't added any cocktails to your favourites yet.</h3>
             </>)
         } else {
-            console.log(drinks)
             return drinks.map((cocktail) => {
                 return (
                     <article className="cocktail-info" key={cocktail.idDrink}>
@@ -57,10 +59,8 @@ function Favourites() {
                             cocktail={cocktail}
                         />
                         <div className="checkbox">
-                        <input className="recipe-checkbox" type="checkbox"
-                               id="recipe-checkbox"
-                               onClick={(e) => checkedHandler(e, cocktail)}/>
-                        <label htmlFor="recipe-checkbox"> Recipe please </label>
+                            <button style={cocktail.isChecked ? {color: "red"} : {color: "green"}} onClick={() => checkedHandler(cocktail.idDrink)}>Recipe please </button>
+
                         </div>
                     </article>
                 )
@@ -87,10 +87,10 @@ function Favourites() {
             {isAuth ?
                 <div className="container">
                     <article className="favs-container">
-                        {getDrinks(favourites)}
+                        {getDrinks(localfavourites)}
                     </article>
                     <button type="submit" className="submit-recipes"
-                            onClick={() => navigate(`/recipe/${getIdFromDrinksArray(getChecked()).join(',')}`)}>Get
+                            onClick={() => navigate(`/recipe/${getIdFromDrinksArray(getChecked(localfavourites)).join(',')}`)}>Get
                         recipes
                     </button>
                 </div>

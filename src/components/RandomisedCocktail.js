@@ -21,10 +21,10 @@ function RandomisedCocktail() {
         axios.get(apiUrl).then(response => {
             console.log(response.data)
             setRandomCocktail(response.data.drinks[0])
-        }).catch(e => console.log(e))
+        }).catch(error => console.log(error))
             .finally(() => setLoading(false));
 
-    }, []);
+    }, [apiUrl]);
 
 
     useEffect(() => {

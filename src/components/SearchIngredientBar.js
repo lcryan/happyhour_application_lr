@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {DB_SEARCH_INGREDIENT_URL} from "../constants";
-import "./SearchIngredientBar.css";
+import './SearchIngredientBar.css';
 import OneCocktailCard from "./OneCocktailCard";
 import {Link} from "react-router-dom";
 
 function SearchIngredientBar() {
 
     const [ingredient, setIngredient] = useState("");
-    const [nameIngredient, setNameIngredient] = useState([]);
+    const [nameIngredient, setNameIngredient] = useState([])
 
 
     useEffect(() => {
