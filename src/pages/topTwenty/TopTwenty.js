@@ -49,23 +49,21 @@ function TopTwenty() {
                 <h1 className="title-top-twenty"> Our fans' faves...</h1>
                 <img src={DividerLine} className="divider-line-top-twenty" alt="beige-thin-line"/>
             </div>
-            {loading ? (
-                <p>Loading...</p>
-            ) : (
-                <div className="container-top-twenty">
-                    {topTwenty.map((cocktail) => {
-                        return (
-                            <article className="cocktail-details" key={cocktail.idDrink}>
-                                <Link to={`/singleCocktail/${cocktail.idDrink}`}>
-                                    <OneCocktailCard cocktail={
-                                        cocktail
-                                    }
-                                    />
-                                </Link>
-                            </article>
-                        )
-                    })}
-                </div>)}
+
+            <div className="container-top-twenty">
+                {topTwenty.map((cocktail) => {
+                    return (
+                        <article className="cocktail-details" key={cocktail.idDrink}>
+                            <Link to={`/singleCocktail/${cocktail.idDrink}`}>
+                                <OneCocktailCard cocktail={
+                                    cocktail
+                                }
+                                />
+                            </Link>
+                        </article>
+                    )
+                })}
+            </div>
             <div className="back-arrow-tt-box">
                 <Link to="/"><FontAwesomeIcon className="back-arrow-tt" icon={faCircleArrowLeft}/></Link>
             </div>
