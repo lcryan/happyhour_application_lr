@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios"
-import './Latest.css'
+import "./Latest.css";
 import OneCocktailCard from "../../components/OneCocktailCard";
 import {Link} from "react-router-dom";
-import DividerLine from '../../assets/icons/dividerline.svg'
+import DividerLine from "../../assets/icons/dividerline.svg";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleArrowLeft} from "@fortawesome/free-solid-svg-icons";
 
