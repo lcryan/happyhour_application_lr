@@ -1,9 +1,8 @@
-import React, {useContext, useState} from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faHeart, faXmark} from '@fortawesome/free-solid-svg-icons';
-import './AddToFavourites.css'
+import React, {useContext, useState} from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faHeart, faXmark} from "@fortawesome/free-solid-svg-icons";
+import "./AddToFavourites.css";
 import {GlobalContext} from "../context/GlobalState";
-
 
 const AddToFavourites = ({cocktail}) => {
     const {
