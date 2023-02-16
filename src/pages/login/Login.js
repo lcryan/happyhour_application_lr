@@ -31,17 +31,18 @@ function Login() {
                 password: password,
             })
             console.log(response.data)
-            login(response.data.accessToken)
-        } catch (e) {
-            console.error(e)
-            setErrorMessage("Invalid username or password. Please try again.")
+            login(response.data.accessToken);
+        } catch (error) {
+            console.error(error)
+            setError(true);
+            setErrorMessage("Invalid username or password. Please try again.");
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     }
 
     return (
-        <>{loading ? <div>Loading</div> : (
+        <>{loading ? <div className="loading-login">Loading...</div> : (
             <div className="login-form">
                 <div className="login-form-logo-container">
                     <img src={BigLogo} className="big-logo-login" alt="brown colored happy hour logo"/>
@@ -69,7 +70,7 @@ function Login() {
                                    onChange={(e) => setPassword(e.target.value)}
                             />
                         </label>
-                        {error && <p className="error">{errorMessage}</p>}
+                        {error && <p className="error-message-login">{errorMessage}</p>}
                         <Button
                             type="submit"
                             className="login-button"
