@@ -15,7 +15,7 @@ function SearchPage() {
                 <h4 className="title-search-bar">Search by ingredient</h4>
                 <div className="search-page-bar"><SearchIngredientBar/></div>
             </article>
-            <div className="single-cocktail-page"> <SingleCocktail/></div>
+            <div className="single-cocktail-page"><SingleCocktail/></div>
             <section className="ingredient-result-container">
                 <div className="output-searchbar-home">
                 </div>
