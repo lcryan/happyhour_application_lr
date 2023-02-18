@@ -1,5 +1,15 @@
-.header-title {
+header {
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+
+}
+
+.header-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,6 +64,7 @@
     max-height: 450px;
     margin-right: 150px;
     margin-top: 40px;
+    margin-left: 50px;
 }
 
 .latest-button, .top-ten-button {
