@@ -15,7 +15,7 @@ function Home() {
 
     return (
         <>
-            <main>
+
                 <header>
                     <article className="header-title">
                         <img className="logo-image" src={LogoImage} alt="the happy hour logo"/>
@@ -41,7 +41,6 @@ function Home() {
                         </article>
                     </article>
                 </header>
-            </main>
         </>
 
     );
