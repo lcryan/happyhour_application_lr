@@ -1,5 +1,15 @@
-.header-title {
+header {
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+
+}
+
+.header-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +48,10 @@
     align-items: center;
     font-weight: bolder;
     font-size: 20px;
-    width: 400px;
+    max-width: 400px;
+    min-width: 200px;
+    min-height: 200px;
+    max-height: 500px;
     padding: 30px 50px;
     margin-bottom: 40px;
 }
@@ -52,13 +65,17 @@
     display: flex;
     flex-direction: column;
     max-height: 450px;
+    min-width:100px;
     margin-right: 150px;
     margin-top: 40px;
+    margin-left: 50px;
+    flex-shrink: 1;
 }
 
 .latest-button, .top-ten-button {
-    width: 600px;
+    max-width: 600px;
     margin-bottom: 40px;
+    min-width: 200px;
 }
 
 .latest-button, .top-ten-button, .mixologist-button {
@@ -85,7 +102,7 @@
 }
 
 .divider-line {
-    width: 200px;
+    min-width: 200px;
     margin-top: -100px;
     margin-bottom: -100px;
 }

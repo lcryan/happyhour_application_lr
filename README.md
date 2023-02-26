@@ -1,115 +1,135 @@
 ## Welcome to the HappyHour Application!
 
-**About the application** 
+### Table of Contents
 
-HappyHour is a cocktail-app about the wonderful and abundant world of cocktails and for people that already are or want to become cocktail lovers.
+1. [ About the application ](#1-about-the-application)
+2. [ Getting started ](#2-getting-started-with-happyhour-app)
+3. [ Information on the backend ](#3-backend-for-the-happyhour-app)
+4. [ User access to the app](#4-access-for-users)
+5. [ User roles ](#5-user-roles)
+6. [ Admin access / admin roles ](#6-admin-access--admin-roles)
+7. [API and API-key](#7-api-and-api-key)
+8. [Important note for the corrector](#8-belangrijke-aanmerking-voor-de-nakijkende-docent)
+9. [Getting started with React](#9-getting-started-with-create-react-app)
 
-It is supposed to help the user to get a better overview about which cocktails are hot and new, how to prepare them and what goes into each one of them.
+## 1. About the application
 
-Cheers and enjoy your own personal HappyHour. 
+HappyHour is a cocktail-app about the wonderful and abundant world of cocktails and for people that already are or want
+to become cocktail lovers.
 
-Please see below the homepage of the application.
-As a registered user you can access all important functionalities from here: 
+It is supposed to help the user to get a better overview about which cocktails are hot and new, how to prepare them and
+what goes into each one of them.
+
+Cheers and enjoy your own personal HappyHour.
+
+Please see below the homepage of the application. As a registered user you can access all important functionalities from
+here:
 
 ![screenshot_homepage](src/assets/images/screenshot_homepage.png)
 
-## Getting started with HappyHour App
+<a name="started"></a>
 
-After you have cloned this repository to your local machine, please install `node_modules` by running the following command:
+## 2. Getting started with HappyHour App
+
+After you have cloned this repository to your local machine, please install `node_modules` by running the following
+command:
+
 ```
 npm install
 ```
 
-Once finalized you will be able to start the application with the following command: 
+Once finalized you will be able to start the application with the following command:
+
 ```
 npm start
 ```
-**OR:** use (if you use Webstorm) use the Webstorm button (npm start). 
+
+**OR:** use (if you use Webstorm) use the Webstorm button (npm start).
 
 Open [http://localhost:3000](http://localhost:3000/) to view the page in the browser.
 
-If you want to stop running the page in the browser use CTRL + C in the terminal. 
-You can rerun the browser with the command mentioned above. 
+If you want to stop running the page in the browser use CTRL + C in the terminal. You can rerun the browser with the
+command mentioned above.
 
-## Backend for the HappyHour App
+<a name="about"></a>
 
-The educational backend of Novi Hogeschool has been used for this project. 
+## 3. Backend for the HappyHour App
+
+The educational backend of Novi Hogeschool has been used for this project.
 **Please note**: the manual to this backend are in Dutch only.
 
 [https://github.com/hogeschoolnovi/novi-educational-backend-documentation](https://github.com/hogeschoolnovi/novi-educational-backend-documentation)
 
+<a name="useraccess"></a>
 
-## Access for users 
+## 4. Access for users
 
-   **1. **Registration and Login**** 
-  
-After registering to the application on the registration page, then user will be able to log   in with his **USERNAME** and **PASSWORD.** A personal token is being saved automatically in the backend. The user will **NOT** need the access token to log in.  
+**1. **Registration and Login****
 
-   **2. Password reset:** 
+After registering to the application on the registration page, then user will be able to log in with his **USERNAME**
+and **PASSWORD.** A personal token is being saved automatically in the backend. The user will **NOT** need the access
+token to log in.
 
-   There is no possibility to reset your password or to access it in another way (f.e. through a  reset-email) once forgotten.
+**2. Password reset:**
 
-**Please note**:** 
+There is no possibility to reset your password or to access it in another way (f.e. through a reset-email) once
+forgotten.
 
-the personal token and therefore the access rights expire after a couple of hours. 
+**Please note**:**
 
-**3. Making a new account after access rights expire:** 
+the personal token and therefore the access rights expire after a couple of hours.
 
-The user can make a new account after his access rights expire. 
-The system generates a new personal token that is connected to the user.
+**3. Making a new account after access rights expire:**
 
-**Note:** 
+The user can make a new account after his access rights expire. The system generates a new personal token that is
+connected to the user.
 
-The user does not have to be able to retrieve the access token, as it will be automatically stored by the backend. 
+**Note:**
 
-## User roles 
+The user does not have to be able to retrieve the access token, as it will be automatically stored by the backend.
 
-All users will be able to: 
+<a name="userroles"></a>
 
-1. Register 
-2. Login 
+## 5. User roles
+
+All users will be able to:
+
+1. Register
+2. Login
 
 For **non-registered users** it is possible to:
 
-1.Search for cocktail by name (searchbar on homepage).
-2.Search for cocktails by ingredient (searchbar on search page).
-3.View newly added cocktails (latest button on homepage).
-4.View the top twenty of all cocktails (top twenty button on homepage).
-5.Use the randomizer feature (randomizer button on homepage).
-6.Use the mixologist feature (mixologist button on homepage). 
-7.View cocktails: including images, the cocktail-name & cocktail ingredients. 
+1.Search for cocktail by name (searchbar on homepage). 2.Search for cocktails by ingredient (searchbar on search page).
+3.View newly added cocktails (the latest button on homepage). 4.View the top twenty of all cocktails (top twenty button
+on homepage). 5.Use the randomizer feature (randomizer button on homepage). 6.Use the mixologist feature (mixologist
+button on homepage). 7.View cocktails: including images, the cocktail-name & cocktail ingredients.
 
+A **registered user** can additionally:
 
-A **registered user** can additionally: 
-
-1. Access all the features mentioned above. 
+1. Access all the features mentioned above.
 2. Access his/her **My Account** page.
 3. Access his/her **Favourites page**
-4. Add and remove cocktails to his/her **Favourites page.** 
-5. View, once cocktails are saved to the **Favourites page**, the instructions for the preparation of the cocktails. 
+4. Add and remove cocktails to his/her **Favourites page.**
+5. View, once cocktails are saved to the **Favourites page**, the instructions for the preparation of the cocktails.
 
+## 6. Admin access / admin roles
 
-## Admin access / admin roles
+There have been no admin roles created for this project.
 
-There have been no admin roles created for this project. 
+## 7. API and API-key
 
+For this project[ TheCocktailDB](https://www.thecocktaildb.com/) has been used. The API-key to access-only API-methods
+will be added to the pdf-file of this frontend project and added to this section under "API-key".
 
-## API and API-key 
-
-For this project[ TheCocktailDB](https://www.thecocktaildb.com/) has been used. 
-The API-key to access-only API-methods will be added to the pdf-file of this frontend project and added to this section under "API-key". 
-
-
-**Aanmerking voor de nakijkende docent: ** 
+## 8. Belangrijke Aanmerking voor de nakijkende docent
 
 Ik heb deze handleiding bewust in het Engels geschreven, om deze ook voor internationale studenten beschikbaar te maken.
 
+## Information about React App
 
-
-##Information about React App 
 Please see below
 
-# Getting Started with Create React App
+# 9. Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -128,7 +148,8 @@ You may also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more
+information.
 
 ### `npm run build`
 
@@ -144,38 +165,50 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will
+remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc.) right
+into your project, so you have full control over them. All of the commands except `eject` will still work, but they will
+point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you
+shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't
+customize it when you are ready for it.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can learn more in
+the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This section has moved
+here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
 ### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This section has moved
+here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
 ### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This section has moved
+here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
 ### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This section has moved
+here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This section has moved
+here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved
+here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
