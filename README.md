@@ -100,9 +100,9 @@ All users will be able to:
 For **non-registered users** it is possible to:
 
 1.Search for cocktail by name (searchbar on homepage). 2.Search for cocktails by ingredient (searchbar on search page).
-3.View newly added cocktails (the latest button on homepage). 4.View the top twenty of all cocktails (top twenty button on
-homepage). 5.Use the randomizer feature (randomizer button on homepage). 6.Use the mixologist feature (mixologist button
-on homepage). 7.View cocktails: including images, the cocktail-name & cocktail ingredients.
+3.View newly added cocktails (the latest button on homepage). 4.View the top twenty of all cocktails (top twenty button
+on homepage). 5.Use the randomizer feature (randomizer button on homepage). 6.Use the mixologist feature (mixologist
+button on homepage). 7.View cocktails: including images, the cocktail-name & cocktail ingredients.
 
 A **registered user** can additionally:
 
